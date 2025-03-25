@@ -1,0 +1,39 @@
+Title: '&lCREATE TRADE'
+Size: 54
+Buttons:
+  Background:
+    ItemStack: BlobLib.Background
+    Slot: 0-53
+  Item:
+    ItemStack:
+      Material: STONE_BUTTON
+      DisplayName: '&6Click an item in your inventory'
+      Lore:
+        - '&7Selects it for the trade'
+    Slot: 13
+  Create:
+    ItemStack:
+      Material: RED_CONCRETE
+      DisplayName: '&6Create Trade'
+      Lore:
+        - '&7No item selected!'
+        - ' '
+        - '&7Pick an item in order to trade'
+    Slot: 29
+  Currency:
+    ItemStack:
+      Material: GOLD_INGOT
+      DisplayName: '&6Currency'
+      Lore:
+        - '&7Currency: %currency%'
+    Slot: 31
+  Price:
+    ItemStack:
+      Material: GOLD_INGOT
+      DisplayName: '&6Item Price'
+      Lore:
+        - '&7Price: %format%'
+    Slot: 33
+  Return:
+    ItemStack: BlobLib.Return
+    Slot: 49

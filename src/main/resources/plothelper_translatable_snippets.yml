@@ -1,0 +1,5 @@
+BlobTycoon-PlotHelper:
+  Inventory:
+    Snippet: '&lPLOT HELPER > INVENTORY'
+  Currently-Browsing:
+    Snippet: '&fCurrently browsing!'

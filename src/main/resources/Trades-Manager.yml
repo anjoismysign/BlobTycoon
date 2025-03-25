@@ -1,0 +1,19 @@
+Title: '&lMANAGE TRADES'
+Size: 54
+Buttons:
+  Background:
+    ItemStack: BlobLib.Background
+    Slot: 0-53
+  Trades:
+    ItemStack:
+      Material: AIR
+    Slot: 10-16,19-25,28-34
+  Previous-Page:
+    ItemStack: BlobLib.Previous-Page
+    Slot: 52
+  Next-Page:
+    ItemStack: BlobLib.Next-Page
+    Slot: 53
+  Return:
+    ItemStack: BlobLib.Return
+    Slot: 45

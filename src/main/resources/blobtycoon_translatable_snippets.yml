@@ -1,0 +1,8 @@
+BlobTycoon-Assets:
+  Remove:
+    Snippet: '&cRemove'
+  Object-Slot:
+    Snippet: '&3Place object'
+BlobTycoon-Placeholder:
+  Plot:
+    Snippet: 'PLOT %n%'

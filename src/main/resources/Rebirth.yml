@@ -1,0 +1,15 @@
+Title: '&lREBIRTH'
+Size: 27
+Buttons:
+  Background:
+    ItemStack: BlobLib.Background
+    Slot: 0-26
+  Rebirth:
+    ItemStack:
+      Material: NETHER_STAR
+      DisplayName: '&6Rebirth'
+      Lore:
+        - '&7Price: %format%'
+        - ' '
+        - '&7Click to rebirth'
+    Slot: 13

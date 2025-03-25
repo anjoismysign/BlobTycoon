@@ -1,0 +1,20 @@
+Title: '&lTYCOON'
+Size: 27
+Buttons:
+  Background:
+    ItemStack: BlobLib.Background
+    Slot: 0-26
+  My-Plot:
+    ItemStack:
+      Material: SCAFFOLDING
+      DisplayName: '&6My Plot'
+      Lore:
+        - '&7Click to teleport'
+    Slot: 11
+  Change-Plot:
+    ItemStack:
+      Material: CLAY
+      DisplayName: '&6Change Plot'
+      Lore:
+        - '&7Click to change plot'
+    Slot: 15

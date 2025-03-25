@@ -1,0 +1,20 @@
+Title: '&lNEW PROFILE'
+Size: 9
+Buttons:
+  Background:
+    ItemStack: BlobLib.Background
+    Slot: 0-8
+  Info:
+    ItemStack:
+      Material: BOOK
+      DisplayName: '&fInfo'
+      Lore:
+        - '&7Creates a new profile'
+    Slot: 1
+  Create:
+    ItemStack:
+      Material: LIME_STAINED_GLASS_PANE
+      DisplayName: '&fCreate'
+      Lore:
+        - '&7Click to create a new profile'
+    Slot: 2

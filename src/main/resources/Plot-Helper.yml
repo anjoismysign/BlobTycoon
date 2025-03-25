@@ -1,0 +1,20 @@
+Title: '&lPLOT HELPER'
+Size: 27
+Buttons:
+  Background:
+    ItemStack: BlobLib.Background
+    Slot: 0-26
+  Storage:
+    ItemStack:
+      Material: CHEST
+      DisplayName: '&6Storage'
+      Lore:
+        - '&7Click to open storage'
+    Slot: 11
+  Trading:
+    ItemStack:
+      Material: EMERALD
+      DisplayName: '&6Trading'
+      Lore:
+        - '&7Click to manage'
+    Slot: 15

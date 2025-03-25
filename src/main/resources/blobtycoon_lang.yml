@@ -1,0 +1,160 @@
+BlobTycoonCmd:
+  TycoonModel-Get-Usage:
+    Type: CHAT
+    Message: '&cUsage: "/%o% get <key> <amount>"'
+  TycoonModel-Give-Usage:
+    Type: CHAT
+    Message: '&cUsage: "/%o% give <key> <amount> <player>"'
+  TycoonModel-Not-Found:
+    Type: CHAT
+    Message: '&c"%o%" not found'
+  TycoonModel-Get-Success:
+    Type: CHAT
+    Message: '&7Got &f%a%x %o%'
+  TycoonModel-Give-Success:
+    Type: CHAT
+    Message: '&7Gave &f%a%x %o% &7to &f%p%'
+  Plot-Successfully-Given:
+    Type: CHAT
+    Message: '&7Successfully given plot to &f%player%'
+  Progress-Successfully-Reset:
+    Type: CHAT
+    Message: '&7Successfully reset progress to &f%player%'
+BlobTycoon:
+  Only-Profile:
+    Type: TITLE
+    Title: '&c&lABORTING'
+    Subtitle: '&7You need more than one profile'
+  Max-Profiles-Reached:
+    Type: CHAT
+    Message: '&cYou have reached the maximum amount of profiles'
+  Profile-Player-Joined:
+    Type: CHAT
+    Message: '&f%player% &7joined the profile'
+  RackAsset-Held-Tutorial:
+    Type: ACTIONBAR
+    Message: '&f&lPLACE &fto place'
+  StructureAsset-Held-Tutorial:
+    Type: ACTIONBAR
+    Message: '&f&lPLACE &fto place'
+  ObjectAsset-Held-Tutorial:
+    Type: ACTIONBAR
+    Message: '&f&lINTERACT &fwith a rack to place'
+  Plot-Still-Loading-Hint:
+    Type: ACTIONBAR
+    Message: '&7Plot is still loading...'
+  Plot-Still-Loading:
+    Type: TITLE
+    Title: '&c&lABORTING'
+    Subtitle: '&7Plot still loading'
+  Duplicate-Profile:
+    Type: CHAT
+    Message: '&cProfile already exists'
+  Profile-Not-Invited:
+    Type: CHAT
+    Message: '&cYou don''t seem to be invited to this profile, maybe invitation expired?'
+  Profile-Invite-Notify:
+    Type: CHAT
+    Message: '&7You have been invited to play on &f%player%''s &7profile. Type &f/bt profile join %player% &7to join'
+  Player-Invited-Success:
+    Type: CHAT
+    Message: '&7Successfully invited &f%player%'
+  Profile-Already-Loaded:
+    Type: TITLE
+    Title: '&c&lABORTING'
+    Subtitle: '&7Profile already loaded'
+  Not-A-Valuable:
+    Type: CHAT
+    Message: '&c"%o%" is not a valuable. Contact an administrator'
+  Transaction-Too-Big:
+    Type: CHAT
+    Message: '&cTransaction too big!'
+  No-Available-Plots-Administrator:
+    Type: CHAT
+    Message: '&7No available plots. Use &f/bt plot setup &7in order to create one 
+    &8(embedded structures are designed for a 20x6x20 area)'
+  No-Available-Plots:
+    Type: CHAT
+    Message: '&7No available plots'
+  Plot-Already-Loaded:
+    Type: TITLE
+    Title: '&c&lABORTING'
+    Subtitle: '&7Plot already loaded'
+  Not-Inside-Plot:
+    Type: TITLE
+    Title: ' '
+    Subtitle: '&7Not inside plot'
+  Profile-Loaded:
+    Type: CHAT
+    Message: '&7You are playing on profile: &f%profile%'
+  Structure-No-Space:
+    Type: TITLE
+    Title: ' '
+    Subtitle: '&7No space left'
+  Storage-Supplied:
+    Type: TITLE
+    Title: '&c&lBEWARE!'
+    Subtitle: '&7There''s stuff in this storage'
+  Storage-Not-Compatible:
+    Type: TITLE
+    Title: '&c&lINCOMPATIBLE'
+    Subtitle: '&7Doesn''t fit in'
+  Insufficient-Mechanics:
+    Type: ACTIONBAR
+    Message: '&c&lINSUFFICIENT %mechanics%'
+Builder:
+  PlotIndex:
+    Type: TITLE
+    Title: '&f&lINDEX'
+    Subtitle: '&7How you want it to be named'
+  PlotIndex-Timeout:
+    Type: TITLE
+    Title: '&c&lTIMEOUT'
+    Subtitle: '&7You took too long to type in Index'
+    BlobSound: Builder.Timeout
+  PlotSizeX:
+    Type: TITLE
+    Title: '&f&lSIZE X'
+    Subtitle: '&7Size in X axis'
+  PlotSizeX-Timeout:
+    Type: TITLE
+    Title: '&c&lTIMEOUT'
+    Subtitle: '&7You took too long to type in Size'
+  PlotSizeY:
+    Type: TITLE
+    Title: '&f&lSIZE Y'
+    Subtitle: '&7Size in Y axis'
+  PlotSizeY-Timeout:
+    Type: TITLE
+    Title: '&c&lTIMEOUT'
+    Subtitle: '&7You took too long to type in Size'
+  PlotSizeZ:
+    Type: TITLE
+    Title: '&f&lSIZE Z'
+    Subtitle: '&7Size in Z axis'
+  PlotSizeZ-Timeout:
+    Type: TITLE
+    Title: '&c&lTIMEOUT'
+    Subtitle: '&7You took too long to type in Size'
+  PlotMinPoint:
+    Type: ACTIONBAR
+    Message: '&7Pick a block. &fClicked block &7will be used'
+  PlotMinPoint-Timeout:
+    Type: TITLE
+    Title: '&c&lTIMEOUT'
+    Subtitle: '&7You took too long to select a location'
+    BlobSound: Builder.Timeout
+BlobTycoon-Offline-Earning:
+  Not-Elapsed:
+    Type: CHAT
+    Message: '&7You can''t claim offline earnings yet.'
+  Falling-Short:
+    Type: CHAT
+    Message: '&7Since you went away, you were falling short,
+    so you didn''t earn any valuable'
+  Earned:
+    Type: CHAT
+    Message: '&7Since your absence, you''ve earned:'
+  Earned-Details:
+    Type: CHAT
+    Message: '+%display% &7%valuable%'

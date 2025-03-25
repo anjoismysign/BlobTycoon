@@ -1,0 +1,24 @@
+Title: '&lPROFILE > INVITE'
+Size: 18
+Buttons:
+  Background:
+    ItemStack: BlobLib.Background
+    Slot: 9-17
+  Players:
+    ItemStack:
+      Material: AIR
+    Slot: 0-8
+  Info:
+    ItemStack:
+      Material: BOOK
+      DisplayName: '&fInfo'
+      Lore:
+        - '&7Invites players to your existent profile.'
+        - '&8Will create a new profile on their behalf'
+    Slot: 9
+  Previous-Page:
+    ItemStack: BlobLib.Previous-Page
+    Slot: 16
+  Next-Page:
+    ItemStack: BlobLib.Next-Page
+    Slot: 17

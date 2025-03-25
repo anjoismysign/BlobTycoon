@@ -1,0 +1,41 @@
+BlobTycoon-PlotHelper:
+  Inventory:
+    ItemStack:
+      Material: CHEST
+      DisplayName: '&6Inventory Page %order%'
+      Lore:
+        - '&7Click to open'
+  Search:
+    ItemStack:
+      Material: OAK_SIGN
+      DisplayName: '&6Search'
+      Lore:
+        - '&7Find items by name'
+  Reset-Search:
+    ItemStack:
+      Material: ANVIL
+      DisplayName: '&6Reset Search'
+      Lore:
+        - '&7Clear search results'
+  Cancel-Trade:
+    ItemStack:
+      Material: RED_CONCRETE
+      DisplayName: '&cCancel Trade'
+      Lore:
+        - '&7Click to cancel'
+  Create-Trade:
+    ItemStack:
+      Material: LIME_CONCRETE
+      DisplayName: '&6Create Trade'
+      Lore:
+        - '&7This item will be set for offer so'
+        - '&7other players can buy it from you'
+        - ' '
+        - '&7Item: %item%'
+        - '&7Price: %format%'
+  Trade-Currency:
+    ItemStack:
+      Material: PAPER
+      DisplayName: '&6%currency%'
+      Lore:
+        - '&7Click to select'

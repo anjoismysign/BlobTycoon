@@ -1,0 +1,18 @@
+BlobTycoon-PlotHelper:
+  Pick-Up-Item:
+    Block:
+      - ' '
+      - '&fClick to pickup!'
+  Trade-View:
+    Block:
+      - ' '
+      - '&fSeller: %sellers%'
+      - '&fPrice: %price%'
+  Trade-No-Longer-For-Sale:
+    Block:
+      - ' '
+      - '&cNo longer for sale'
+  Search-Query:
+    Block:
+      - ' '
+      - '&7Filtered: &f%query%'

@@ -1,0 +1,16 @@
+Title: '&lCANCEL TRADE'
+Size: 54
+Buttons:
+  Background:
+    ItemStack: BlobLib.Background
+    Slot: 0-53
+  Item:
+    ItemStack:
+      Material: AIR
+    Slot: 13
+  Cancel:
+    ItemStack: BlobTycoon-PlotHelper.Cancel-Trade
+    Slot: 31
+  Return:
+    ItemStack: BlobLib.Return
+    Slot: 49

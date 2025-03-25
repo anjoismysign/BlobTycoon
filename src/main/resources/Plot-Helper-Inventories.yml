@@ -1,0 +1,19 @@
+Title: '&lPLOT HELPER > INVENTORIES'
+Size: 18
+Buttons:
+  Background:
+    ItemStack: BlobLib.Background
+    Slot: 9-17
+  Inventories:
+    ItemStack:
+      Material: AIR
+    Slot: 0-8
+  Previous-Page:
+    ItemStack: BlobLib.Previous-Page
+    Slot: 16
+  Next-Page:
+    ItemStack: BlobLib.Next-Page
+    Slot: 17
+  Return:
+    ItemStack: BlobLib.Return
+    Slot: 9

@@ -1,0 +1,25 @@
+Title: '&lMARKETPLACE'
+Size: 54
+Buttons:
+  Background:
+    ItemStack: BlobLib.Background
+    Slot: 0-53
+  Trades:
+    ItemStack:
+      Material: AIR
+    Slot: 11-16,20-25,29-34,38-43
+  Previous-Page:
+    ItemStack: BlobLib.Previous-Page
+    Slot: 52
+  Next-Page:
+    ItemStack: BlobLib.Next-Page
+    Slot: 53
+  Search:
+    ItemStack: BlobTycoon-PlotHelper.Search
+    Slot: 50
+  Reset-Search:
+    ItemStack: BlobTycoon-PlotHelper.Reset-Search
+    Slot: 49
+  Return:
+    ItemStack: BlobLib.Return
+    Slot: 45

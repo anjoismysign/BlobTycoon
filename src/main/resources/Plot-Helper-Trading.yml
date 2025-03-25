@@ -1,0 +1,31 @@
+Title: '&lPLOT HELPER > TRADING'
+Size: 27
+Buttons:
+  Background:
+    ItemStack: BlobLib.Background
+    Slot: 0-26
+  Marketplace:
+    ItemStack:
+      Material: EMERALD
+      DisplayName: '&6Marketplace'
+      Lore:
+        - '&7Find items to trade by players'
+        - ' '
+        - '&7Items offered here are &6trades'
+        - '&7which means they can be bought'
+        - '&7or sold for a certain currency.'
+    Slot: 11
+  Manage-Trades:
+    ItemStack:
+      Material: BOOK
+      DisplayName: '&6Manage Trades'
+      Lore:
+        - '&7Click to manage your trades'
+    Slot: 13
+  Create-Trade:
+    ItemStack:
+      Material: WRITABLE_BOOK
+      DisplayName: '&6Create Trade'
+      Lore:
+        - '&7Set up a trade for other players'
+    Slot: 15

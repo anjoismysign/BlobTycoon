@@ -1,0 +1,31 @@
+BlobTycoon:
+  Tycoon-Menu:
+    ItemStack:
+      Material: COMPASS
+      DisplayName: '&6Tycoon Menu'
+      Lore:
+        - '&7Click to interact'
+  Select-Plot:
+    ItemStack:
+      Material: CLAY
+      DisplayName: '&fPLOT %n%'
+      Lore:
+        - '&7Click to load'
+  Vault-MultiEconomy-Display:
+    ItemStack:
+      Material: PAPER
+      DisplayName: '&f%currency%'
+      Lore:
+        - '&7Balance: &f%balance%'
+  Switch-Profile-Element:
+    ItemStack:
+      Material: PAPER
+      DisplayName: '&f%profile%'
+      Lore:
+        - '&7Click to switch'
+  Invite-Profile-Element:
+    ItemStack:
+      Material: IRON_HELMET
+      DisplayName: '&f%player%'
+      Lore:
+        - '&7Click to invite'

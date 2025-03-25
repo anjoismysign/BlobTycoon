@@ -1,0 +1,166 @@
+Database:
+  #SQLITE, MYSQL, MONGODB (you may add URI, example below)
+  #URI: mongodb://localhost:27017
+  Type: SQLITE
+  IdentifierType: UUID
+  Hostname: localhost
+  Port: 3306
+  Database: database
+  Username: admin
+  Password: password
+Settings:
+  PlotPlacing:
+    Block-Particle-Configuration:
+      Particle: NOTE
+      X: 0.0
+      Y: 0.5
+      Z: 0.0
+      Count: 5
+    Entity-Particle-Configuration:
+      Particle: CLOUD
+      X: 0.0
+      Y: 0.25
+      Z: 0.0
+      Count: 5
+      Use-Random-Offset: true
+      Offset-X: 1.0
+      Offset-Y: 1.0
+      Offset-Z: 1.0
+      Use-Extra: true
+      Extra: 0.0
+  PlotHelper:
+    Enabled: false
+    X: 0.0
+    Y: 0.0
+    Z: 0.0
+    Yaw: 0.0
+    Pitch: 0.0
+    EntityType: ALLAY
+    Storage:
+      Enabled: true
+      # the amount inventories that are given by default to a new profile
+      Default-Storage: 1
+    Merchant:
+      Enabled: true
+      # if true, will enable community trading
+      Enable-Community-Trades: false
+      # the default trade options that are given to the player
+      Default-Trade:
+        # currency by name
+        Currency: default
+        # amount of currency
+        Amount: 500.0
+      # the amount of trades that can be done with the merchant at the same time
+      Default-Maximum-Trades: 5
+      Trade-Search:
+        Enabled: true
+        # whether to teleport the player to the merchant (the plot helper) whenever processed the transaction
+        Auto-Teleport-On-Successful-Transaction: true
+        # Whether the plot owners are notified when transaction is processed
+        Notify-Plot-Owners: true
+  Hologram:
+    Enabled: true
+    X: 0.0
+    Y: 4.0
+    Z: 0.0
+    Lines:
+      - '%owners%'
+      - ' '
+      - '&7Rebirths: %blobtycoon_rebirths%'
+  Rebirth:
+    #earns +10% on each rebirth
+    Earning-Multiplier: 0.1
+    Cost-Increase:
+      Type: ABSENT
+      Configuration: { }
+  # If true, will notify when another plot owner joins to all online owners
+  Notify-Owner-Join: false
+  # Players cannot join or create a profile if they already own this number of profiles
+  Max-Profiles-Per-Player: 3
+  # The materials that are considered as valid floor
+  Valid-Floor: [ ]
+  #If true, it will teleport the player to the plot's home location when joining
+  Teleport-To-Plot-On-Join: true
+  #The higher the number, the fastest it will place structures
+  Max-Placed-Per-Second: 20
+  #What empty blocks should be replaced with whenever placing/removing structures
+  Empty-Material: AIR
+  #If true, it will help debugging loading assets and such
+  Tiny-Debug: false
+  #Can go as long as you want
+  ProfileNames: [ ]
+  Selection:
+    Remove:
+      Particle: CRIT
+      #In ticks
+      Duration: 30
+      Distance: 0.5
+    Allowed:
+      Particle: CRIT
+      Distance: 0.5
+    Denied:
+      Particle: ANGRY_VILLAGER
+      Distance: 0.5
+    #Used for creating plots
+    Selector:
+      Particle: CRIT
+      Distance: 0.5
+  #if player types one of the following keywords, it will withdraw/deposit all of their money
+  All-Keywords:
+    - all
+  #if player types one of the following keywords, it will withdraw/deposit half of their money
+  Half-Keywords:
+    - half
+Listeners:
+  ComplexListeners:
+    Offline-Earning:
+      Register: false
+      Values:
+        # The amount that is earned while offline earning, compared to the online earning, being 0.01 1% and 1.0 100%
+        Earning: 0.02
+        # In seconds, the maximum time that can be earned while plot is offline
+        Max-Elapsed: 36000
+    Tycoon-Menu:
+      Register: true
+      Values:
+        #In case of IsPlayerInventory being true, this is ignored
+        Slot: 8
+        #In case of IsPlayerInventory being true, this is ignored
+        Menu-TranslatableItem: BlobTycoon.Tycoon-Menu
+        #The TranslatableItem that's used to select a plot
+        Select-Plot-TranslatableItem: BlobTycoon.Select-Plot
+        #The MetaBlobInventory that holds the menu
+        MetaBlobInventory: Tycoon-Menu
+        #Whether the inventory is the player's inventory itself
+        Is-Player-Inventory: false
+  TinyListeners:
+    # If true, it will transfer funds internally
+    Internal-Transfer-Funds: false
+    #If true, will open the PlotHelper UI through attacking the PlotHelper
+    PlotHelper-Hit: true
+    #If true, will open the PlotHelper UI through interacting with the PlotHelper
+    PlotHelper-Interact: true
+    #If true, will prevent damage to any PlotHelper
+    PlotHelper-Prevent-Damage: true
+    #If true, will display a mini tutorial when holding a StructureAsset on hand
+    StructureAsset-Held-Tutorial: false
+    #If true, will display a mini tutorial when holding a RackAsset on hand
+    RackAsset-Held-Tutorial: false
+    #If true, will display a mini tutorial when holding a ObjectAsset on hand
+    ObjectAsset-Held-Tutorial: false
+    #If true, will translate TranslatableItems once profile is loaded
+    Translate-On-Profile-Load-Event: false
+    #Whether ObjectModels can be placed through interacting
+    ObjectModel-Place-Interact: true
+    #Whether ObjectModels can be placed through attacking
+    ObjectModel-Place-Hit: true
+    #Whether ObjectModels can be removed through interacting
+    ObjectModel-Remove-Interact: true
+    #Whether ObjectModels can be removed through attacking
+    ObjectModel-Remove-Hit: true
+    #Whether StructureModels can be placed removed interacting
+    StructureModel-Remove-Interact: true
+    #Whether StructureModels can be placed removed attacking
+    StructureModel-Remove-Hit: true
+    #Whether to give a kit to a player when they create a new profile
+    New-Profile-Kit: true

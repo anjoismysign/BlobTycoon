@@ -1,0 +1,28 @@
+name: BlobTycoon
+version: ${project.version}
+main: us.mytheria.blobtycoon.BlobTycoon
+api-version: 1.19
+load: STARTUP
+depend: [ BlobLib ]
+authors: [ anjoismysign ]
+softdepend:
+  - Vault
+  - PlaceholderAPI
+  - BlobEconomy
+  - BlobRP
+  - BlobPets
+  - DecentHolograms
+  - FancyHolograms
+commands:
+  visitplot:
+    aliases: [ visit, vp, v ]
+    description: Allows players to visit others
+  blobtycoon:
+    aliases: [ bt ]
+    description: Main command for BlobTycoon2
+  rackasset:
+    description: Manages rack asset
+  structureasset:
+    description: Manages structure asset
+  objectasset:
+    description: Manages object asset

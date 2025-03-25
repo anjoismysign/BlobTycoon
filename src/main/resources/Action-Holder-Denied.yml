@@ -1,0 +1,13 @@
+Title: '&lMANAGE'
+Size: 27
+Buttons:
+  Background:
+    ItemStack: BlobLib.Background
+    Slot: 0-26
+  Remove:
+    ItemStack:
+      Material: RED_STAINED_GLASS_PANE
+      DisplayName: '&fRemove'
+      Lore:
+        - '&7Click to remove'
+    Slot: 13

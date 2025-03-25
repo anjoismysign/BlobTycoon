@@ -1,0 +1,70 @@
+Title: '&lPLOT > BUILD'
+Size: 27
+Buttons:
+  Background:
+    ItemStack: BlobLib.Background
+    Slot: 0-26
+  White-Background:
+    ItemStack:
+      Material: WHITE_STAINED_GLASS_PANE
+      CustomModelData: 0
+      DisplayName: " "
+      Lore: [ ]
+    Slot: 1-7,10-16,19-25
+  PlotIndex:
+    ItemStack:
+      Material: BOOK
+      CustomModelData: 0
+      DisplayName: "&6Index"
+      Lore:
+        - "&7Selected: &f%plotIndex%"
+    Slot: 1
+  PlotMinPoint:
+    ItemStack:
+      Material: WOODEN_AXE
+      CustomModelData: 0
+      DisplayName: "&6MinPoint"
+      Lore:
+        - "&7Selected: &f%plotMinPoint%"
+    Slot: 2
+  PlotDirection:
+    ItemStack:
+      Material: COMPASS
+      CustomModelData: 0
+      DisplayName: "&6Direction"
+      Lore:
+        - "&7Selected: &f%plotDirection%"
+    Slot: 3
+  PlotSizeX:
+    ItemStack:
+      Material: STRUCTURE_BLOCK
+      CustomModelData: 0
+      DisplayName: "&6Size X"
+      Lore:
+        - "&7Selected: &f%plotSizeX%"
+    Slot: 5
+  PlotSizeY:
+    ItemStack:
+      Material: STRUCTURE_BLOCK
+      CustomModelData: 0
+      DisplayName: "&6Size Y"
+      Lore:
+        - "&7Selected: &f%plotSizeY%"
+    Slot: 6
+  PlotSizeZ:
+    ItemStack:
+      Material: STRUCTURE_BLOCK
+      CustomModelData: 0
+      DisplayName: "&6Size Z"
+      Lore:
+        - "&7Selected: &f%plotSizeZ%"
+    Slot: 7
+  Build:
+    ItemStack:
+      Material: SLIME_BALL
+      CustomModelData: 0
+      DisplayName: "&6Build"
+      Lore:
+        - "&7Click to add reward"
+        - "&7to the files."
+    Slot: 22

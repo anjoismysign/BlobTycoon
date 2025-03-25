@@ -1,0 +1,18 @@
+BlobTycoon:
+  Owner-Join-Notify:
+    Type: CHAT
+    Message: '&f%player% &7has joined'
+  Visit-Failed:
+    Type: TITLE
+    Title: '&c&lSLOW DOWN!'
+    Subtitle: '&7You are going fast!'
+  Visit:
+    Type: CHAT
+    Message: '&f%player% &7has come to visit'
+  Visiting:
+    Type: CHAT
+    Message: '&7Visiting &f%player%'
+  Cannot-Visit-Yourself:
+    Type: TITLE
+    Title: '&c&lABORTING'
+    Subtitle: '&7You cannot visit your own plot!'

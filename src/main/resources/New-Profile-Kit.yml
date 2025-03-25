@@ -1,0 +1,7 @@
+Title: ''
+Size: 9
+Buttons:
+  0:
+    ItemStack:
+      Material: DIRT
+    Slot: 0

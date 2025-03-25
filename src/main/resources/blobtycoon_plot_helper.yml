@@ -1,0 +1,23 @@
+BlobTycoon:
+  Plot-Helper-Trade-Successful-Sell:
+    Type: TITLE
+    Title: '&a&lBOUGHT!'
+    Subtitle: '&fx%amount% %item%'
+  Plot-Helper-Trade-Notify-Sell:
+    Type: CHAT
+    Message: '&f%player% &7has bought &fx%amount% %item%'
+  Plot-Helper-Trade-Notify-Server-Sell:
+    Type: CHAT
+    Message: '&7Somebody has bought &fx%amount% %item%'
+  Plot-Helper-Too-Many-Trades:
+    Type: TITLE
+    Title: '&c&lTOO MANY!'
+    Subtitle: '&7You have too many trades!'
+  PlotHelper-Search:
+    Type: TITLE
+    Title: '&f&lSEARCH'
+    Subtitle: '&7Type in to search'
+  PlotHelper-Search-Timeout:
+    Type: TITLE
+    Title: '&c&lTIMEOUT!'
+    Subtitle: '&7Took too long!'

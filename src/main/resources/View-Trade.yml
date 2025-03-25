@@ -1,0 +1,21 @@
+Title: '&lVIEW TRADE'
+Size: 54
+Buttons:
+  Background:
+    ItemStack: BlobLib.Background
+    Slot: 0-53
+  Item:
+    ItemStack:
+      Material: AIR
+    Slot: 13
+  Buy:
+    ItemStack:
+      Material: GOLD_NUGGET
+      DisplayName: '&6Buy'
+      Lore:
+        - ' '
+        - '&fPrice: %price%'
+    Slot: 31
+  Return:
+    ItemStack: BlobLib.Return
+    Slot: 49

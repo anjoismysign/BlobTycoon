@@ -1,0 +1,6 @@
+BlobTycoon:
+  Generic-TagSet:
+    Inclusions: [ ]
+  Plot-Helper-Banned-Items:
+    Inclusions:
+      - BlobTycoon.Tycoon-Menu

@@ -1,0 +1,23 @@
+Title: '&lSWITCH PROFILE'
+Size: 18
+Buttons:
+  Background:
+    ItemStack: BlobLib.Background
+    Slot: 9-17
+  Profiles:
+    ItemStack:
+      Material: AIR
+    Slot: 0-8
+  Info:
+    ItemStack:
+      Material: BOOK
+      DisplayName: '&fInfo'
+      Lore:
+        - '&7Switches to an existent profile'
+    Slot: 9
+  Previous-Page:
+    ItemStack: BlobLib.Previous-Page
+    Slot: 16
+  Next-Page:
+    ItemStack: BlobLib.Next-Page
+    Slot: 17
