@@ -110,7 +110,6 @@ public class TycoonModelReader {
         TranslatableItem translatableItem = TranslatableItem.by(translatableItemKey);
         Objects.requireNonNull(translatableItem,
                 "'TranslatableItem' is not valid or set");
-        ConfigurationSection structureDataSection = section.getConfigurationSection("Structure-Data");
         Structure structure = BlobTycoonInternalAPI.getInstance().getStructure(structurePath);
         if (structure == null)
             throw new ConfigurationFieldException("'Structure' doesn't point to a valid structure");
@@ -196,7 +195,6 @@ public class TycoonModelReader {
         TranslatableItem translatableItem = TranslatableItem.by(translatableItemKey);
         Objects.requireNonNull(translatableItem,
                 "'TranslatableItem' is not valid or set");
-        ConfigurationSection structureDataSection = section.getConfigurationSection("Structure-Data");
         Structure structure = BlobTycoonInternalAPI.getInstance().getStructure(structurePath);
         if (structure == null)
             throw new ConfigurationFieldException("'Structure' doesn't point to a valid structure");

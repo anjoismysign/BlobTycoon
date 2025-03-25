@@ -52,7 +52,6 @@ public class TycoonPH {
             if (tycoonPlayer == null) {
                 return notOnline().get();
             }
-            Player player = tycoonPlayer.getPlayer();
             PlotProfile plotProfile = getPlotProfile(tycoonPlayer);
             if (plotProfile == null) {
                 return notOnline().get();
@@ -113,7 +112,6 @@ public class TycoonPH {
             if (tycoonPlayer == null) {
                 return notOnline().get();
             }
-            Player player = tycoonPlayer.getPlayer();
             PlotProfile plotProfile = getPlotProfile(tycoonPlayer);
             if (plotProfile == null) {
                 return notOnline().get();
@@ -145,7 +143,6 @@ public class TycoonPH {
             if (tycoonPlayer == null) {
                 return notOnline().get();
             }
-            Player player = tycoonPlayer.getPlayer();
             PlotProfile plotProfile = getPlotProfile(tycoonPlayer);
             if (plotProfile == null) {
                 return notOnline().get();
@@ -185,7 +182,6 @@ public class TycoonPH {
             if (tycoonPlayer == null) {
                 return notOnline().get();
             }
-            Player player = tycoonPlayer.getPlayer();
             PlotProfile plotProfile = getPlotProfile(tycoonPlayer);
             if (plotProfile == null) {
                 return notOnline().get();

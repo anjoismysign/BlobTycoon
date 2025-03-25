@@ -43,7 +43,7 @@ public record RackAsset(@NotNull String getKey,
                         @NotNull Map<String, MechanicsProcessor> getProduction,
                         @NotNull Map<String, ScalarValuableEarner> getScalarValuableEarners,
                         @NotNull String getTagSetKey,
-                        @NotNull int getCooldown,
+                        int getCooldown,
                         @NotNull Uber<Boolean> isOnCooldown,
                         boolean isActionHolderEnabled,
                         @NotNull List<Action<Entity>> getActions)

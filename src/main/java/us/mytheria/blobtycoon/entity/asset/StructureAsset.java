@@ -44,7 +44,7 @@ public record StructureAsset(@NotNull String getKey,
                              @NotNull Map<String, MechanicsProcessor> getProduction,
                              @NotNull Map<String, ValuableEarner> getValuableEarners,
                              @NotNull Map<String, ScalarValuableEarner> getScalarValuableEarners,
-                             @NotNull int getCooldown,
+                             int getCooldown,
                              @NotNull Uber<Boolean> isOnCooldown,
                              boolean isActionHolderEnabled,
                              @NotNull List<Action<Entity>> getActions)
