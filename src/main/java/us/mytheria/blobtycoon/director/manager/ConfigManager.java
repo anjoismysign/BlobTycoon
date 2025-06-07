@@ -51,6 +51,7 @@ public class ConfigManager extends TycoonManager {
     private TinyEventListener plotHelperHit;
     private TinyEventListener plotHelperInteract;
     private TinyEventListener plotHelperPreventDamage;
+    private TinyEventListener shopArticleTransferFunds;
 
     private ComplexEventListener tycoonMenu;
     private ComplexEventListener offlineEarning;
@@ -120,6 +121,7 @@ public class ConfigManager extends TycoonManager {
         plotHelperHit = listeners.tinyEventListener("PlotHelper-Hit");
         plotHelperInteract = listeners.tinyEventListener("PlotHelper-Interact");
         plotHelperPreventDamage = listeners.tinyEventListener("PlotHelper-Prevent-Damage");
+        shopArticleTransferFunds = listeners.tinyEventListener("Shop-Article-Transfer-Funds");
     }
 
     public TinyEventListener getInternalTransferFunds() {
@@ -180,6 +182,10 @@ public class ConfigManager extends TycoonManager {
 
     public TinyEventListener getPlotHelperPreventDamage() {
         return plotHelperPreventDamage;
+    }
+
+    public TinyEventListener getShopArticleTransferFunds() {
+        return shopArticleTransferFunds;
     }
 
     public ComplexEventListener getTycoonMenu() {

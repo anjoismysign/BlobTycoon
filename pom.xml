@@ -10,7 +10,7 @@
     <properties>
         <minecraft.version>1.21.4</minecraft.version>
         <testServer>/Users/lbenav8095/Documents/Dev/Java/anjoismysign/1.19 Test Server</testServer>
-        <java.version>16</java.version>
+        <java.version>17</java.version>
     </properties>
     <version>2.0-SNAPSHOT</version>
     <build>
@@ -106,19 +106,19 @@
         <dependency>
             <groupId>us.mytheria</groupId>
             <artifactId>blobrp</artifactId>
-            <version>0.5.9</version>
+            <version>0.6.01</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>me.anjoismysign</groupId>
             <artifactId>blobpets</artifactId>
-            <version>1.0.8</version>
+            <version>1.0.9</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>me.clip</groupId>
             <artifactId>placeholderapi</artifactId>
-            <version>2.11.2</version>
+            <version>2.11.6</version>
             <scope>provided</scope>
         </dependency>
         <dependency>

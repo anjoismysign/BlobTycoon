@@ -1,7 +1,9 @@
 package us.mytheria.blobtycoon.director.manager;
 
+import org.bukkit.Bukkit;
 import us.mytheria.bloblib.entities.ListenerManager;
 import us.mytheria.blobtycoon.director.TycoonManagerDirector;
+import us.mytheria.blobtycoon.listener.BlobTycoonListener;
 import us.mytheria.blobtycoon.listener.InternalTransferFunds;
 import us.mytheria.blobtycoon.listener.NewProfileKit;
 import us.mytheria.blobtycoon.listener.ObjectAssetHeldTutorialListener;
@@ -13,6 +15,7 @@ import us.mytheria.blobtycoon.listener.PlotHelperInteract;
 import us.mytheria.blobtycoon.listener.PlotHelperLoadChunk;
 import us.mytheria.blobtycoon.listener.PlotHelperPreventDamage;
 import us.mytheria.blobtycoon.listener.RackAssetHeldTutorialListener;
+import us.mytheria.blobtycoon.listener.ShopArticleTransferFundsListener;
 import us.mytheria.blobtycoon.listener.StructureAssetHeldTutorialListener;
 import us.mytheria.blobtycoon.listener.TranslateOnProfileLoad;
 import us.mytheria.blobtycoon.listener.TranslationItemApplier;
@@ -54,6 +57,14 @@ public class TycoonListenerManager extends ListenerManager {
         add(new RackAssetHeldTutorialListener(this));
         add(new StructureAssetHeldTutorialListener(this));
         add(new ObjectAssetHeldTutorialListener(this));
+
+
+        Bukkit.getScheduler().runTask(getPlugin(), () -> {
+            if (Bukkit.getPluginManager().isPluginEnabled("BlobRP")) {
+                BlobTycoonListener listener = new ShopArticleTransferFundsListener(this);
+                add(listener);
+            }
+        });
     }
 
     @Override

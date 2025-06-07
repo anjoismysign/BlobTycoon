@@ -134,6 +134,8 @@ Listeners:
         #Whether the inventory is the player's inventory itself
         Is-Player-Inventory: false
   TinyListeners:
+    # If true, it will transfer funds from BlobTycoon to Economy plugin if a BlobRP sale failed and had funds
+    ShopArticle-Transfer-Funds: false
     # If true, it will transfer funds internally
     Internal-Transfer-Funds: false
     #If true, will open the PlotHelper UI through attacking the PlotHelper

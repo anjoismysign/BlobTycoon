@@ -926,7 +926,9 @@ public class PlotProfile implements SharedSerializable<PlotProprietorProfile>,
                 onReturnPlayer -> {
                     BlobLibInventoryAPI.getInstance().trackInventory(onReturnPlayer, "Plot-Helper-Trading")
                             .getInventory().open(onReturnPlayer);
-                });
+                },
+                null,
+                null);
 
     }
 
@@ -999,7 +1001,9 @@ public class PlotProfile implements SharedSerializable<PlotProprietorProfile>,
                 onReturnPlayer -> {
                     BlobLibInventoryAPI.getInstance().trackInventory(onReturnPlayer, "Plot-Helper-Trading")
                             .getInventory().open(onReturnPlayer);
-                });
+                },
+                null,
+                null);
         if (query == null)
             return;
         blobSelector.modify("Search", current -> {
