@@ -5,8 +5,8 @@ import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitTask;
 import org.bukkit.util.BlockVector;
-import us.mytheria.bloblib.api.BlobLibInventoryAPI;
 import us.mytheria.bloblib.api.BlobLibSoundAPI;
+import us.mytheria.bloblib.entities.PlayerAddress;
 import us.mytheria.bloblib.entities.inventory.BlobInventory;
 import us.mytheria.bloblib.entities.inventory.BlobObjectBuilder;
 import us.mytheria.bloblib.entities.inventory.ObjectBuilderButton;
@@ -17,19 +17,21 @@ import us.mytheria.blobtycoon.entity.StructureDirection;
 import us.mytheria.blobtycoon.entity.selection.Selector;
 
 import java.io.File;
-import java.util.Objects;
 import java.util.UUID;
 
 public class PlotDataBuilder extends BlobObjectBuilder<PlotData> {
+
     private final Selector selector;
     private final BukkitTask checker;
 
     public static PlotDataBuilder build(UUID builderId, PlotManager plotManager) {
-        var carrier = BlobLibInventoryAPI.getInstance()
-                .getInventoryBuilderCarrier("PlotData");
-        Objects.requireNonNull(carrier, "'carrier' cannot be null");
+        BlobInventory inventory = BlobInventory
+                .fromBlobInventoryOrFail("PlotData", PlayerAddress.builder()
+                        .setUuid(builderId).build());
+
         return new PlotDataBuilder(
-                BlobInventory.fromInventoryBuilderCarrier(carrier), builderId,
+                inventory,
+                builderId,
                 plotManager);
     }
 

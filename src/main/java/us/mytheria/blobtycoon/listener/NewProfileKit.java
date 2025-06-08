@@ -27,8 +27,7 @@ public class NewProfileKit extends BlobTycoonListener {
             return;
         plotProfile.setFresh(false);
         Player player = tycoonPlayer.getPlayer();
-        BlobInventory blobInventory = BlobLibInventoryAPI.getInstance()
-                .getBlobInventory("New-Profile-Kit", player);
+        BlobInventory blobInventory = BlobInventory.fromBlobInventoryOrFail("New-Profile-Kit", player.getLocale());
         ItemStack[] contents = blobInventory.getInventory().getContents();
         int length = contents.length;
         for (int i = 0; i < length; i++) {

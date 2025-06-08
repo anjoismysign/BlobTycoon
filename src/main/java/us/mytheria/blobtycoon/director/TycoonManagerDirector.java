@@ -16,7 +16,11 @@ import us.mytheria.blobtycoon.blobpets.Found;
 import us.mytheria.blobtycoon.blobpets.NotFound;
 import us.mytheria.blobtycoon.command.BlobTycoonCmd;
 import us.mytheria.blobtycoon.command.VisitCmd;
-import us.mytheria.blobtycoon.director.manager.*;
+import us.mytheria.blobtycoon.director.manager.ExpansionManager;
+import us.mytheria.blobtycoon.director.manager.PlotManager;
+import us.mytheria.blobtycoon.director.manager.StructureTracker;
+import us.mytheria.blobtycoon.director.manager.TycoonConfigManager;
+import us.mytheria.blobtycoon.director.manager.TycoonListenerManager;
 import us.mytheria.blobtycoon.entity.PlotProfileManager;
 import us.mytheria.blobtycoon.entity.TycoonPet;
 import us.mytheria.blobtycoon.entity.TycoonPlayerManager;
@@ -26,7 +30,11 @@ import us.mytheria.blobtycoon.entity.asset.StructureAsset;
 import us.mytheria.blobtycoon.entity.blobrp.BlobRPMiddleman;
 import us.mytheria.blobtycoon.entity.mechanics.MechanicsData;
 import us.mytheria.blobtycoon.entity.plothelper.PlotHelperInventoryManager;
-import us.mytheria.blobtycoon.entity.structure.*;
+import us.mytheria.blobtycoon.entity.structure.ObjectModel;
+import us.mytheria.blobtycoon.entity.structure.StorageModel;
+import us.mytheria.blobtycoon.entity.structure.StructureModel;
+import us.mytheria.blobtycoon.entity.structure.TycoonModel;
+import us.mytheria.blobtycoon.entity.structure.TycoonModelHolder;
 import us.mytheria.blobtycoon.entity.valuable.ValuableDirector;
 import us.mytheria.blobtycoon.entity.valuable.ValuableDriverManager;
 import us.mytheria.blobtycoon.event.AsyncBlobTycoonLoadEvent;
@@ -279,6 +287,17 @@ public class TycoonManagerDirector extends GenericManagerDirector<BlobTycoon>
         getTycoonPlayerManager().unload();
     }
 
+    @Override
+    public boolean isReloading() {
+        return getMechanicsDataDirector().isReloading() ||
+                getValuableDirector().isReloading() ||
+                getStructureTracker().isReloading() ||
+                getRackAssetDirector().isReloading() ||
+                getObjectAssetDirector().isReloading() ||
+                getStructureAssetDirector().isReloading() ||
+                blobPetsMiddleman.isReloading();
+    }
+
     @NotNull
     public final PlotManager getPlotManager() {
         return getManager("PlotManager", PlotManager.class);
@@ -360,17 +379,6 @@ public class TycoonManagerDirector extends GenericManagerDirector<BlobTycoon>
             return Optional.empty();
         PetExpansionDirector<TycoonPet> director = (PetExpansionDirector<TycoonPet>) manager;
         return Optional.of(director);
-    }
-
-    @Override
-    public boolean isReloading() {
-        return getMechanicsDataDirector().isReloading() ||
-                getValuableDirector().isReloading() ||
-                getStructureTracker().isReloading() ||
-                getRackAssetDirector().isReloading() ||
-                getObjectAssetDirector().isReloading() ||
-                getStructureAssetDirector().isReloading() ||
-                blobPetsMiddleman.isReloading();
     }
 
     public BlobPetsMiddleman getBlobPetsMiddleman() {

@@ -17,7 +17,14 @@ import us.mytheria.bloblib.entities.translatable.TranslatableItem;
 import us.mytheria.blobtycoon.BlobTycoonInternalAPI;
 import us.mytheria.blobtycoon.director.TycoonManagerDirector;
 import us.mytheria.blobtycoon.director.manager.PlotManager;
-import us.mytheria.blobtycoon.entity.*;
+import us.mytheria.blobtycoon.entity.DefaultStructures;
+import us.mytheria.blobtycoon.entity.PlotExpansion;
+import us.mytheria.blobtycoon.entity.PlotProfile;
+import us.mytheria.blobtycoon.entity.PlotProprietorProfile;
+import us.mytheria.blobtycoon.entity.ProfileData;
+import us.mytheria.blobtycoon.entity.ProfileSwitchResult;
+import us.mytheria.blobtycoon.entity.TycoonPlayer;
+import us.mytheria.blobtycoon.entity.ValuableTeller;
 import us.mytheria.blobtycoon.entity.configuration.CostIncreaseConfiguration;
 import us.mytheria.blobtycoon.entity.configuration.RebirthConfiguration;
 

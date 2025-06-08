@@ -1,6 +1,10 @@
 package us.mytheria.blobtycoon.entity.selection;
 
-import org.bukkit.*;
+import org.bukkit.Bukkit;
+import org.bukkit.Location;
+import org.bukkit.Material;
+import org.bukkit.Particle;
+import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Player;
@@ -12,7 +16,11 @@ import org.jetbrains.annotations.Nullable;
 import us.mytheria.bloblib.entities.Cuboid;
 import us.mytheria.bloblib.utilities.PlayerUtil;
 import us.mytheria.blobtycoon.BlobTycoonInternalAPI;
-import us.mytheria.blobtycoon.entity.*;
+import us.mytheria.blobtycoon.entity.Plot;
+import us.mytheria.blobtycoon.entity.PlotProfile;
+import us.mytheria.blobtycoon.entity.PlotProprietorProfile;
+import us.mytheria.blobtycoon.entity.StructureData;
+import us.mytheria.blobtycoon.entity.TycoonPlayer;
 import us.mytheria.blobtycoon.entity.configuration.SelectionConfiguration;
 import us.mytheria.blobtycoon.entity.plotdata.PlotData;
 import us.mytheria.blobtycoon.entity.structure.StructureModel;
@@ -29,16 +37,14 @@ import java.util.UUID;
 public class StructureModelSelector {
     @NotNull
     private final UUID owner;
+    @NotNull
+    private final TycoonModelHolder<StructureModel> holder;
     @Nullable
     private Block selected;
     @Nullable
     private CuboidArea cuboidArea;
     @Nullable
     private Location pos;
-
-    @NotNull
-    private final TycoonModelHolder<StructureModel> holder;
-
     @Nullable
     private BukkitTask visualizer;
 
@@ -82,9 +88,8 @@ public class StructureModelSelector {
                     selector.visualize();
                     return;
                 }
-                if (selector.visualizer == null)
-                    return;
-                else {
+                if (selector.visualizer == null) {
+                } else {
                     if (adjacentBlock.getLocation().toVector().toBlockVector()
                             .equals(selector.selected.getLocation()
                                     .toVector().toBlockVector())) {

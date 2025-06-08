@@ -102,7 +102,9 @@ public class TycoonMenuListener extends BlobTycoonListener {
                         returning -> {
                             BlobLibInventoryAPI.getInstance().trackMetaInventory(returning,
                                     registry.getKey()).getInventory().open(returning);
-                        });
+                        },
+                        null,
+                        null);
             });
         } else {
             registry = null;

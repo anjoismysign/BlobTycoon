@@ -2,7 +2,11 @@ package us.mytheria.blobtycoon.entity;
 
 import me.anjoismysign.anjo.entities.Tuple2;
 import org.bson.Document;
-import org.bukkit.*;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.Location;
+import org.bukkit.Material;
+import org.bukkit.Registry;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
@@ -54,7 +58,15 @@ import us.mytheria.blobtycoon.util.TemperatureUnit;
 
 import java.io.Serializable;
 import java.time.Instant;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
+import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
@@ -78,30 +90,27 @@ public class PlotProfile implements SharedSerializable<PlotProprietorProfile>,
      */
     private final List<PlotExpansion> expansions;
     private final Map<String, PlotProprietorProfile> proprietors;
-    private int selectedExpansionIndex;
     private final SharedSerializable<PlotProprietorProfile> sharedSerializable = this;
-
     transient private final Plot plot;
     transient private final PlotHelper plotHelper;
-    transient private boolean isValid, plotLoaded;
     transient private final Map<String, Mechanics> mechanics;
-    transient private BukkitTask mechanicsTimer;
-    transient private Map<String, String> onlineProprietors;
     transient private final Map<String, Double> mechanicsData;
     transient private final Map<String, Double> earners;
     transient private final Map<String, Double> scalarEarners;
     transient private final Map<String, Double> valuables;
     transient private final Map<UUID, Map<String, Double>> bankBalances;
-
     transient private final Map<String, Double> transientEarners;
     transient private final Map<String, Double> transientScalarEarners;
     transient private final Map<String, CreateTradeContext> tradeContexts;
     transient private final long lastConnection;
-    transient private boolean isFresh;
     transient private final Set<UUID> invited;
     transient private final Set<String> deniedVisit;
-
-    private int rebirths;
+    final transient private Map<String, String> onlineProprietors;
+    private final int rebirths;
+    private int selectedExpansionIndex;
+    transient private boolean isValid, plotLoaded;
+    transient private BukkitTask mechanicsTimer;
+    transient private boolean isFresh;
 
     public PlotProfile(BlobCrudable blobCrudable,
                        TycoonManagerDirector director,
@@ -174,21 +183,6 @@ public class PlotProfile implements SharedSerializable<PlotProprietorProfile>,
         return proprietors;
     }
 
-    public void reload() {
-        reloadMechanicsOperator();
-        reloadHologram();
-        plotHelper().reload();
-    }
-
-    public void unload() {
-        forEachOnlineProprietor(tycoonPlayer -> {
-            Player player = tycoonPlayer.getPlayer();
-            UUID uuid = player.getUniqueId();
-            getCreateTradeContext(player).cancel(player);
-            tradeContexts.remove(uuid.toString());
-        });
-    }
-
     public void join(@NotNull Player player) {
         TycoonPlayer tycoonPlayer = director.getTycoonPlayerManager()
                 .isBlobSerializable(player).orElseThrow();
@@ -236,6 +230,21 @@ public class PlotProfile implements SharedSerializable<PlotProprietorProfile>,
         Bukkit.getPluginManager().callEvent(new ProfileLoadEvent(tycoonPlayer));
         onlineProprietors.put(player.getUniqueId().toString(), fetch.getIdentification());
         reloadHologram();
+    }
+
+    public void reload() {
+        reloadMechanicsOperator();
+        reloadHologram();
+        plotHelper().reload();
+    }
+
+    public void unload() {
+        forEachOnlineProprietor(tycoonPlayer -> {
+            Player player = tycoonPlayer.getPlayer();
+            UUID uuid = player.getUniqueId();
+            getCreateTradeContext(player).cancel(player);
+            tradeContexts.remove(uuid.toString());
+        });
     }
 
     /**
@@ -397,6 +406,10 @@ public class PlotProfile implements SharedSerializable<PlotProprietorProfile>,
         return blobCrudable;
     }
 
+    public BlobCrudable serializeAllAttributes() {
+        return serializeAllAttributes(false);
+    }
+
     private BlobCrudable serializeAllAttributes(boolean reset) {
         Document document = blobCrudable.getDocument();
         document.put("Proprietors", serializeProprietors());
@@ -413,10 +426,6 @@ public class PlotProfile implements SharedSerializable<PlotProprietorProfile>,
         document.put("Is-Fresh", isFresh);
         document.put("PlotHelper", plotHelper.serialize());
         return blobCrudable;
-    }
-
-    public BlobCrudable serializeAllAttributes() {
-        return serializeAllAttributes(false);
     }
 
     /**
@@ -534,19 +543,6 @@ public class PlotProfile implements SharedSerializable<PlotProprietorProfile>,
         return proprietor;
     }
 
-    public void forEachOnlineProprietor(@NotNull Consumer<TycoonPlayer> consumer) {
-        onlineProprietors.keySet().forEach(uuid -> {
-            Player player = director.getPlugin().getServer().getPlayer(UUID.fromString(uuid));
-            if (player == null)
-                return;
-            TycoonPlayer tycoonPlayer = BlobTycoonInternalAPI.getInstance()
-                    .getTycoonPlayer(player);
-            if (tycoonPlayer == null)
-                return;
-            consumer.accept(tycoonPlayer);
-        });
-    }
-
     public void forEachProprietor(@NotNull Consumer<UUID> consumer) {
         proprietors.values().stream()
                 .map(PlotProprietorProfile::getIdentification)
@@ -601,6 +597,49 @@ public class PlotProfile implements SharedSerializable<PlotProprietorProfile>,
         return uuid;
     }
 
+    private void reloadHologram() {
+        HologramConfiguration hologramConfiguration = HologramConfiguration.getInstance();
+        hologramConfiguration.deleteHologram(plot.getData());
+        if (hologramConfiguration.isEnabled())
+            hologramConfiguration.createHologram(this);
+    }
+
+    public Map<String, Double> getEarners() {
+        return earners;
+    }
+
+    public Map<String, Double> getScalarEarners() {
+        return scalarEarners;
+    }
+
+    public Map<String, Double> getTransientEarners() {
+        return transientEarners;
+    }
+
+    public Map<String, Double> getTransientScalarEarners() {
+        return transientScalarEarners;
+    }
+
+    public double getRebirthMultiplier() {
+        double multiplier = 0.0;
+        multiplier += rebirths;
+        multiplier *= RebirthConfiguration.getInstance().getEarningMultiplier();
+        multiplier += 1.0;
+        return multiplier;
+    }
+
+    public Map<String, Double> getValuables() {
+        return valuables;
+    }
+
+    public Map<UUID, Map<String, Double>> getBankBalances() {
+        return bankBalances;
+    }
+
+    public TemperatureConversor getTemperatureConversor() {
+        return temperatureConversor;
+    }
+
     public Map<String, Double> getMechanicsData() {
         return mechanicsData;
     }
@@ -651,39 +690,17 @@ public class PlotProfile implements SharedSerializable<PlotProprietorProfile>,
         mechanicsTimer = mechanicsTimer();
     }
 
-    private void reloadHologram() {
-        HologramConfiguration hologramConfiguration = HologramConfiguration.getInstance();
-        hologramConfiguration.deleteHologram(plot.getData());
-        if (hologramConfiguration.isEnabled())
-            hologramConfiguration.createHologram(this);
-    }
-
-    public Map<String, Double> getEarners() {
-        return earners;
-    }
-
-    public Map<String, Double> getScalarEarners() {
-        return scalarEarners;
-    }
-
-    public Map<String, Double> getTransientEarners() {
-        return transientEarners;
-    }
-
-    public Map<String, Double> getTransientScalarEarners() {
-        return transientScalarEarners;
-    }
-
-    public Map<String, Double> getValuables() {
-        return valuables;
-    }
-
-    public Map<UUID, Map<String, Double>> getBankBalances() {
-        return bankBalances;
-    }
-
-    public TemperatureConversor getTemperatureConversor() {
-        return temperatureConversor;
+    public void forEachOnlineProprietor(@NotNull Consumer<TycoonPlayer> consumer) {
+        onlineProprietors.keySet().forEach(uuid -> {
+            Player player = director.getPlugin().getServer().getPlayer(UUID.fromString(uuid));
+            if (player == null)
+                return;
+            TycoonPlayer tycoonPlayer = BlobTycoonInternalAPI.getInstance()
+                    .getTycoonPlayer(player);
+            if (tycoonPlayer == null)
+                return;
+            consumer.accept(tycoonPlayer);
+        });
     }
 
     public long getLastConnection() {
@@ -783,14 +800,6 @@ public class PlotProfile implements SharedSerializable<PlotProprietorProfile>,
 
     public int getRebirths() {
         return rebirths;
-    }
-
-    public double getRebirthMultiplier() {
-        double multiplier = 0.0;
-        multiplier += rebirths;
-        multiplier *= RebirthConfiguration.getInstance().getEarningMultiplier();
-        multiplier += 1.0;
-        return multiplier;
     }
 
     public PlotHelper plotHelper() {

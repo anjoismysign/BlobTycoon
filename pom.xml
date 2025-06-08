@@ -9,13 +9,12 @@
     <name>BlobTycoon</name>
     <properties>
         <minecraft.version>1.21.4</minecraft.version>
-        <testServer>/Users/lbenav8095/Documents/Dev/Java/anjoismysign/1.19 Test Server</testServer>
         <java.version>17</java.version>
     </properties>
     <version>2.0-SNAPSHOT</version>
     <build>
+        <finalName>${project.name}-${project.version}.jar</finalName>
         <plugins>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
@@ -46,8 +45,6 @@
                             <goal>shade</goal>
                         </goals>
                         <configuration>
-                            <outputFile>${testServer}/plugins/${project.name}-${project.version}.jar
-                            </outputFile>
                             <filters>
                                 <filter>
                                     <artifact>*:*</artifact>

@@ -10,7 +10,11 @@ import org.bukkit.block.BlockFace;
 import org.bukkit.block.structure.Mirror;
 import org.bukkit.block.structure.StructureRotation;
 import org.bukkit.configuration.ConfigurationSection;
-import org.bukkit.entity.*;
+import org.bukkit.entity.Entity;
+import org.bukkit.entity.EntityType;
+import org.bukkit.entity.Interaction;
+import org.bukkit.entity.ItemFrame;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
@@ -23,7 +27,13 @@ import us.mytheria.bloblib.entities.Cuboid;
 import us.mytheria.bloblib.entities.message.BlobSound;
 import us.mytheria.bloblib.exception.ConfigurationFieldException;
 import us.mytheria.blobtycoon.BlobTycoonInternalAPI;
-import us.mytheria.blobtycoon.entity.*;
+import us.mytheria.blobtycoon.entity.Plot;
+import us.mytheria.blobtycoon.entity.PlotExpansion;
+import us.mytheria.blobtycoon.entity.PlotObject;
+import us.mytheria.blobtycoon.entity.PlotProfile;
+import us.mytheria.blobtycoon.entity.PlotProprietorProfile;
+import us.mytheria.blobtycoon.entity.TycoonKey;
+import us.mytheria.blobtycoon.entity.TycoonPlayer;
 import us.mytheria.blobtycoon.entity.asset.RackAsset;
 import us.mytheria.blobtycoon.entity.configuration.SelectionConfiguration;
 import us.mytheria.blobtycoon.entity.plotdata.PlotData;
@@ -33,7 +43,12 @@ import us.mytheria.blobtycoon.util.PlotDiscriminator;
 import us.mytheria.blobtycoon.util.TycoonStructrador;
 import us.mytheria.blobtycoon.util.Vectorator;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Objects;
+import java.util.Random;
+import java.util.Set;
+import java.util.UUID;
 
 public interface StorageModel extends StructureModel {
     static int READ(ConfigurationSection section) {
@@ -41,12 +56,6 @@ public interface StorageModel extends StructureModel {
             throw new ConfigurationFieldException("'Max-Storage' is not valid or set");
         return section.getInt("Max-Storage");
     }
-
-    default void serialize(ConfigurationSection section) {
-        section.set("Max-Storage", getMaxStorage());
-    }
-
-    int getMaxStorage();
 
     /**
      * Measures the storage model based on its remove button
@@ -86,6 +95,59 @@ public interface StorageModel extends StructureModel {
         Cuboid cuboid = new Cuboid(location, origin);
         return new Tuple2<>(rack.getModel(), cuboid);
     }
+
+    /**
+     * Get the remove button from an object frame
+     *
+     * @param objectFrame the object frame
+     * @param player      the player
+     * @return the remove button
+     */
+    @Nullable
+    static ItemFrame getRemoveButton(@NotNull ItemFrame objectFrame, @NotNull Player player) {
+        Objects.requireNonNull(objectFrame, "'objectFrame' cannot be null");
+        Objects.requireNonNull(player, "'player' cannot be null");
+        PersistentDataContainer container = objectFrame.getPersistentDataContainer();
+        if (!container.has(TycoonKey.OBJECT_ID.getKey(), PersistentDataType.STRING))
+            return null;
+        String objectId = container.get(TycoonKey.OBJECT_ID.getKey(), PersistentDataType.STRING);
+        TycoonPlayer tycoonPlayer = BlobTycoonInternalAPI.getInstance()
+                .getTycoonPlayer(player);
+        if (tycoonPlayer == null)
+            return null;
+        PlotProprietorProfile proprietorProfile = tycoonPlayer.getProfile();
+        if (proprietorProfile == null)
+            return null;
+        PlotProfile plotProfile = proprietorProfile.getPlotProfile();
+        Collection<Entity> all = plotProfile.getPlot().getData().getAllEntities();
+        for (Entity entity : all) {
+            if (entity.getType() != EntityType.ITEM_FRAME)
+                continue;
+            ItemFrame removeButton = (ItemFrame) entity;
+            if (removeButton.getItem() == null)
+                continue;
+            if (!removeButton.getPersistentDataContainer()
+                    .has(TycoonKey.ITEM_FRAME_TYPE.getKey(), PersistentDataType.STRING)
+                    || !removeButton.getPersistentDataContainer()
+                    .get(TycoonKey.ITEM_FRAME_TYPE.getKey(), PersistentDataType.STRING)
+                    .equals(ItemFrameType.REMOVE_BUTTON.name()))
+                continue;
+            PersistentDataContainer removeButtonContainer = removeButton.getPersistentDataContainer();
+            if (!removeButtonContainer.has(TycoonKey.OBJECT_ID.getKey(), PersistentDataType.STRING))
+                continue;
+            String removeButtonId = removeButtonContainer.get(TycoonKey.OBJECT_ID.getKey(), PersistentDataType.STRING);
+            if (!removeButtonId.equals(objectId))
+                continue;
+            return removeButton;
+        }
+        return null;
+    }
+
+    default void serialize(ConfigurationSection section) {
+        section.set("Max-Storage", getMaxStorage());
+    }
+
+    int getMaxStorage();
 
     @Override
     default boolean remove(@NotNull TycoonPlayer tycoonPlayer,
@@ -300,52 +362,5 @@ public interface StorageModel extends StructureModel {
                     .getMessage("BlobTycoon.Structure-No-Space", player)
                     .handle(player);
         }
-    }
-
-    /**
-     * Get the remove button from an object frame
-     *
-     * @param objectFrame the object frame
-     * @param player      the player
-     * @return the remove button
-     */
-    @Nullable
-    static ItemFrame getRemoveButton(@NotNull ItemFrame objectFrame, @NotNull Player player) {
-        Objects.requireNonNull(objectFrame, "'objectFrame' cannot be null");
-        Objects.requireNonNull(player, "'player' cannot be null");
-        PersistentDataContainer container = objectFrame.getPersistentDataContainer();
-        if (!container.has(TycoonKey.OBJECT_ID.getKey(), PersistentDataType.STRING))
-            return null;
-        String objectId = container.get(TycoonKey.OBJECT_ID.getKey(), PersistentDataType.STRING);
-        TycoonPlayer tycoonPlayer = BlobTycoonInternalAPI.getInstance()
-                .getTycoonPlayer(player);
-        if (tycoonPlayer == null)
-            return null;
-        PlotProprietorProfile proprietorProfile = tycoonPlayer.getProfile();
-        if (proprietorProfile == null)
-            return null;
-        PlotProfile plotProfile = proprietorProfile.getPlotProfile();
-        Collection<Entity> all = plotProfile.getPlot().getData().getAllEntities();
-        for (Entity entity : all) {
-            if (entity.getType() != EntityType.ITEM_FRAME)
-                continue;
-            ItemFrame removeButton = (ItemFrame) entity;
-            if (removeButton.getItem() == null)
-                continue;
-            if (!removeButton.getPersistentDataContainer()
-                    .has(TycoonKey.ITEM_FRAME_TYPE.getKey(), PersistentDataType.STRING)
-                    || !removeButton.getPersistentDataContainer()
-                    .get(TycoonKey.ITEM_FRAME_TYPE.getKey(), PersistentDataType.STRING)
-                    .equals(ItemFrameType.REMOVE_BUTTON.name()))
-                continue;
-            PersistentDataContainer removeButtonContainer = removeButton.getPersistentDataContainer();
-            if (!removeButtonContainer.has(TycoonKey.OBJECT_ID.getKey(), PersistentDataType.STRING))
-                continue;
-            String removeButtonId = removeButtonContainer.get(TycoonKey.OBJECT_ID.getKey(), PersistentDataType.STRING);
-            if (!removeButtonId.equals(objectId))
-                continue;
-            return removeButton;
-        }
-        return null;
     }
 }
