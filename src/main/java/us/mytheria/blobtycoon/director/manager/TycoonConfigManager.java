@@ -20,7 +20,7 @@ import java.io.File;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class ConfigManager extends TycoonManager {
+public class TycoonConfigManager extends TycoonManager {
     private boolean tinyDebug;
     private Material emptyMaterial;
     private final List<String> profileNames;
@@ -52,11 +52,12 @@ public class ConfigManager extends TycoonManager {
     private TinyEventListener plotHelperInteract;
     private TinyEventListener plotHelperPreventDamage;
     private TinyEventListener shopArticleTransferFunds;
+    private TinyEventListener blobEconomyTransferFunds;
 
     private ComplexEventListener tycoonMenu;
     private ComplexEventListener offlineEarning;
 
-    public ConfigManager(TycoonManagerDirector managerDirector) {
+    public TycoonConfigManager(TycoonManagerDirector managerDirector) {
         super(managerDirector);
         blobTycoonConfiguration = BlobTycoonConfiguration.getInstance(this);
         profileNames = new ArrayList<>();
@@ -121,7 +122,8 @@ public class ConfigManager extends TycoonManager {
         plotHelperHit = listeners.tinyEventListener("PlotHelper-Hit");
         plotHelperInteract = listeners.tinyEventListener("PlotHelper-Interact");
         plotHelperPreventDamage = listeners.tinyEventListener("PlotHelper-Prevent-Damage");
-        shopArticleTransferFunds = listeners.tinyEventListener("Shop-Article-Transfer-Funds");
+        shopArticleTransferFunds = listeners.tinyEventListener("ShopArticle-Transfer-Funds");
+        blobEconomyTransferFunds = listeners.tinyEventListener("BlobEconomy-Transfer-Funds");
     }
 
     public TinyEventListener getInternalTransferFunds() {

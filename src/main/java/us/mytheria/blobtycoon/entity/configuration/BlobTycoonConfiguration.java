@@ -3,7 +3,7 @@ package us.mytheria.blobtycoon.entity.configuration;
 import org.bukkit.configuration.ConfigurationSection;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import us.mytheria.blobtycoon.director.manager.ConfigManager;
+import us.mytheria.blobtycoon.director.manager.TycoonConfigManager;
 
 public class BlobTycoonConfiguration {
     private static BlobTycoonConfiguration instance;
@@ -14,14 +14,14 @@ public class BlobTycoonConfiguration {
     private PlotHelperConfiguration plotHelperConfiguration;
     private PlotPlacingConfiguration plotPlacingConfiguration;
 
-    private final ConfigManager configManager;
+    private final TycoonConfigManager configManager;
 
-    private BlobTycoonConfiguration(ConfigManager configManager) {
+    private BlobTycoonConfiguration(TycoonConfigManager configManager) {
         this.configManager = configManager;
     }
 
     @NotNull
-    public static BlobTycoonConfiguration getInstance(@Nullable ConfigManager configManager) {
+    public static BlobTycoonConfiguration getInstance(@Nullable TycoonConfigManager configManager) {
         if (instance == null) {
             if (configManager == null)
                 throw new NullPointerException("injected dependency is null");

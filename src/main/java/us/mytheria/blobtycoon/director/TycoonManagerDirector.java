@@ -77,7 +77,7 @@ public class TycoonManagerDirector extends GenericManagerDirector<BlobTycoon>
         registerBlobInventory("View-Trade");
         registerBlobInventory("Cancel-Trade");
         registerBlobInventory("Community-Trades");
-        addManager("ConfigManager", new ConfigManager(this));
+        addManager("ConfigManager", new TycoonConfigManager(this));
         boolean tinyDebug = getConfigManager().tinyDebug();
         addDirector("MechanicsData", MechanicsData::fromFile, false);
         if (tinyDebug)
@@ -300,8 +300,8 @@ public class TycoonManagerDirector extends GenericManagerDirector<BlobTycoon>
     }
 
     @NotNull
-    public final ConfigManager getConfigManager() {
-        return getManager("ConfigManager", ConfigManager.class);
+    public final TycoonConfigManager getConfigManager() {
+        return getManager("ConfigManager", TycoonConfigManager.class);
     }
 
     @NotNull

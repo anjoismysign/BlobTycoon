@@ -1,7 +1,7 @@
 package us.mytheria.blobtycoon.listener;
 
 import us.mytheria.bloblib.entities.BlobListener;
-import us.mytheria.blobtycoon.director.manager.ConfigManager;
+import us.mytheria.blobtycoon.director.manager.TycoonConfigManager;
 import us.mytheria.blobtycoon.director.manager.TycoonListenerManager;
 
 public abstract class BlobTycoonListener implements BlobListener {
@@ -15,7 +15,7 @@ public abstract class BlobTycoonListener implements BlobListener {
         return listenerManager;
     }
 
-    public ConfigManager getConfigManager() {
+    public TycoonConfigManager getConfigManager() {
         return getListenerManager().getManagerDirector().getConfigManager();
     }
 }
