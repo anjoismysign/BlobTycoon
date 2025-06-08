@@ -55,7 +55,7 @@ public interface StorageModel extends StructureModel {
      * @return the storage model and the area of the storage model
      */
     static Tuple2<StorageModel, Cuboid> measure(@NotNull ItemFrame removeButton) {
-        Objects.requireNonNull(removeButton, "'itemFrame' cannot be null");
+        Objects.requireNonNull(removeButton, "'removeButton' cannot be null");
         PersistentDataContainer container = removeButton.getPersistentDataContainer();
         if (!container.has(TycoonKey.TYPE.getKey(), PersistentDataType.STRING))
             return null;

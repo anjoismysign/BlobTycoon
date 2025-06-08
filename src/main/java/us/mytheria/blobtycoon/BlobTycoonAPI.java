@@ -83,7 +83,10 @@ public class BlobTycoonAPI {
                             .replace("%sellers%", String.join(", ", trade.getOwners()))
                             .replace("%price%", trade.formatPrice());
                     return itemStack;
-                });
+                },
+                null,
+                null,
+                null);
         return true;
     }
 }

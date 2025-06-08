@@ -128,6 +128,9 @@ public class ValuableTeller {
                             .displayName("&cInvalid")
                             .lore("&7Not a valuable: &f" + valuable)
                             .build();
-                });
+                },
+                null,
+                null,
+                null);
     }
 }

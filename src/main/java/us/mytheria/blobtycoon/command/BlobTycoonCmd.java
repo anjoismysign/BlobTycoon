@@ -97,7 +97,10 @@ public class BlobTycoonCmd {
                                         .modder()
                                         .replace("%profile%", profile.getName())
                                         .get()
-                                        .get());
+                                        .get(),
+                                null,
+                                null,
+                                null);
             });
         });
         Command inviteCommand = profileCommand.child("invite");
@@ -199,7 +202,10 @@ public class BlobTycoonCmd {
                                         .modder()
                                         .replace("%player%", player.getName())
                                         .get()
-                                        .get());
+                                        .get(),
+                                null,
+                                null,
+                                null);
             });
         });
         Command joinCommand = profileCommand.child("join");

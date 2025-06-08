@@ -34,7 +34,7 @@ public interface ActionHolder {
      * @param player The player that is processing the action
      */
     default void process(@NotNull Player player) {
-        Objects.requireNonNull(player, "Player cannot be null");
+        Objects.requireNonNull(player, "'player' cannot be null");
         getActions().forEach(action -> action.perform(player));
         isOnCooldown().talk(true);
         Bukkit.getScheduler().runTaskLater(Bukkit.getPluginManager().getPlugin("BlobTycoon"), () -> {

@@ -42,7 +42,7 @@ import java.util.UUID;
  */
 public interface ObjectModel extends TycoonModel {
     static boolean isObjectModel(@NotNull Interaction interaction) {
-        Objects.requireNonNull(interaction, "Interaction cannot be null!");
+        Objects.requireNonNull(interaction, "'interaction' cannot be null!");
         PersistentDataContainer container = interaction.getPersistentDataContainer();
         if (!container.has(TycoonKey.OBJECT_ID.getKey(), PersistentDataType.STRING))
             return false;
@@ -56,8 +56,8 @@ public interface ObjectModel extends TycoonModel {
     static void remove(@NotNull Player player,
                        @NotNull Interaction interaction,
                        int delay) {
-        Objects.requireNonNull(player, "Player cannot be null!");
-        Objects.requireNonNull(interaction, "Interaction cannot be null!");
+        Objects.requireNonNull(player, "'player' cannot be null!");
+        Objects.requireNonNull(interaction, "'interaction' cannot be null!");
         PersistentDataContainer container = interaction.getPersistentDataContainer();
         String id = container.get(TycoonKey.OBJECT_ID.getKey(), PersistentDataType.STRING);
         String key = container.get(TycoonKey.KEY.getKey(), PersistentDataType.STRING);
@@ -122,8 +122,8 @@ public interface ObjectModel extends TycoonModel {
 
     static void place(@NotNull ItemFrame objectFrame,
                       @NotNull Player player) {
-        Objects.requireNonNull(objectFrame, "ItemFrame cannot be null!");
-        Objects.requireNonNull(player, "Player cannot be null!");
+        Objects.requireNonNull(objectFrame, "'objectFrame' cannot be null!");
+        Objects.requireNonNull(player, "'player' cannot be null!");
         TycoonPlayer tycoonPlayer = BlobTycoonInternalAPI.getInstance()
                 .getTycoonPlayer(player);
         PlotProprietorProfile profile = tycoonPlayer.getProfile();

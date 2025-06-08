@@ -17,6 +17,7 @@ import us.mytheria.blobtycoon.entity.StructureDirection;
 import us.mytheria.blobtycoon.entity.selection.Selector;
 
 import java.io.File;
+import java.util.Objects;
 import java.util.UUID;
 
 public class PlotDataBuilder extends BlobObjectBuilder<PlotData> {
@@ -24,9 +25,11 @@ public class PlotDataBuilder extends BlobObjectBuilder<PlotData> {
     private final BukkitTask checker;
 
     public static PlotDataBuilder build(UUID builderId, PlotManager plotManager) {
+        var carrier = BlobLibInventoryAPI.getInstance()
+                .getInventoryBuilderCarrier("PlotData");
+        Objects.requireNonNull(carrier, "'carrier' cannot be null");
         return new PlotDataBuilder(
-                BlobLibInventoryAPI.getInstance()
-                        .buildInventory("PlotData"), builderId,
+                BlobInventory.fromInventoryBuilderCarrier(carrier), builderId,
                 plotManager);
     }
 
