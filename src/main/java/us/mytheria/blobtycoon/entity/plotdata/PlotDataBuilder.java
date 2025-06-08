@@ -26,8 +26,8 @@ public class PlotDataBuilder extends BlobObjectBuilder<PlotData> {
 
     public static PlotDataBuilder build(UUID builderId, PlotManager plotManager) {
         BlobInventory inventory = BlobInventory
-                .fromBlobInventoryOrFail("PlotData", PlayerAddress.builder()
-                        .setUuid(builderId).build());
+                .ofKeyAddressOrThrow("PlotData", PlayerAddress.builder()
+                        .setUUID(builderId).build());
 
         return new PlotDataBuilder(
                 inventory,
