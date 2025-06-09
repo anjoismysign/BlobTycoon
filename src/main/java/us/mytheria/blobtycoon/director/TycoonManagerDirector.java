@@ -2,7 +2,6 @@ package us.mytheria.blobtycoon.director;
 
 import me.anjoismysign.blobpets.entity.petexpansion.PetExpansionDirector;
 import org.bukkit.Bukkit;
-import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.jetbrains.annotations.NotNull;
@@ -27,7 +26,6 @@ import us.mytheria.blobtycoon.entity.TycoonPlayerManager;
 import us.mytheria.blobtycoon.entity.asset.ObjectAsset;
 import us.mytheria.blobtycoon.entity.asset.RackAsset;
 import us.mytheria.blobtycoon.entity.asset.StructureAsset;
-import us.mytheria.blobtycoon.entity.blobrp.BlobRPMiddleman;
 import us.mytheria.blobtycoon.entity.mechanics.MechanicsData;
 import us.mytheria.blobtycoon.entity.plothelper.PlotHelperInventoryManager;
 import us.mytheria.blobtycoon.entity.structure.ObjectModel;
@@ -183,20 +181,6 @@ public class TycoonManagerDirector extends GenericManagerDirector<BlobTycoon>
         addDirector(objectName, file -> {
             return function.apply(file, this);
         }, false);
-    }
-
-    @EventHandler
-    public void onLoad(AsyncBlobTycoonLoadEvent event) {
-        boolean tinyDebug = getConfigManager().tinyDebug();
-        if (tinyDebug)
-            logger.warning("BlobTycoon has loaded");
-        BlobRPMiddleman blobrp = BlobRPMiddleman.get();
-        blobrp.reloadMerchants();
-        if (tinyDebug)
-            logger.warning("Reloaded Merchants");
-        blobrp.reloadRecipes();
-        if (tinyDebug)
-            logger.warning("Reloaded Recipes");
     }
 
     /**

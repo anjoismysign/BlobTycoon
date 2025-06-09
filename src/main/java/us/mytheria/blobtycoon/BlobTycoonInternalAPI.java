@@ -237,9 +237,13 @@ public class BlobTycoonInternalAPI {
     public PlotProfile isPlotHelper(@Nullable Entity entity) {
         if (entity == null)
             return null;
-        return director.getPlotProfileManager().getAll().stream()
-                .filter(plotProfile -> plotProfile.getPlotHelper().getUniqueId().equals(entity.getUniqueId()))
-                .findFirst().orElse(null);
+        for (PlotProfile profile : director.getPlotProfileManager().getAll()) {
+            if (profile.getPlotHelper() != null &&
+                    profile.getPlotHelper().getUniqueId().equals(entity.getUniqueId())) {
+                return profile;
+            }
+        }
+        return null;
     }
 
     @NotNull
