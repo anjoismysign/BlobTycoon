@@ -12,8 +12,8 @@ import us.mytheria.bloblib.entities.BlobExecutor;
 import us.mytheria.bloblib.entities.ObjectDirector;
 import us.mytheria.bloblib.entities.ObjectDirectorData;
 import us.mytheria.bloblib.entities.translatable.TranslatableItem;
+import us.mytheria.blobtycoon.blobrp.BlobRPMiddleman;
 import us.mytheria.blobtycoon.entity.Sellable;
-import us.mytheria.blobtycoon.entity.blobrp.BlobRPMiddleman;
 import us.mytheria.blobtycoon.entity.structure.TycoonModel;
 import us.mytheria.blobtycoon.entity.structure.TycoonModelHolder;
 
@@ -72,7 +72,7 @@ public class ModelHolderDirector<T extends TycoonModelHolder<M>,
             int amount;
             try {
                 amount = Integer.parseInt(args[2]);
-            } catch ( NumberFormatException exception ) {
+            } catch (NumberFormatException exception) {
                 BlobLibMessageAPI.getInstance()
                         .getMessage("BlobTycoonCmd.TycoonModel-Give-Usage", sender)
                         .modder()
@@ -141,7 +141,7 @@ public class ModelHolderDirector<T extends TycoonModelHolder<M>,
             if (args.length >= 3) {
                 try {
                     amount = Integer.parseInt(args[2]);
-                } catch ( NumberFormatException exception ) {
+                } catch (NumberFormatException exception) {
                     BlobLibMessageAPI.getInstance()
                             .getMessage("BlobTycoonCmd.TycoonModel-Get-Usage", player)
                             .modder()

@@ -1,4 +1,4 @@
-package us.mytheria.blobtycoon.entity.blobrp;
+package us.mytheria.blobtycoon.blobrp;
 
 import org.bukkit.NamespacedKey;
 import org.jetbrains.annotations.NotNull;
