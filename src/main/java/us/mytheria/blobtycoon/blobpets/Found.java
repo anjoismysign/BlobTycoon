@@ -2,6 +2,7 @@ package us.mytheria.blobtycoon.blobpets;
 
 import me.anjoismysign.blobpets.entity.petexpansion.PetExpansionDirector;
 import org.jetbrains.annotations.NotNull;
+import us.mytheria.bloblib.entities.ObjectDirector;
 import us.mytheria.blobtycoon.director.TycoonManagerDirector;
 import us.mytheria.blobtycoon.entity.TycoonPet;
 
@@ -10,18 +11,18 @@ import java.util.Objects;
 import java.util.Optional;
 
 public class Found implements BlobPetsMiddleman {
-    private final TycoonManagerDirector director;
     private static Found instance;
-
-    private Found(TycoonManagerDirector director) {
-        this.director = director;
-    }
+    private final TycoonManagerDirector director;
 
     public static BlobPetsMiddleman getInstance(TycoonManagerDirector director) {
         if (instance == null) {
             instance = new Found(director);
         }
         return instance;
+    }
+
+    private Found(TycoonManagerDirector director) {
+        this.director = director;
     }
 
     @Override
@@ -72,5 +73,16 @@ public class Found implements BlobPetsMiddleman {
             return;
         PetExpansionDirector<TycoonPet> get = (PetExpansionDirector<TycoonPet>) optional.get();
         get.setExpansionDirectory(file);
+    }
+
+    @Override
+    public ObjectDirector<?> instantiateTycoonPetDirector(@NotNull TycoonManagerDirector director) {
+        Objects.requireNonNull(director, "'director' cannot be null");
+        return PetExpansionDirector.of(director, "TycoonPet", TycoonPet::fromFile);
+    }
+    
+    @Override
+    public boolean isEnabled() {
+        return true;
     }
 }

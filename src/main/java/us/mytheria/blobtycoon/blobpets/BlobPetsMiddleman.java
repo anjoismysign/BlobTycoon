@@ -1,6 +1,9 @@
 package us.mytheria.blobtycoon.blobpets;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import us.mytheria.bloblib.entities.ObjectDirector;
+import us.mytheria.blobtycoon.director.TycoonManagerDirector;
 
 import java.io.File;
 
@@ -14,4 +17,9 @@ public interface BlobPetsMiddleman {
     void addExpansion(@NotNull File file);
 
     void setExpansionDirectory(@NotNull File file);
+    
+    @Nullable
+    ObjectDirector<?> instantiateTycoonPetDirector(@NotNull TycoonManagerDirector director);
+
+    boolean isEnabled();
 }

@@ -149,7 +149,7 @@ public class TycoonManagerDirector extends GenericManagerDirector<BlobTycoon>
                 logger.warning("Done loading ValuableDirector");
         });
         addManager("ValuableDriverManager", new ValuableDriverManager(this));
-        us.mytheria.blobtycoon.entity.blobpets.BlobPetsMiddleman blobPetsMiddleman = us.mytheria.blobtycoon.entity.blobpets.BlobPetsMiddleman.get();
+        BlobPetsMiddleman blobPetsMiddleman = getBlobPetsMiddleman();
         boolean isBlobPetsEnabled = blobPetsMiddleman.isEnabled();
         if (isBlobPetsEnabled) {
             addManager("TycoonPetDirector", blobPetsMiddleman.instantiateTycoonPetDirector(this));

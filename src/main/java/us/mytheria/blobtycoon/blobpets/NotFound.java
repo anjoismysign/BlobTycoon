@@ -1,20 +1,23 @@
 package us.mytheria.blobtycoon.blobpets;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import us.mytheria.bloblib.entities.ObjectDirector;
+import us.mytheria.blobtycoon.director.TycoonManagerDirector;
 
 import java.io.File;
 
 public class NotFound implements BlobPetsMiddleman {
     private static NotFound instance;
 
-    private NotFound() {
-    }
-
     public static BlobPetsMiddleman getInstance() {
         if (instance == null) {
             instance = new NotFound();
         }
         return instance;
+    }
+
+    private NotFound() {
     }
 
     @Override
@@ -40,5 +43,15 @@ public class NotFound implements BlobPetsMiddleman {
     @Override
     public void setExpansionDirectory(@NotNull File file) {
 
+    }
+
+    @Override
+    public @Nullable ObjectDirector<?> instantiateTycoonPetDirector(@NotNull TycoonManagerDirector director) {
+        return null;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return false;
     }
 }
