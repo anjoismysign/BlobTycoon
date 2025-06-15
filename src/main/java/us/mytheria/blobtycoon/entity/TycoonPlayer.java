@@ -40,15 +40,14 @@ public class TycoonPlayer implements BlobSerializable,
     private final Map<String, String> configuration;
     @NotNull
     private final TradeUserInfo tradeUserInfo;
-    private int selectedProfile;
-
     @NotNull
-    private Uber<Runnable> removeStructure, useStructure;
-
+    private final Uber<Runnable> removeStructure;
+    @NotNull
+    private final Uber<Runnable> useStructure;
+    private final TycoonManagerDirector director;
+    private int selectedProfile;
     private PlotProprietorProfile profile;
     private boolean lockProfile;
-
-    private final TycoonManagerDirector director;
 
     public TycoonPlayer(BlobCrudable crudable, TycoonManagerDirector director) {
         this.director = director;
@@ -134,7 +133,7 @@ public class TycoonPlayer implements BlobSerializable,
                         addProfile(plotProfile);
                     plotProfile.join(player);
                 });
-            } catch ( Exception exception ) {
+            } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
@@ -143,11 +142,6 @@ public class TycoonPlayer implements BlobSerializable,
     @NotNull
     public String getLastKnownName() {
         return lastKnownName;
-    }
-
-    @NotNull
-    public String getIdentification() {
-        return identification;
     }
 
     @Override
@@ -163,6 +157,11 @@ public class TycoonPlayer implements BlobSerializable,
         document.put("ProfileNames", profileNames);
         document.put("Configuration", configuration);
         return crudable;
+    }
+
+    @NotNull
+    public String getIdentification() {
+        return identification;
     }
 
     /**

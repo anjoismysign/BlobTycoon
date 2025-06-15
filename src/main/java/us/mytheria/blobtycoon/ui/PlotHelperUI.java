@@ -22,7 +22,6 @@ import us.mytheria.bloblib.entities.translatable.TranslatableItem;
 import us.mytheria.bloblib.utilities.ItemStackUtil;
 import us.mytheria.bloblib.utilities.TextColor;
 import us.mytheria.bloblib.vault.multieconomy.ElasticEconomy;
-import us.mytheria.blobtycoon.BlobTycoonAPI;
 import us.mytheria.blobtycoon.BlobTycoonInternalAPI;
 import us.mytheria.blobtycoon.blobeconomy.BlobEconomyMiddleman;
 import us.mytheria.blobtycoon.entity.IndexedValue;
@@ -172,7 +171,7 @@ public class PlotHelperUI implements ReloadableUI {
             }
             PlotHelperContainer communityTrade = tycoonPlayer.getCommunityTrade();
             if (communityTrade != null) {
-                BlobTycoonAPI.getInstance().openCommunityTrade(player, communityTrade);
+                BlobTycoonInternalAPI.getInstance().openCommunityTrade(player, communityTrade);
                 // if it doesn't work on 2nd time, set community trade here
                 return;
             }
@@ -424,7 +423,7 @@ public class PlotHelperUI implements ReloadableUI {
                             double parsed = Double.parseDouble(input);
                             context.setAmount(parsed);
                             profile.openCreateTradeUI(player);
-                        } catch ( NumberFormatException exception ) {
+                        } catch (NumberFormatException exception) {
                             Set<String> allKeywords = BlobTycoonInternalAPI.getInstance().getAllKeywords();
                             Set<String> halfKeywords = BlobTycoonInternalAPI.getInstance().getHalfKeywords();
                             ElasticEconomy elasticEconomy = BlobLibEconomyAPI.getInstance().getElasticEconomy();

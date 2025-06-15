@@ -8,7 +8,6 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.player.PlayerInteractAtEntityEvent;
 import org.bukkit.inventory.EquipmentSlot;
 import us.mytheria.bloblib.api.BlobLibMessageAPI;
-import us.mytheria.blobtycoon.BlobTycoonAPI;
 import us.mytheria.blobtycoon.BlobTycoonInternalAPI;
 import us.mytheria.blobtycoon.director.manager.TycoonListenerManager;
 import us.mytheria.blobtycoon.entity.PlotProfile;
@@ -44,7 +43,7 @@ public class PlotHelperCommunityTrades extends BlobTycoonListener {
             return;
         if (plotProfile.getPlotHelper().getUniqueId().equals(entity.getUniqueId()))
             return;
-        BlobTycoonAPI.getInstance().openCommunityTrade(player, find);
+        BlobTycoonInternalAPI.getInstance().openCommunityTrade(player, find);
     }
 
     @EventHandler
@@ -70,7 +69,7 @@ public class PlotHelperCommunityTrades extends BlobTycoonListener {
             return;
         if (plotProfile.getPlotHelper().getUniqueId().equals(entity.getUniqueId()))
             return;
-        BlobTycoonAPI.getInstance().openCommunityTrade(player, find);
+        BlobTycoonInternalAPI.getInstance().openCommunityTrade(player, find);
     }
 
     public boolean checkIfShouldRegister() {

@@ -35,20 +35,8 @@ public final class BlobTycoon extends BlobPlugin {
         return proxy;
     }
 
-    public BlobTycoonInternalAPI getInternalAPI() {
-        return internalAPI;
-    }
-
-    public BlobTycoonValuableAPI getValuableAPI() {
-        return valuableAPI;
-    }
-
     public BlobTycoonAPI getApi() {
         return api;
-    }
-
-    public TycoonPH getTycoonPH() {
-        return tycoonPH;
     }
 
     public BlobEconomyMiddleman getBlobEconomyMiddleman() {
