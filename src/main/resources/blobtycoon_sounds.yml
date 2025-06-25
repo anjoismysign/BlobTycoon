@@ -1,21 +1,21 @@
 BlobTycoon:
   Plot-Helper-Clear-Search:
-    Sound: BLOCK_ANVIL_USE
+    Sound: block.anvil.use
     Volume: 1.0
     Pitch: 1.0
     Audience: PLAYER
   Plot-Helper-Inventory-Open:
-    Sound: BLOCK_CHEST_OPEN
+    Sound: block.chest.open
     Volume: 1.0
     Pitch: 1.0
     Audience: PLAYER
   Stone-Place:
-    Sound: BLOCK_STONE_PLACE
+    Sound: block.stone.place
     Volume: 1.0
     Pitch: 1.0
     Audience: PLAYER
   Stone-Break:
-    Sound: BLOCK_STONE_BREAK
+    Sound: block.stone.break
     Volume: 1.0
     Pitch: 1.0
     Audience: PLAYER
