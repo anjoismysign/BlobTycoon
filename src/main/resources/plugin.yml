@@ -1,6 +1,6 @@
 name: BlobTycoon
 version: ${project.version}
-main: io.github.anjoismysign.BlobTycoon
+main: io.github.anjoismysign.blobtycoon.BlobTycoon
 api-version: 1.19
 load: STARTUP
 depend: [ BlobLib ]
