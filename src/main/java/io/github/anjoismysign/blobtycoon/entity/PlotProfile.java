@@ -42,6 +42,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.Registry;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Entity;
@@ -839,7 +840,6 @@ public class PlotProfile implements SharedSerializable<PlotProprietorProfile>,
         String uuid = player.getUniqueId().toString();
         if (!onlineProprietors.containsKey(uuid))
             throw new IllegalStateException("Player is not a proprietor");
-        TycoonPlayer tycoonPlayer = BlobTycoonInternalAPI.getInstance().getTycoonPlayer(player);
         CreateTradeContext context = getCreateTradeContext(player);
         BlobInventory blobInventory = BlobLibInventoryAPI.getInstance()
                 .trackInventory(player, "Create-Trade").getInventory();
@@ -850,8 +850,9 @@ public class PlotProfile implements SharedSerializable<PlotProprietorProfile>,
             ItemStack tradingItem = context.getTradingItem();
             String itemDisplay = tradingItemTranslatableItem == null ? ItemStackUtil.display(tradingItem) :
                     ItemStackUtil.display(tradingItemTranslatableItem.localize(player).get());
-            if (Registry.MATERIAL.match(itemDisplay) != null)
+            if (Registry.MATERIAL.get(NamespacedKey.minecraft(itemDisplay)) != null) {
                 itemDisplay = TextColor.PARSE("&f" + itemDisplay);
+            }
             String name = context.getCurrency();
             String format = BlobLibEconomyAPI.getInstance().getElasticEconomy().getImplementation(name)
                     .format(context.getAmount());
