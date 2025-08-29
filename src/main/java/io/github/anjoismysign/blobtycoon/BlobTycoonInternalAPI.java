@@ -118,6 +118,15 @@ public class BlobTycoonInternalAPI {
     public String getRandomProfileName(@NotNull List<String> noRepeat) {
         Objects.requireNonNull(noRepeat, "'noRepeat' cannot be null");
         List<String> names = director.getConfigManager().getProfileNames();
+        if (names.isEmpty()) {
+            names = List.of(
+                    "Alpha", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot",
+                    "Golf", "Hotel", "India", "Juliett", "Kilo", "Lima",
+                    "Mike", "November", "Oscar", "Papa", "Quebec", "Romeo",
+                    "Sierra", "Tango", "Uniform", "Victor", "Whiskey",
+                    "X-ray", "Yankee", "Zulu"
+            );
+        }
         String random = names.get((int) (Math.random() * names.size()));
         if (noRepeat.contains(random))
             return getRandomProfileName(noRepeat);

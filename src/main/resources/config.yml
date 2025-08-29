@@ -88,7 +88,7 @@ Settings:
   #If true, it will help debugging loading assets and such
   Tiny-Debug: false
   #Can go as long as you want
-  ProfileNames: [ ]
+  ProfileNames: []
   Selection:
     Remove:
       Particle: CRIT
