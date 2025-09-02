@@ -212,7 +212,6 @@ public class StructureModelSelector {
         pos1 = Vectorator.of(pos1).rotate(rotation);
         pos2 = Vectorator.of(pos2).rotate(rotation);
 
-        World world = location.getWorld();
         location.setY(origin.getBlockY() - 1);
         pos = location.clone();
         Location to = location.clone();
@@ -231,10 +230,8 @@ public class StructureModelSelector {
             particle = selectionConfiguration.getDeniedParticle();
             distance = selectionConfiguration.getDeniedDistance();
         }
-        Cuboid cuboid = cuboidArea.cuboid();
         Location loc1 = cuboidArea.getLoc1();
         Location loc2 = cuboidArea.getLoc2();
-        Location center = cuboid.getCenter().clone();
         int x1 = loc1.getBlockX();
         int x2 = loc2.getBlockX();
         int floor = loc1.getBlockY();

@@ -9,7 +9,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
 import org.bukkit.util.BlockVector;
-import org.bukkit.util.Consumer;
 import org.bukkit.util.Vector;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -18,6 +17,7 @@ import io.github.anjoismysign.bloblib.entities.Cuboid;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 public record Selection(@NotNull World getWorld,
                         @NotNull BlockVector getMin,

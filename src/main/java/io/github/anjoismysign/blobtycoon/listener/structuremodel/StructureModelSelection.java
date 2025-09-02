@@ -128,7 +128,6 @@ public class StructureModelSelection extends BlobTycoonListener {
                         return;
                     }
                     TycoonModelHolder<StructureModel> holder = (TycoonModelHolder<StructureModel>) value;
-                    Block block = player.getTargetBlock(null, 5);
                     StructureModelSelector selector = StructureModelSelector.of(player, holder);
                     selectors.put(playerName, selector);
                 });
