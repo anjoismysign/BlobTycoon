@@ -538,4 +538,30 @@ public class TycoonPlayer implements BlobSerializable,
     public TradeUserInfo getTradeUserInfo() {
         return tradeUserInfo;
     }
+
+    @NotNull
+    public List<PlotProfileView> getPlotProfileViews(){
+        List<PlotProfileView> list = new ArrayList<>();
+        profiles.forEach((index, id)->{
+            String name = profileNames.get(index);
+            list.add(new PlotProfileView() {
+                @Override
+                public int getIndex() {
+                    return index;
+                }
+
+                @Override
+                public @NotNull String getName() {
+                    return name;
+                }
+
+                @Override
+                public @NotNull String getIdentification() {
+                    return id;
+                }
+            });
+        });
+        return list;
+    }
+
 }
