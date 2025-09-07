@@ -165,6 +165,14 @@ public class TycoonPlayer implements BlobSerializable,
     }
 
     /**
+     * Gets the current profile index
+     * @return the index
+     */
+    public int getSelectedProfile(){
+        return selectedProfile;
+    }
+
+    /**
      * Will return the PlotProfile associated with the given identification.
      *
      * @return The PlotProfile associated with the given identification.
