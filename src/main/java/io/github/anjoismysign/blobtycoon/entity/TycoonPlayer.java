@@ -339,6 +339,7 @@ public class TycoonPlayer implements BlobSerializable,
      *
      * @param profile The profile to switch to.
      * @param ifFail  The action to run if the profile switch fails.
+     * @param delete if PlotProfile should be deleted. this is used in case the TycoonPlayer was the last member of the profile
      * @return True if the profile was successfully switched.
      */
     public ProfileSwitchResult switchProfile(int profile,
