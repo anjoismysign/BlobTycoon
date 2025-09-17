@@ -1,8 +1,15 @@
 package io.github.anjoismysign.blobtycoon.entity;
 
+import io.github.anjoismysign.bloblib.api.BlobLibDisguiseAPI;
+import io.github.anjoismysign.bloblib.disguises.DisguiseManager;
+import io.github.anjoismysign.bloblib.disguises.Disguiser;
+import io.github.anjoismysign.bloblib.middleman.LibsDisguises;
+import io.github.anjoismysign.blobtycoon.util.BTDisguiseAPI;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.block.structure.Mirror;
 import org.bukkit.block.structure.StructureRotation;
+import org.bukkit.persistence.PersistentDataContainer;
 import org.jetbrains.annotations.Nullable;
 import io.github.anjoismysign.bloblib.utilities.Structrador;
 import io.github.anjoismysign.blobtycoon.BlobTycoonInternalAPI;
@@ -94,6 +101,22 @@ public class PlotPlaceProgress {
                 if (whenComplete != null) {
                     whenComplete.run();
                 }
+                Disguiser disguiser = BlobLibDisguiseAPI.getInstance().getDisguiser();
+                if (disguiser.hasEngine()){
+                    BTDisguiseAPI api = BTDisguiseAPI.INSTANCE;
+                    request.getPlotData().getAllEntities().forEach(entity -> {
+                        PersistentDataContainer container = entity.getPersistentDataContainer();
+                        boolean has = api.has(container);
+                        if (!has){
+                            return;
+                        }
+                        @Nullable String raw = api.raw(container);
+                        if (raw == null){
+                            return;
+                        }
+                        disguiser.disguiseEntity(raw, entity);
+                    });
+                }
                 PlotPlaceRequest poll = queue.poll();
                 if (poll != null) {
                     paste(poll, plotExpansion, false);
@@ -128,7 +151,7 @@ public class PlotPlaceProgress {
         return isPlacing;
     }
 
-    public static enum PlaceResult {
+    public enum PlaceResult {
         SUCCESS,
         QUEUED,
         NOT_QUEUEABLE,

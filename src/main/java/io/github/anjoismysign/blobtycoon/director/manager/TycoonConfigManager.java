@@ -1,5 +1,6 @@
 package io.github.anjoismysign.blobtycoon.director.manager;
 
+import io.github.anjoismysign.bloblib.middleman.itemstack.ItemStackModder;
 import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
@@ -10,7 +11,6 @@ import io.github.anjoismysign.bloblib.entities.ComplexEventListener;
 import io.github.anjoismysign.bloblib.entities.ConfigDecorator;
 import io.github.anjoismysign.bloblib.entities.ListenersSection;
 import io.github.anjoismysign.bloblib.entities.TinyEventListener;
-import io.github.anjoismysign.bloblib.itemstack.ItemStackModder;
 import io.github.anjoismysign.blobtycoon.director.TycoonManager;
 import io.github.anjoismysign.blobtycoon.director.TycoonManagerDirector;
 import io.github.anjoismysign.blobtycoon.entity.configuration.BlobTycoonConfiguration;

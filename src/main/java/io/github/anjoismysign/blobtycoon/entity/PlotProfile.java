@@ -1,5 +1,6 @@
 package io.github.anjoismysign.blobtycoon.entity;
 
+import io.github.anjoismysign.bloblib.middleman.itemstack.ItemStackModder;
 import io.github.anjoismysign.blobtycoon.BlobTycoonInternalAPI;
 import io.github.anjoismysign.anjo.entities.Tuple2;
 import io.github.anjoismysign.blobtycoon.blobeconomy.BlobEconomyMiddleman;
@@ -14,7 +15,6 @@ import io.github.anjoismysign.bloblib.entities.currency.Currency;
 import io.github.anjoismysign.bloblib.entities.inventory.BlobInventory;
 import io.github.anjoismysign.bloblib.entities.translatable.TranslatableBlock;
 import io.github.anjoismysign.bloblib.entities.translatable.TranslatableItem;
-import io.github.anjoismysign.bloblib.itemstack.ItemStackModder;
 import io.github.anjoismysign.bloblib.utilities.ItemStackUtil;
 import io.github.anjoismysign.bloblib.utilities.Structrador;
 import io.github.anjoismysign.bloblib.utilities.TextColor;

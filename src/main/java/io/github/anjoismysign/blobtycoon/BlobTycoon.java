@@ -10,6 +10,12 @@ import io.github.anjoismysign.blobtycoon.director.TycoonManagerDirector;
 import io.github.anjoismysign.blobtycoon.entity.TycoonPH;
 
 public final class BlobTycoon extends BlobPlugin {
+    private static BlobTycoon INSTANCE;
+
+    public static BlobTycoon getInstance(){
+        return INSTANCE;
+    }
+
     private IManagerDirector proxy;
     private BlobTycoonValuableAPI valuableAPI;
     private BlobTycoonInternalAPI internalAPI;
@@ -19,6 +25,7 @@ public final class BlobTycoon extends BlobPlugin {
 
     @Override
     public void onEnable() {
+        INSTANCE = this;
         TycoonManagerDirector director = new TycoonManagerDirector(this);
         proxy = director.proxy();
         valuableAPI = BlobTycoonValuableAPI.getInstance(director);

@@ -1,5 +1,6 @@
 package io.github.anjoismysign.blobtycoon;
 
+import io.github.anjoismysign.bloblib.middleman.itemstack.ItemStackModder;
 import org.bukkit.Material;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
@@ -11,7 +12,6 @@ import io.github.anjoismysign.bloblib.api.BlobLibInventoryAPI;
 import io.github.anjoismysign.bloblib.api.BlobLibTranslatableAPI;
 import io.github.anjoismysign.bloblib.entities.translatable.TranslatableBlock;
 import io.github.anjoismysign.bloblib.entities.translatable.TranslatableItem;
-import io.github.anjoismysign.bloblib.itemstack.ItemStackModder;
 import io.github.anjoismysign.blobtycoon.director.TycoonManagerDirector;
 import io.github.anjoismysign.blobtycoon.entity.DefaultStructuresInitializer;
 import io.github.anjoismysign.blobtycoon.entity.PlotProfile;
