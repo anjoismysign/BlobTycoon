@@ -65,10 +65,10 @@ public class PlotHelperUI implements ReloadableUI {
             List<IndexedValue<PlotHelperInventory>> indexedInventories = inventories.entrySet().stream()
                     .map(entry -> new IndexedValue<>(entry.getKey(), entry.getValue()))
                     .toList();
-            UUID uuid = player.getUniqueId();
             Bukkit.getScheduler().runTask(Bukkit.getPluginManager().getPlugin("BlobTycoon"), () -> {
-                if (player != Bukkit.getPlayer(uuid) || !profile.isValid())
+                if (!player.isConnected() || !profile.isValid()) {
                     return;
+                }
                 BlobLibInventoryAPI.getInstance().customSelector(
                         "Plot-Helper-Inventories",
                         player,
@@ -242,11 +242,11 @@ public class PlotHelperUI implements ReloadableUI {
                         .handle(player);
                 return;
             }
-            UUID uuid = player.getUniqueId();
             PlotProfile profile = tycoonPlayer.getProfile().getPlotProfile();
             Bukkit.getScheduler().runTask(Bukkit.getPluginManager().getPlugin("BlobTycoon"), () -> {
-                if (player != Bukkit.getPlayer(uuid) || !profile.isValid())
+                if (!player.isConnected() || !profile.isValid()) {
                     return;
+                }
                 profile.openManageTradesUI(player);
             });
         });
@@ -260,11 +260,11 @@ public class PlotHelperUI implements ReloadableUI {
                         .handle(player);
                 return;
             }
-            UUID uuid = player.getUniqueId();
             PlotProfile profile = tycoonPlayer.getProfile().getPlotProfile();
             Bukkit.getScheduler().runTask(Bukkit.getPluginManager().getPlugin("BlobTycoon"), () -> {
-                if (player != Bukkit.getPlayer(uuid) || !profile.isValid())
+                if (!player.isConnected() || !profile.isValid()) {
                     return;
+                }
                 profile.openTradesMarketplaceUI(player, tycoonPlayer.getTradeQuery());
             });
         });

@@ -57,10 +57,10 @@ public class BlobTycoonCmd {
                         .toCommandSender(sender);
                 return;
             }
-            UUID uuid = target.getUniqueId();
             Bukkit.getScheduler().runTask(managerDirector.getPlugin(), () -> {
-                if (target != Bukkit.getPlayer(uuid))
+                if (!target.isConnected()) {
                     return;
+                }
                 BlobLibInventoryAPI.getInstance()
                         .trackInventory(target.getPlayer(), "BlobTycoon-New-Profile")
                         .getInventory().open(target);
@@ -85,10 +85,10 @@ public class BlobTycoonCmd {
                         .handle(target);
                 return;
             }
-            UUID uuid = target.getUniqueId();
             Bukkit.getScheduler().runTask(managerDirector.getPlugin(), () -> {
-                if (target != Bukkit.getPlayer(uuid))
+                if (!target.isConnected()) {
                     return;
+                }
                 BlobLibInventoryAPI.getInstance()
                         .customSelector("BlobTycoon-Switch-Profile",
                                 target, "Profiles", "Profile",
@@ -172,11 +172,11 @@ public class BlobTycoonCmd {
                         .handle(target);
                 return;
             }
-            UUID uuid = target.getUniqueId();
             PlotProfile plotProfile = tycoonPlayer.getProfile().getPlotProfile();
             Bukkit.getScheduler().runTask(managerDirector.getPlugin(), () -> {
-                if (target != Bukkit.getPlayer(uuid) || !plotProfile.isValid())
+                if (!target.isConnected() || !plotProfile.isValid()) {
                     return;
+                }
                 BlobLibInventoryAPI.getInstance()
                         .customSelector("BlobTycoon-Invite-Profile",
                                 target, "Players", "Player",
@@ -331,10 +331,10 @@ public class BlobTycoonCmd {
             blobInventory.modder("Rebirth", modder -> {
                 modder.replace("%format%", economy.format(configuration.getCost(rebirths)));
             });
-            UUID uuid = target.getUniqueId();
             Bukkit.getScheduler().runTask(managerDirector.getPlugin(), () -> {
-                if (target != Bukkit.getPlayer(uuid) || !plotProfile.isValid())
+                if (!target.isConnected() || !plotProfile.isValid()) {
                     return;
+                }
                 blobInventory.open(target);
             });
         });

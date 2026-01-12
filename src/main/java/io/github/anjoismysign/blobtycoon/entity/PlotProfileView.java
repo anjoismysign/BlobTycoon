@@ -12,4 +12,6 @@ public interface PlotProfileView {
     @NotNull
     String getIdentification();
 
+    boolean hasPlayedBefore();
+
 }

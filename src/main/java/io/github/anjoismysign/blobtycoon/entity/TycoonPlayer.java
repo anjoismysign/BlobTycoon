@@ -75,7 +75,6 @@ public class TycoonPlayer implements BlobSerializable,
         crudable.hasInteger("SelectedProfile").ifPresent(integer -> selectedProfile = integer);
         CompletableFuture<PlotProfile> future = new CompletableFuture<>();
         PlotProfileManager plotProfileManager = director.getPlotProfileManager();
-        UUID uuid = player.getUniqueId();
         Bukkit.getScheduler().runTaskLater(plugin, () -> {
             String selectedProfileIdentification = getSelectedProfileIdentification();
             if (selectedProfileIdentification == null) {
@@ -127,8 +126,9 @@ public class TycoonPlayer implements BlobSerializable,
             }
             try {
                 Bukkit.getScheduler().runTask(plugin, () -> {
-                    if (player != Bukkit.getPlayer(uuid) || !plotProfile.isValid())
+                    if (!player.isConnected() || !plotProfile.isValid()) {
                         return;
+                    }
                     if (profiles.isEmpty())
                         addProfile(plotProfile);
                     plotProfile.join(player);
@@ -313,11 +313,12 @@ public class TycoonPlayer implements BlobSerializable,
                     .getPlotProfileManager().createRandom(this);
             randomFuture.whenComplete((plotProfile, throwable) -> {
                 if (throwable != null) {
-                    if (ifFail != null && player == Bukkit.getPlayer(uuid))
+                    if (ifFail != null && player.isConnected()) {
                         ifFail.accept(player);
+                    }
                     return;
                 }
-                if (player != Bukkit.getPlayer(uuid)) {
+                if (!player.isConnected()) {
                     plotProfile.freePlot();
                     return;
                 }
@@ -367,7 +368,6 @@ public class TycoonPlayer implements BlobSerializable,
                     .handle(player);
             return ProfileSwitchResult.PLACING_QUEUED;
         }
-        UUID uuid = player.getUniqueId();
         Runnable onSwitch = () -> {
             if (delete)
                 director.getPlotProfileManager().deleteObject(oldIdentification);
@@ -381,8 +381,9 @@ public class TycoonPlayer implements BlobSerializable,
             PlotProfile cached = plotProfileManager.isCached(getSelectedProfileIdentification())
                     .orElse(null);
             if (cached != null) {
-                if (player != Bukkit.getPlayer(uuid))
+                if (!player.isConnected()) {
                     return;
+                }
                 Bukkit.getScheduler().runTask(director.getPlugin(), () -> {
                     cached.join(player);
                 });
@@ -392,12 +393,13 @@ public class TycoonPlayer implements BlobSerializable,
                     .getPlotProfileManager().download(getSelectedProfileIdentification(), this);
             download.whenComplete((plotProfile, throwable) -> {
                 if (throwable != null) {
-                    if (ifFail != null && player == Bukkit.getPlayer(uuid))
+                    if (ifFail != null && player.isConnected()) {
                         ifFail.accept(player);
+                    }
                     throwable.printStackTrace();
                     return;
                 }
-                if (player != Bukkit.getPlayer(uuid)) {
+                if (!player.isConnected()) {
                     plotProfile.freePlot();
                     return;
                 }
@@ -558,6 +560,23 @@ public class TycoonPlayer implements BlobSerializable,
                 @Override
                 public @NotNull String getIdentification() {
                     return id;
+                }
+
+                @Override
+                public boolean hasPlayedBefore() {
+                    @Nullable var player = getPlayer();
+                    if (player == null){
+                        return false;
+                    }
+                    var tycoonPlayer = BlobTycoonInternalAPI.getInstance().getTycoonPlayer(player);
+                    if (tycoonPlayer == null){
+                        return false;
+                    }
+                    @Nullable var profile = tycoonPlayer.getProfile();
+                    if (profile == null){
+                        return false;
+                    }
+                    return !profile.getPlotProfile().isFresh();
                 }
             });
         });

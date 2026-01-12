@@ -66,7 +66,6 @@ public class TycoonMenuListener extends BlobTycoonListener {
                         .getTycoonPlayer(player.getUniqueId());
                 Objects.requireNonNull(tycoonPlayer);
                 PlotProfile plotProfile = tycoonPlayer.getProfile().getPlotProfile();
-                UUID uuid = player.getUniqueId();
                 player.closeInventory();
                 BlobLibInventoryAPI.getInstance().customSelector(
                         "Change-Plot",
@@ -77,8 +76,9 @@ public class TycoonMenuListener extends BlobTycoonListener {
                         plotProfile::getExpansions,
                         //Once clicked an expansion, will proceed to load
                         expansion -> {
-                            if (player != Bukkit.getPlayer(uuid))
+                            if (!player.isConnected()) {
                                 return;
+                            }
                             int index = expansion.getIndex();
                             player.closeInventory();
                             if (plotProfile.getSelectedExpansionIndex() == index) {

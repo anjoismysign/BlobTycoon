@@ -83,7 +83,7 @@ public class StructureModelSelection extends BlobTycoonListener {
         new BukkitRunnable() {
             @Override
             public void run() {
-                if (player != Bukkit.getPlayer(uuid)) {
+                if (!player.isConnected()) {
                     selectors.remove(playerName);
                     cancel();
                     return;
