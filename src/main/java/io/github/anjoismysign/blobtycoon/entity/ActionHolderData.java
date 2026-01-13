@@ -1,8 +1,8 @@
 package io.github.anjoismysign.blobtycoon.entity;
 
+import io.github.anjoismysign.bloblib.action.Action;
 import org.bukkit.entity.Entity;
 import org.jetbrains.annotations.NotNull;
-import io.github.anjoismysign.bloblib.action.Action;
 
 import java.util.List;
 

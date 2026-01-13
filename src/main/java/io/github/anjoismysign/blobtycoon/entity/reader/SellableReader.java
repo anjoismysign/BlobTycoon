@@ -1,8 +1,8 @@
 package io.github.anjoismysign.blobtycoon.entity.reader;
 
-import org.bukkit.configuration.ConfigurationSection;
 import io.github.anjoismysign.bloblib.exception.ConfigurationFieldException;
 import io.github.anjoismysign.blobtycoon.entity.Sellable;
+import org.bukkit.configuration.ConfigurationSection;
 
 public class SellableReader {
     public static Sellable READ(ConfigurationSection configuration) {

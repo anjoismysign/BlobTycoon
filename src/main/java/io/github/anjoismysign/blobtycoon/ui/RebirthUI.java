@@ -1,8 +1,5 @@
 package io.github.anjoismysign.blobtycoon.ui;
 
-import net.milkbowl.vault.economy.IdentityEconomy;
-import org.bukkit.entity.Player;
-import org.jetbrains.annotations.NotNull;
 import io.github.anjoismysign.bloblib.api.BlobLibEconomyAPI;
 import io.github.anjoismysign.bloblib.api.BlobLibInventoryAPI;
 import io.github.anjoismysign.bloblib.api.BlobLibMessageAPI;
@@ -13,6 +10,9 @@ import io.github.anjoismysign.blobtycoon.entity.PlotProfile;
 import io.github.anjoismysign.blobtycoon.entity.TycoonPlayer;
 import io.github.anjoismysign.blobtycoon.entity.configuration.CostIncreaseConfiguration;
 import io.github.anjoismysign.blobtycoon.entity.configuration.RebirthConfiguration;
+import net.milkbowl.vault.economy.IdentityEconomy;
+import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
 
 public class RebirthUI implements ReloadableUI {
     protected RebirthUI() {

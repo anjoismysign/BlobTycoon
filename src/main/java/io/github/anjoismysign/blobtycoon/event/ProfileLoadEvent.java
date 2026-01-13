@@ -1,7 +1,7 @@
 package io.github.anjoismysign.blobtycoon.event;
 
-import org.bukkit.event.HandlerList;
 import io.github.anjoismysign.blobtycoon.entity.TycoonPlayer;
+import org.bukkit.event.HandlerList;
 
 /**
  * Called when a TycoonPlayer is done loading, having loaded their

@@ -1,15 +1,5 @@
 package io.github.anjoismysign.blobtycoon.listener.structuremodel;
 
-import org.bukkit.Bukkit;
-import org.bukkit.block.Block;
-import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.block.Action;
-import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.inventory.EquipmentSlot;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.scheduler.BukkitRunnable;
 import io.github.anjoismysign.bloblib.api.BlobLibMessageAPI;
 import io.github.anjoismysign.bloblib.entities.translatable.TranslatableItem;
 import io.github.anjoismysign.blobtycoon.BlobTycoonInternalAPI;
@@ -21,6 +11,15 @@ import io.github.anjoismysign.blobtycoon.entity.structure.PrimitiveAsset;
 import io.github.anjoismysign.blobtycoon.entity.structure.StructureModel;
 import io.github.anjoismysign.blobtycoon.entity.structure.TycoonModelHolder;
 import io.github.anjoismysign.blobtycoon.listener.BlobTycoonListener;
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.block.Action;
+import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.inventory.EquipmentSlot;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -79,7 +78,6 @@ public class StructureModelSelection extends BlobTycoonListener {
     public void onHeld(PlayerJoinEvent event) {
         Player player = event.getPlayer();
         String playerName = player.getName();
-        UUID uuid = player.getUniqueId();
         new BukkitRunnable() {
             @Override
             public void run() {

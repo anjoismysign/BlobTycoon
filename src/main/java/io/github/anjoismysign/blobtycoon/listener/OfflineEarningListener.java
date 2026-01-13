@@ -1,8 +1,5 @@
 package io.github.anjoismysign.blobtycoon.listener;
 
-import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
-import org.jetbrains.annotations.NotNull;
 import io.github.anjoismysign.bloblib.api.BlobLibMessageAPI;
 import io.github.anjoismysign.bloblib.entities.ComplexEventListener;
 import io.github.anjoismysign.blobtycoon.director.manager.TycoonListenerManager;
@@ -12,6 +9,9 @@ import io.github.anjoismysign.blobtycoon.entity.TycoonPlayer;
 import io.github.anjoismysign.blobtycoon.entity.mechanics.Mechanics;
 import io.github.anjoismysign.blobtycoon.event.ProfileLoadEvent;
 import io.github.anjoismysign.blobtycoon.util.TycoonUnit;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.jetbrains.annotations.NotNull;
 
 import java.time.Instant;
 import java.util.HashMap;

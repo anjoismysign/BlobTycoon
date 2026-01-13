@@ -1,11 +1,11 @@
 package io.github.anjoismysign.blobtycoon.entity;
 
+import io.github.anjoismysign.blobtycoon.entity.plotdata.PlotData;
 import io.github.anjoismysign.util.Structrador;
 import org.bukkit.Location;
 import org.bukkit.util.BlockVector;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import io.github.anjoismysign.blobtycoon.entity.plotdata.PlotData;
 
 import java.util.Objects;
 

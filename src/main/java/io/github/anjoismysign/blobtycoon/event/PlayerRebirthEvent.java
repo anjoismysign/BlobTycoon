@@ -1,8 +1,8 @@
 package io.github.anjoismysign.blobtycoon.event;
 
+import io.github.anjoismysign.blobtycoon.entity.TycoonPlayer;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.HandlerList;
-import io.github.anjoismysign.blobtycoon.entity.TycoonPlayer;
 
 /**
  * Called on each online TycoonPlayer on a PlotProfile that rebirths.

@@ -1,10 +1,10 @@
 package io.github.anjoismysign.blobtycoon.event;
 
-import org.bukkit.Location;
-import org.bukkit.event.Cancellable;
 import io.github.anjoismysign.blobtycoon.entity.TycoonPlayer;
 import io.github.anjoismysign.blobtycoon.entity.structure.TycoonModel;
 import io.github.anjoismysign.blobtycoon.entity.structure.TycoonModelHolder;
+import org.bukkit.Location;
+import org.bukkit.event.Cancellable;
 
 /**
  * Represents either placement or removal of a TycoonModel's structure

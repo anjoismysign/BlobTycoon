@@ -1,12 +1,12 @@
 package io.github.anjoismysign.blobtycoon.entity;
 
+import io.github.anjoismysign.blobtycoon.BlobTycoon;
+import io.github.anjoismysign.blobtycoon.director.TycoonManagerDirector;
+import io.github.anjoismysign.blobtycoon.util.TycoonStructrador;
 import io.github.anjoismysign.util.Structrador;
 import org.bukkit.structure.Structure;
 import org.bukkit.structure.StructureManager;
 import org.jetbrains.annotations.NotNull;
-import io.github.anjoismysign.blobtycoon.BlobTycoon;
-import io.github.anjoismysign.blobtycoon.director.TycoonManagerDirector;
-import io.github.anjoismysign.blobtycoon.util.TycoonStructrador;
 
 import java.io.File;
 import java.util.Objects;

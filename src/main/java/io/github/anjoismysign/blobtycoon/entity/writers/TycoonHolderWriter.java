@@ -1,7 +1,7 @@
 package io.github.anjoismysign.blobtycoon.entity.writers;
 
-import org.bukkit.configuration.file.YamlConfiguration;
 import io.github.anjoismysign.blobtycoon.entity.structure.TycoonModelHolder;
+import org.bukkit.configuration.file.YamlConfiguration;
 
 public class TycoonHolderWriter {
     public static void WRITE(TycoonModelHolder<?> holder, YamlConfiguration configuration) {

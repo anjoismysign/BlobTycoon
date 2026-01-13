@@ -1,12 +1,12 @@
 package io.github.anjoismysign.blobtycoon.event;
 
+import io.github.anjoismysign.blobtycoon.entity.asset.ObjectAsset;
+import io.github.anjoismysign.blobtycoon.entity.asset.RackAsset;
+import io.github.anjoismysign.blobtycoon.entity.asset.StructureAsset;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 import org.bukkit.structure.Structure;
 import org.jetbrains.annotations.NotNull;
-import io.github.anjoismysign.blobtycoon.entity.asset.ObjectAsset;
-import io.github.anjoismysign.blobtycoon.entity.asset.RackAsset;
-import io.github.anjoismysign.blobtycoon.entity.asset.StructureAsset;
 
 import java.util.Collection;
 

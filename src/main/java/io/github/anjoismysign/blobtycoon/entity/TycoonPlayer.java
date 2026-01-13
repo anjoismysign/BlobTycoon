@@ -1,7 +1,5 @@
 package io.github.anjoismysign.blobtycoon.entity;
 
-import io.github.anjoismysign.blobtycoon.BlobTycoon;
-import io.github.anjoismysign.blobtycoon.BlobTycoonInternalAPI;
 import io.github.anjoismysign.anjo.entities.Uber;
 import io.github.anjoismysign.bloblib.api.BlobLibEconomyAPI;
 import io.github.anjoismysign.bloblib.api.BlobLibMessageAPI;
@@ -9,6 +7,8 @@ import io.github.anjoismysign.bloblib.entities.BlobCrudable;
 import io.github.anjoismysign.bloblib.entities.BlobSerializable;
 import io.github.anjoismysign.bloblib.entities.MinecraftTimeUnit;
 import io.github.anjoismysign.bloblib.vault.multieconomy.ElasticEconomy;
+import io.github.anjoismysign.blobtycoon.BlobTycoon;
+import io.github.anjoismysign.blobtycoon.BlobTycoonInternalAPI;
 import io.github.anjoismysign.blobtycoon.director.TycoonManagerDirector;
 import io.github.anjoismysign.blobtycoon.entity.playerconfiguration.PlayerConfiguration;
 import io.github.anjoismysign.blobtycoon.exception.PlotProfileNotCompletedException;

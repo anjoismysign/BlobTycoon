@@ -1,8 +1,8 @@
 package io.github.anjoismysign.blobtycoon.entity.playerconfiguration;
 
+import io.github.anjoismysign.blobtycoon.entity.plothelper.CommodityMarketOfferType;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import io.github.anjoismysign.blobtycoon.entity.plothelper.CommodityMarketOfferType;
 
 import java.util.Objects;
 

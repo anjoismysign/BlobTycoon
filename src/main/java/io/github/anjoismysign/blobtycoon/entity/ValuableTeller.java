@@ -1,16 +1,16 @@
 package io.github.anjoismysign.blobtycoon.entity;
 
+import io.github.anjoismysign.bloblib.api.BlobLibInventoryAPI;
+import io.github.anjoismysign.bloblib.api.BlobLibListenerAPI;
+import io.github.anjoismysign.bloblib.api.BlobLibMessageAPI;
 import io.github.anjoismysign.bloblib.middleman.itemstack.ItemStackBuilder;
+import io.github.anjoismysign.blobtycoon.BlobTycoonInternalAPI;
+import io.github.anjoismysign.blobtycoon.BlobTycoonValuableAPI;
+import io.github.anjoismysign.blobtycoon.entity.valuable.ValuableDriver;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import io.github.anjoismysign.bloblib.api.BlobLibInventoryAPI;
-import io.github.anjoismysign.bloblib.api.BlobLibListenerAPI;
-import io.github.anjoismysign.bloblib.api.BlobLibMessageAPI;
-import io.github.anjoismysign.blobtycoon.BlobTycoonInternalAPI;
-import io.github.anjoismysign.blobtycoon.BlobTycoonValuableAPI;
-import io.github.anjoismysign.blobtycoon.entity.valuable.ValuableDriver;
 
 import java.util.Objects;
 import java.util.Set;

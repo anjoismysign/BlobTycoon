@@ -1,12 +1,12 @@
 package io.github.anjoismysign.blobtycoon.entity.mechanics;
 
+import io.github.anjoismysign.blobtycoon.BlobTycoonInternalAPI;
+import io.github.anjoismysign.blobtycoon.entity.TycoonPlayer;
+import io.github.anjoismysign.blobtycoon.util.TemperatureConversor;
 import org.bukkit.Bukkit;
 import org.bukkit.scheduler.BukkitTask;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import io.github.anjoismysign.blobtycoon.BlobTycoonInternalAPI;
-import io.github.anjoismysign.blobtycoon.entity.TycoonPlayer;
-import io.github.anjoismysign.blobtycoon.util.TemperatureConversor;
 
 import java.util.Map;
 import java.util.function.Consumer;

@@ -1,8 +1,8 @@
 package io.github.anjoismysign.blobtycoon.event;
 
+import io.github.anjoismysign.blobtycoon.entity.TycoonPlayer;
 import org.bukkit.event.Event;
 import org.jetbrains.annotations.NotNull;
-import io.github.anjoismysign.blobtycoon.entity.TycoonPlayer;
 
 public abstract class TycoonPlayerEvent extends Event {
     @NotNull

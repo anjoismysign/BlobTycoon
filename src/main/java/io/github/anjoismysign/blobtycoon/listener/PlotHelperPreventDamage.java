@@ -1,11 +1,11 @@
 package io.github.anjoismysign.blobtycoon.listener;
 
-import org.bukkit.entity.Entity;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.entity.EntityDamageEvent;
 import io.github.anjoismysign.blobtycoon.BlobTycoonInternalAPI;
 import io.github.anjoismysign.blobtycoon.director.manager.TycoonListenerManager;
 import io.github.anjoismysign.blobtycoon.entity.configuration.PlotHelperConfiguration;
+import org.bukkit.entity.Entity;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.entity.EntityDamageEvent;
 
 public class PlotHelperPreventDamage extends BlobTycoonListener {
     public PlotHelperPreventDamage(TycoonListenerManager listenerManager) {

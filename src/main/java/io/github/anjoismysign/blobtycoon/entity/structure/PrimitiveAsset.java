@@ -1,7 +1,7 @@
 package io.github.anjoismysign.blobtycoon.entity.structure;
 
-import org.jetbrains.annotations.Nullable;
 import io.github.anjoismysign.blobtycoon.entity.tycoonattribute.TycoonAttributeOperation;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.HashMap;
 import java.util.Map;

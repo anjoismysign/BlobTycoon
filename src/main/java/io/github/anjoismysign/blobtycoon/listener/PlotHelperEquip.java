@@ -1,11 +1,11 @@
 package io.github.anjoismysign.blobtycoon.listener;
 
+import io.github.anjoismysign.blobtycoon.BlobTycoonInternalAPI;
+import io.github.anjoismysign.blobtycoon.director.manager.TycoonListenerManager;
 import org.bukkit.entity.Entity;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerInteractAtEntityEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
-import io.github.anjoismysign.blobtycoon.BlobTycoonInternalAPI;
-import io.github.anjoismysign.blobtycoon.director.manager.TycoonListenerManager;
 
 public class PlotHelperEquip extends BlobTycoonListener {
     public PlotHelperEquip(TycoonListenerManager listenerManager) {

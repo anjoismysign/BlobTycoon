@@ -1,10 +1,10 @@
 package io.github.anjoismysign.blobtycoon.entity;
 
+import io.github.anjoismysign.bloblib.utilities.ItemStackUtil;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.jetbrains.annotations.Nullable;
-import io.github.anjoismysign.bloblib.utilities.ItemStackUtil;
 
 import java.util.HashMap;
 import java.util.Map;

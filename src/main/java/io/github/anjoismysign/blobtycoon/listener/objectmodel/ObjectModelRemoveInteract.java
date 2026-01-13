@@ -1,12 +1,12 @@
 package io.github.anjoismysign.blobtycoon.listener.objectmodel;
 
+import io.github.anjoismysign.blobtycoon.director.manager.TycoonListenerManager;
+import io.github.anjoismysign.blobtycoon.entity.structure.ObjectModel;
+import io.github.anjoismysign.blobtycoon.listener.BlobTycoonListener;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Interaction;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerInteractAtEntityEvent;
-import io.github.anjoismysign.blobtycoon.director.manager.TycoonListenerManager;
-import io.github.anjoismysign.blobtycoon.entity.structure.ObjectModel;
-import io.github.anjoismysign.blobtycoon.listener.BlobTycoonListener;
 
 public class ObjectModelRemoveInteract extends BlobTycoonListener {
     public ObjectModelRemoveInteract(TycoonListenerManager listenerManager) {

@@ -1,12 +1,12 @@
 package io.github.anjoismysign.blobtycoon.entity;
 
+import io.github.anjoismysign.blobtycoon.director.manager.PlotManager;
 import org.bukkit.Chunk;
 import org.bukkit.World;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.BoundingBox;
 import org.bukkit.util.Vector;
 import org.jetbrains.annotations.NotNull;
-import io.github.anjoismysign.blobtycoon.director.manager.PlotManager;
 
 import java.util.HashSet;
 import java.util.Set;

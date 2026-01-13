@@ -1,8 +1,5 @@
 package io.github.anjoismysign.blobtycoon.entity.reader;
 
-import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.entity.Player;
-import org.jetbrains.annotations.NotNull;
 import io.github.anjoismysign.bloblib.exception.ConfigurationFieldException;
 import io.github.anjoismysign.blobtycoon.director.TycoonManagerDirector;
 import io.github.anjoismysign.blobtycoon.entity.Sellable;
@@ -10,6 +7,9 @@ import io.github.anjoismysign.blobtycoon.entity.structure.ObjectModel;
 import io.github.anjoismysign.blobtycoon.entity.structure.StorageModel;
 import io.github.anjoismysign.blobtycoon.entity.structure.StructureModel;
 import io.github.anjoismysign.blobtycoon.entity.structure.TycoonModelHolderData;
+import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.util.function.Consumer;

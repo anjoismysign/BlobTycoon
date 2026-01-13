@@ -1,8 +1,8 @@
 package io.github.anjoismysign.blobtycoon.blobeconomy;
 
-import org.jetbrains.annotations.Nullable;
 import io.github.anjoismysign.blobeconomy.BlobEconomyAPI;
 import io.github.anjoismysign.bloblib.entities.currency.Currency;
+import org.jetbrains.annotations.Nullable;
 
 public class BlobEconomyFound implements BlobEconomyMiddleman {
     private static BlobEconomyFound instance;

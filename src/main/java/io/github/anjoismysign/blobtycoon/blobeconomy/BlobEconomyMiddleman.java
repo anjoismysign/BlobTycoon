@@ -1,9 +1,9 @@
 package io.github.anjoismysign.blobtycoon.blobeconomy;
 
-import org.bukkit.Bukkit;
-import org.jetbrains.annotations.Nullable;
 import io.github.anjoismysign.bloblib.entities.currency.Currency;
 import io.github.anjoismysign.blobtycoon.BlobTycoon;
+import org.bukkit.Bukkit;
+import org.jetbrains.annotations.Nullable;
 
 public interface BlobEconomyMiddleman {
     static BlobEconomyMiddleman getInstance() {

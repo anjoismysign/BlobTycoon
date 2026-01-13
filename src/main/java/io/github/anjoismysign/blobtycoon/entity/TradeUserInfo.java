@@ -1,8 +1,8 @@
 package io.github.anjoismysign.blobtycoon.entity;
 
-import org.jetbrains.annotations.Nullable;
 import io.github.anjoismysign.blobtycoon.entity.plothelper.PlotHelperContainer;
 import io.github.anjoismysign.blobtycoon.entity.plothelper.PlotHelperTrade;
+import org.jetbrains.annotations.Nullable;
 
 public class TradeUserInfo {
     @Nullable

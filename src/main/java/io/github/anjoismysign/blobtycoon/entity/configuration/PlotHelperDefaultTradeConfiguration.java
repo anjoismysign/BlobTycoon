@@ -1,8 +1,8 @@
 package io.github.anjoismysign.blobtycoon.entity.configuration;
 
+import io.github.anjoismysign.bloblib.exception.ConfigurationFieldException;
 import org.bukkit.configuration.ConfigurationSection;
 import org.jetbrains.annotations.NotNull;
-import io.github.anjoismysign.bloblib.exception.ConfigurationFieldException;
 
 /**
  * @param getCurrency The currency to get

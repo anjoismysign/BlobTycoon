@@ -1,9 +1,9 @@
 package io.github.anjoismysign.blobtycoon.entity;
 
+import io.github.anjoismysign.bloblib.exception.ConfigurationFieldException;
 import org.bukkit.configuration.ConfigurationSection;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import io.github.anjoismysign.bloblib.exception.ConfigurationFieldException;
 
 import java.util.Objects;
 

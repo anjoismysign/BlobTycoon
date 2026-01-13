@@ -1,9 +1,9 @@
 package io.github.anjoismysign.blobtycoon.entity.configuration;
 
+import io.github.anjoismysign.blobtycoon.director.manager.TycoonConfigManager;
 import org.bukkit.configuration.ConfigurationSection;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import io.github.anjoismysign.blobtycoon.director.manager.TycoonConfigManager;
 
 public class BlobTycoonConfiguration {
     private static BlobTycoonConfiguration instance;

@@ -1,14 +1,14 @@
 package io.github.anjoismysign.blobtycoon.entity.structure;
 
+import io.github.anjoismysign.bloblib.api.BlobLibSoundAPI;
+import io.github.anjoismysign.bloblib.entities.message.BlobSound;
+import io.github.anjoismysign.bloblib.entities.translatable.TranslatableItem;
+import io.github.anjoismysign.blobtycoon.entity.Descriptor;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.structure.Structure;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import io.github.anjoismysign.bloblib.api.BlobLibSoundAPI;
-import io.github.anjoismysign.bloblib.entities.message.BlobSound;
-import io.github.anjoismysign.bloblib.entities.translatable.TranslatableItem;
-import io.github.anjoismysign.blobtycoon.entity.Descriptor;
 
 import java.util.function.Consumer;
 

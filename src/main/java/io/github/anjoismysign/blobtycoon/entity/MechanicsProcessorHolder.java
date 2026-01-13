@@ -1,7 +1,7 @@
 package io.github.anjoismysign.blobtycoon.entity;
 
-import io.github.anjoismysign.blobtycoon.BlobTycoonInternalAPI;
 import io.github.anjoismysign.anjo.entities.Tuple2;
+import io.github.anjoismysign.blobtycoon.BlobTycoonInternalAPI;
 import io.github.anjoismysign.blobtycoon.entity.mechanics.MechanicsData;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.ConfigurationSection;

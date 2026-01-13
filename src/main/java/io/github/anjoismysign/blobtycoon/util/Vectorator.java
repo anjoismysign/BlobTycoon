@@ -1,10 +1,10 @@
 package io.github.anjoismysign.blobtycoon.util;
 
+import io.github.anjoismysign.blobtycoon.exception.TycoonExceptionFactory;
 import io.github.anjoismysign.util.VectorUtil;
 import org.bukkit.block.BlockFace;
 import org.bukkit.util.Vector;
 import org.jetbrains.annotations.NotNull;
-import io.github.anjoismysign.blobtycoon.exception.TycoonExceptionFactory;
 
 import java.util.Objects;
 

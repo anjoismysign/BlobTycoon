@@ -1,15 +1,5 @@
 package io.github.anjoismysign.blobtycoon.listener;
 
-import org.bukkit.Bukkit;
-import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.block.Action;
-import org.bukkit.event.inventory.InventoryClickEvent;
-import org.bukkit.event.player.PlayerDropItemEvent;
-import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.event.player.PlayerLocaleChangeEvent;
-import org.bukkit.event.player.PlayerSwapHandItemsEvent;
-import org.bukkit.inventory.EquipmentSlot;
 import io.github.anjoismysign.bloblib.api.BlobLibInventoryAPI;
 import io.github.anjoismysign.bloblib.api.BlobLibMessageAPI;
 import io.github.anjoismysign.bloblib.entities.inventory.InventoryDataRegistry;
@@ -20,9 +10,17 @@ import io.github.anjoismysign.blobtycoon.director.manager.TycoonListenerManager;
 import io.github.anjoismysign.blobtycoon.entity.PlotProfile;
 import io.github.anjoismysign.blobtycoon.entity.TycoonPlayer;
 import io.github.anjoismysign.blobtycoon.event.ProfileLoadEvent;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.block.Action;
+import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.player.PlayerDropItemEvent;
+import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.event.player.PlayerLocaleChangeEvent;
+import org.bukkit.event.player.PlayerSwapHandItemsEvent;
+import org.bukkit.inventory.EquipmentSlot;
 
 import java.util.Objects;
-import java.util.UUID;
 
 public class TycoonMenuListener extends BlobTycoonListener {
     private InventoryDataRegistry<MetaInventoryButton> registry;

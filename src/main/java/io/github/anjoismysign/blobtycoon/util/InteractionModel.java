@@ -1,6 +1,7 @@
 package io.github.anjoismysign.blobtycoon.util;
 
 
+import io.github.anjoismysign.blobtycoon.entity.TycoonKey;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.entity.Entity;
@@ -12,7 +13,6 @@ import org.bukkit.util.BoundingBox;
 import org.bukkit.util.Vector;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import io.github.anjoismysign.blobtycoon.entity.TycoonKey;
 
 import java.util.ArrayList;
 import java.util.List;

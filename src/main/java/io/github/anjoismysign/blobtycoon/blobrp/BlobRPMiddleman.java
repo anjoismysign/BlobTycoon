@@ -1,10 +1,10 @@
 package io.github.anjoismysign.blobtycoon.blobrp;
 
+import io.github.anjoismysign.bloblib.entities.translatable.TranslatableItem;
+import io.github.anjoismysign.blobtycoon.entity.Sellable;
 import org.bukkit.Bukkit;
 import org.bukkit.NamespacedKey;
 import org.jetbrains.annotations.NotNull;
-import io.github.anjoismysign.bloblib.entities.translatable.TranslatableItem;
-import io.github.anjoismysign.blobtycoon.entity.Sellable;
 
 public interface BlobRPMiddleman {
     static BlobRPMiddleman get() {

@@ -1,15 +1,19 @@
 package io.github.anjoismysign.blobtycoon.entity;
 
-import org.bukkit.Bukkit;
-import org.bukkit.entity.Player;
-import org.jetbrains.annotations.NotNull;
 import io.github.anjoismysign.bloblib.api.BlobLibEconomyAPI;
 import io.github.anjoismysign.bloblib.entities.currency.Currency;
 import io.github.anjoismysign.bloblib.vault.multieconomy.ElasticEconomy;
 import io.github.anjoismysign.blobtycoon.blobeconomy.BlobEconomyMiddleman;
 import io.github.anjoismysign.blobtycoon.util.TycoonUnit;
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+import java.util.UUID;
 
 public interface BankAccount {
     Map<UUID, Map<String, Double>> getBankBalances();

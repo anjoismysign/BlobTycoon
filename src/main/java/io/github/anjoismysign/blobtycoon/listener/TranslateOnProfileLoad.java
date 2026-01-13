@@ -1,11 +1,11 @@
 package io.github.anjoismysign.blobtycoon.listener;
 
-import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
-import org.bukkit.inventory.ItemStack;
 import io.github.anjoismysign.bloblib.entities.translatable.TranslatableItem;
 import io.github.anjoismysign.blobtycoon.director.manager.TycoonListenerManager;
 import io.github.anjoismysign.blobtycoon.event.ProfileLoadEvent;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.inventory.ItemStack;
 
 public class TranslateOnProfileLoad extends BlobTycoonListener {
     public TranslateOnProfileLoad(TycoonListenerManager listenerManager) {

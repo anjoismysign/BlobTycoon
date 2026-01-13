@@ -1,13 +1,13 @@
 package io.github.anjoismysign.blobtycoon.entity;
 
+import io.github.anjoismysign.blobtycoon.BlobTycoon;
+import io.github.anjoismysign.blobtycoon.entity.plotdata.PlotData;
+import io.github.anjoismysign.blobtycoon.util.TycoonStructrador;
 import io.github.anjoismysign.util.Structrador;
 import org.bson.types.Binary;
 import org.bukkit.util.BlockVector;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import io.github.anjoismysign.blobtycoon.BlobTycoon;
-import io.github.anjoismysign.blobtycoon.entity.plotdata.PlotData;
-import io.github.anjoismysign.blobtycoon.util.TycoonStructrador;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,8 +1,8 @@
 package io.github.anjoismysign.blobtycoon.entity;
 
+import io.github.anjoismysign.blobtycoon.entity.plotdata.PlotData;
 import io.github.anjoismysign.util.Structrador;
 import org.jetbrains.annotations.Nullable;
-import io.github.anjoismysign.blobtycoon.entity.plotdata.PlotData;
 
 /**
  * Represents a request to make a plot place.

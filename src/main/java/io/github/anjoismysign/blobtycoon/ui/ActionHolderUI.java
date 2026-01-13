@@ -1,11 +1,11 @@
 package io.github.anjoismysign.blobtycoon.ui;
 
-import org.bukkit.entity.Player;
-import org.jetbrains.annotations.NotNull;
 import io.github.anjoismysign.bloblib.api.BlobLibInventoryAPI;
 import io.github.anjoismysign.bloblib.entities.ReloadableUI;
 import io.github.anjoismysign.blobtycoon.BlobTycoonInternalAPI;
 import io.github.anjoismysign.blobtycoon.entity.TycoonPlayer;
+import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 

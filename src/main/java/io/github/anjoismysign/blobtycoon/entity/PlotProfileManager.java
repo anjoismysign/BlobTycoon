@@ -1,11 +1,5 @@
 package io.github.anjoismysign.blobtycoon.entity;
 
-import org.bson.Document;
-import org.bukkit.Bukkit;
-import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import io.github.anjoismysign.bloblib.api.BlobLibMessageAPI;
 import io.github.anjoismysign.bloblib.entities.BlobCrudable;
 import io.github.anjoismysign.bloblib.entities.DocumentDecorator;
@@ -17,6 +11,12 @@ import io.github.anjoismysign.bloblib.utilities.BlobCrudManagerFactory;
 import io.github.anjoismysign.blobtycoon.director.TycoonManager;
 import io.github.anjoismysign.blobtycoon.director.TycoonManagerDirector;
 import io.github.anjoismysign.blobtycoon.exception.NoAvailablePlotsException;
+import org.bson.Document;
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
+import org.bukkit.event.Listener;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;
 import java.util.HashMap;

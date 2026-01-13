@@ -1,17 +1,10 @@
 package io.github.anjoismysign.blobtycoon;
 
-import io.github.anjoismysign.bloblib.middleman.itemstack.ItemStackModder;
-import org.bukkit.Material;
-import org.bukkit.entity.Entity;
-import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.structure.Structure;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import io.github.anjoismysign.bloblib.api.BlobLibInventoryAPI;
 import io.github.anjoismysign.bloblib.api.BlobLibTranslatableAPI;
 import io.github.anjoismysign.bloblib.entities.translatable.TranslatableBlock;
 import io.github.anjoismysign.bloblib.entities.translatable.TranslatableItem;
+import io.github.anjoismysign.bloblib.middleman.itemstack.ItemStackModder;
 import io.github.anjoismysign.blobtycoon.director.TycoonManagerDirector;
 import io.github.anjoismysign.blobtycoon.entity.DefaultStructuresInitializer;
 import io.github.anjoismysign.blobtycoon.entity.PlotProfile;
@@ -23,6 +16,13 @@ import io.github.anjoismysign.blobtycoon.entity.structure.ObjectModel;
 import io.github.anjoismysign.blobtycoon.entity.structure.PrimitiveAsset;
 import io.github.anjoismysign.blobtycoon.entity.structure.StructureModel;
 import io.github.anjoismysign.blobtycoon.entity.structure.TycoonModelHolder;
+import org.bukkit.Material;
+import org.bukkit.entity.Entity;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.structure.Structure;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.util.ArrayList;

@@ -1,7 +1,7 @@
 package io.github.anjoismysign.blobtycoon.entity.valuable;
 
-import org.bukkit.configuration.file.YamlConfiguration;
 import io.github.anjoismysign.bloblib.entities.BlobObject;
+import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
 

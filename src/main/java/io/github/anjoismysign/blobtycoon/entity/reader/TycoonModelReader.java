@@ -1,11 +1,5 @@
 package io.github.anjoismysign.blobtycoon.entity.reader;
 
-import org.bukkit.configuration.ConfigurationSection;
-import org.bukkit.entity.Player;
-import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.structure.Structure;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import io.github.anjoismysign.bloblib.entities.translatable.TranslatableItem;
 import io.github.anjoismysign.bloblib.exception.ConfigurationFieldException;
 import io.github.anjoismysign.blobtycoon.BlobTycoonInternalAPI;
@@ -13,6 +7,12 @@ import io.github.anjoismysign.blobtycoon.entity.StructureData;
 import io.github.anjoismysign.blobtycoon.entity.structure.ObjectModel;
 import io.github.anjoismysign.blobtycoon.entity.structure.StorageModel;
 import io.github.anjoismysign.blobtycoon.entity.structure.StructureModel;
+import org.bukkit.configuration.ConfigurationSection;
+import org.bukkit.entity.Player;
+import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.structure.Structure;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Objects;
 import java.util.function.Consumer;

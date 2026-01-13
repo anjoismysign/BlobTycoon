@@ -1,10 +1,10 @@
 package io.github.anjoismysign.blobtycoon.event;
 
+import io.github.anjoismysign.blobtycoon.entity.TycoonPlayer;
+import io.github.anjoismysign.blobtycoon.entity.plothelper.PlotHelperTrade;
 import org.bukkit.event.HandlerList;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import io.github.anjoismysign.blobtycoon.entity.TycoonPlayer;
-import io.github.anjoismysign.blobtycoon.entity.plothelper.PlotHelperTrade;
 
 /**
  * Called when a TycoonPlayer is done loading, having loaded their

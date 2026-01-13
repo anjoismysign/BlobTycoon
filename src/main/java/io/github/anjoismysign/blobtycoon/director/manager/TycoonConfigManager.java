@@ -1,23 +1,27 @@
 package io.github.anjoismysign.blobtycoon.director.manager;
 
-import io.github.anjoismysign.bloblib.middleman.itemstack.ItemStackModder;
-import org.bukkit.Material;
-import org.bukkit.configuration.ConfigurationSection;
-import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
-import org.jetbrains.annotations.NotNull;
 import io.github.anjoismysign.bloblib.api.BlobLibTranslatableAPI;
 import io.github.anjoismysign.bloblib.entities.ComplexEventListener;
 import io.github.anjoismysign.bloblib.entities.ConfigDecorator;
 import io.github.anjoismysign.bloblib.entities.ListenersSection;
 import io.github.anjoismysign.bloblib.entities.TinyEventListener;
+import io.github.anjoismysign.bloblib.middleman.itemstack.ItemStackModder;
 import io.github.anjoismysign.blobtycoon.director.TycoonManager;
 import io.github.anjoismysign.blobtycoon.director.TycoonManagerDirector;
 import io.github.anjoismysign.blobtycoon.entity.configuration.BlobTycoonConfiguration;
 import io.github.anjoismysign.blobtycoon.ui.BlobTycoonUI;
+import org.bukkit.Material;
+import org.bukkit.configuration.ConfigurationSection;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Objects;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class TycoonConfigManager extends TycoonManager {

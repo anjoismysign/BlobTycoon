@@ -1,14 +1,14 @@
 package io.github.anjoismysign.blobtycoon.entity.mechanics;
 
-import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.entity.Player;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import io.github.anjoismysign.bloblib.entities.BlobObject;
 import io.github.anjoismysign.bloblib.utilities.Formatter;
 import io.github.anjoismysign.blobtycoon.util.TemperatureConversor;
 import io.github.anjoismysign.blobtycoon.util.TemperatureUnit;
 import io.github.anjoismysign.blobtycoon.util.ThousandsSeparator;
+import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.util.Objects;

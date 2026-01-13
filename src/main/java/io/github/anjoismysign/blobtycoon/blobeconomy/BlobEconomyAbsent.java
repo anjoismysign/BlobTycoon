@@ -1,7 +1,7 @@
 package io.github.anjoismysign.blobtycoon.blobeconomy;
 
-import org.jetbrains.annotations.Nullable;
 import io.github.anjoismysign.bloblib.entities.currency.Currency;
+import org.jetbrains.annotations.Nullable;
 
 public class BlobEconomyAbsent implements BlobEconomyMiddleman {
     private static BlobEconomyAbsent instance;

@@ -1,11 +1,11 @@
 package io.github.anjoismysign.blobtycoon.event;
 
-import org.bukkit.Location;
-import org.bukkit.event.HandlerList;
-import org.jetbrains.annotations.NotNull;
 import io.github.anjoismysign.blobtycoon.entity.TycoonPlayer;
 import io.github.anjoismysign.blobtycoon.entity.structure.ObjectModel;
 import io.github.anjoismysign.blobtycoon.entity.structure.TycoonModelHolder;
+import org.bukkit.Location;
+import org.bukkit.event.HandlerList;
+import org.jetbrains.annotations.NotNull;
 
 public class ObjectModelRemoveEvent extends TycoonModelHolderOperationEvent<ObjectModel> {
     private static final HandlerList HANDLERS_LIST = new HandlerList();

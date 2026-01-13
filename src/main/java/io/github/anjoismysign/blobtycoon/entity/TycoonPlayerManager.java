@@ -1,10 +1,10 @@
 package io.github.anjoismysign.blobtycoon.entity;
 
+import io.github.anjoismysign.bloblib.entities.BlobSerializableManager;
+import io.github.anjoismysign.blobtycoon.director.TycoonManagerDirector;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerQuitEvent;
-import io.github.anjoismysign.bloblib.entities.BlobSerializableManager;
-import io.github.anjoismysign.blobtycoon.director.TycoonManagerDirector;
 
 import java.util.Optional;
 import java.util.UUID;

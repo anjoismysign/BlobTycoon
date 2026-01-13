@@ -1,13 +1,13 @@
 package io.github.anjoismysign.blobtycoon.entity.configuration;
 
+import io.github.anjoismysign.bloblib.entities.positionable.Positionable;
+import io.github.anjoismysign.bloblib.exception.ConfigurationFieldException;
 import org.bukkit.Location;
 import org.bukkit.Particle;
 import org.bukkit.Registry;
 import org.bukkit.configuration.ConfigurationSection;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import io.github.anjoismysign.bloblib.entities.positionable.Positionable;
-import io.github.anjoismysign.bloblib.exception.ConfigurationFieldException;
 
 import java.util.Objects;
 

@@ -1,7 +1,7 @@
 package io.github.anjoismysign.blobtycoon.command;
 
-import io.github.anjoismysign.blobtycoon.BlobTycoonInternalAPI;
 import io.github.anjoismysign.bloblib.api.BlobLibMessageAPI;
+import io.github.anjoismysign.blobtycoon.BlobTycoonInternalAPI;
 import io.github.anjoismysign.blobtycoon.director.TycoonManagerDirector;
 import io.github.anjoismysign.blobtycoon.entity.PlotProfile;
 import io.github.anjoismysign.blobtycoon.entity.TycoonPlayer;

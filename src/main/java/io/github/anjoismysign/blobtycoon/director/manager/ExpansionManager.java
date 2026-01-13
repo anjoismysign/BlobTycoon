@@ -1,7 +1,6 @@
 package io.github.anjoismysign.blobtycoon.director.manager;
 
 import io.github.anjoismysign.aesthetic.DirectoryAssistant;
-import org.jetbrains.annotations.NotNull;
 import io.github.anjoismysign.bloblib.entities.ObjectManager;
 import io.github.anjoismysign.blobtycoon.director.TycoonManager;
 import io.github.anjoismysign.blobtycoon.director.TycoonManagerDirector;
@@ -11,6 +10,7 @@ import io.github.anjoismysign.blobtycoon.entity.asset.RackAsset;
 import io.github.anjoismysign.blobtycoon.entity.asset.StructureAsset;
 import io.github.anjoismysign.blobtycoon.entity.mechanics.MechanicsData;
 import io.github.anjoismysign.blobtycoon.entity.valuable.Valuable;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.util.HashMap;

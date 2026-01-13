@@ -1,8 +1,5 @@
 package io.github.anjoismysign.blobtycoon.entity.configuration;
 
-import org.bukkit.configuration.ConfigurationSection;
-import org.bukkit.util.Vector;
-import org.jetbrains.annotations.NotNull;
 import io.github.anjoismysign.bloblib.api.BlobLibHologramAPI;
 import io.github.anjoismysign.bloblib.entities.positionable.Positionable;
 import io.github.anjoismysign.bloblib.exception.ConfigurationFieldException;
@@ -11,6 +8,9 @@ import io.github.anjoismysign.bloblib.hologram.HologramDriver;
 import io.github.anjoismysign.bloblib.hologram.HologramDriverType;
 import io.github.anjoismysign.blobtycoon.entity.PlotProfile;
 import io.github.anjoismysign.blobtycoon.entity.plotdata.PlotData;
+import org.bukkit.configuration.ConfigurationSection;
+import org.bukkit.util.Vector;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,9 +1,9 @@
 package io.github.anjoismysign.blobtycoon.util;
 
-import org.bukkit.entity.Entity;
-import org.bukkit.entity.EntityType;
 import io.github.anjoismysign.bloblib.api.BlobLibPetAPI;
 import io.github.anjoismysign.blobtycoon.BlobTycoonInternalAPI;
+import org.bukkit.entity.Entity;
+import org.bukkit.entity.EntityType;
 
 public class PlotDiscriminator {
 

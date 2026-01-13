@@ -1,8 +1,8 @@
 package io.github.anjoismysign.blobtycoon.entity;
 
+import io.github.anjoismysign.bloblib.api.BlobLibMessageAPI;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
-import io.github.anjoismysign.bloblib.api.BlobLibMessageAPI;
 
 import java.util.List;
 import java.util.Objects;

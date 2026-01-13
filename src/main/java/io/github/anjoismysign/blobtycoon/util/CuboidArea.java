@@ -1,8 +1,8 @@
 package io.github.anjoismysign.blobtycoon.util;
 
+import io.github.anjoismysign.bloblib.entities.Cuboid;
 import org.bukkit.Location;
 import org.bukkit.util.Vector;
-import io.github.anjoismysign.bloblib.entities.Cuboid;
 
 public record CuboidArea(Location getLoc1,
                          Location getLoc2,

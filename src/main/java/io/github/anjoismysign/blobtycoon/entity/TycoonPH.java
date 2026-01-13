@@ -1,9 +1,5 @@
 package io.github.anjoismysign.blobtycoon.entity;
 
-import org.bukkit.Bukkit;
-import org.bukkit.entity.Player;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import io.github.anjoismysign.bloblib.api.BlobLibTranslatableAPI;
 import io.github.anjoismysign.bloblib.entities.BlobPHExpansion;
 import io.github.anjoismysign.bloblib.entities.translatable.TranslatableSnippet;
@@ -11,6 +7,10 @@ import io.github.anjoismysign.bloblib.utilities.TextColor;
 import io.github.anjoismysign.blobtycoon.BlobTycoon;
 import io.github.anjoismysign.blobtycoon.BlobTycoonInternalAPI;
 import io.github.anjoismysign.blobtycoon.entity.mechanics.MechanicsData;
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Objects;
 import java.util.UUID;

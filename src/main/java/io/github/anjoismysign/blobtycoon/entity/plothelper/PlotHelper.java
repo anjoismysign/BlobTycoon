@@ -1,5 +1,9 @@
 package io.github.anjoismysign.blobtycoon.entity.plothelper;
 
+import io.github.anjoismysign.blobtycoon.director.TycoonManagerDirector;
+import io.github.anjoismysign.blobtycoon.entity.ChunkCoordinates;
+import io.github.anjoismysign.blobtycoon.entity.PlotProfile;
+import io.github.anjoismysign.blobtycoon.entity.configuration.PlotHelperConfiguration;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Entity;
 import org.bukkit.inventory.Inventory;
@@ -7,10 +11,6 @@ import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import io.github.anjoismysign.blobtycoon.director.TycoonManagerDirector;
-import io.github.anjoismysign.blobtycoon.entity.ChunkCoordinates;
-import io.github.anjoismysign.blobtycoon.entity.PlotProfile;
-import io.github.anjoismysign.blobtycoon.entity.configuration.PlotHelperConfiguration;
 
 import java.util.HashMap;
 import java.util.Map;

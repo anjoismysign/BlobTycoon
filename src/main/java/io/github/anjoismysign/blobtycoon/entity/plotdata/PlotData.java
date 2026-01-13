@@ -1,5 +1,11 @@
 package io.github.anjoismysign.blobtycoon.entity.plotdata;
 
+import io.github.anjoismysign.bloblib.entities.BlobObject;
+import io.github.anjoismysign.bloblib.entities.Cuboid;
+import io.github.anjoismysign.bloblib.exception.ConfigurationFieldException;
+import io.github.anjoismysign.blobtycoon.BlobTycoonInternalAPI;
+import io.github.anjoismysign.blobtycoon.entity.StructureDirection;
+import io.github.anjoismysign.blobtycoon.util.PlotDiscriminator;
 import io.github.anjoismysign.util.VectorUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -14,12 +20,6 @@ import org.bukkit.util.BoundingBox;
 import org.bukkit.util.Vector;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import io.github.anjoismysign.bloblib.entities.BlobObject;
-import io.github.anjoismysign.bloblib.entities.Cuboid;
-import io.github.anjoismysign.bloblib.exception.ConfigurationFieldException;
-import io.github.anjoismysign.blobtycoon.BlobTycoonInternalAPI;
-import io.github.anjoismysign.blobtycoon.entity.StructureDirection;
-import io.github.anjoismysign.blobtycoon.util.PlotDiscriminator;
 
 import java.io.File;
 import java.io.IOException;

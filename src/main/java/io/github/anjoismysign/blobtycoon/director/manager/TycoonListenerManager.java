@@ -1,6 +1,5 @@
 package io.github.anjoismysign.blobtycoon.director.manager;
 
-import org.bukkit.Bukkit;
 import io.github.anjoismysign.bloblib.entities.ListenerManager;
 import io.github.anjoismysign.blobtycoon.director.TycoonManagerDirector;
 import io.github.anjoismysign.blobtycoon.listener.BlobTycoonListener;
@@ -27,6 +26,7 @@ import io.github.anjoismysign.blobtycoon.listener.objectmodel.ObjectModelRemoveI
 import io.github.anjoismysign.blobtycoon.listener.structuremodel.StructureModelRemoveHit;
 import io.github.anjoismysign.blobtycoon.listener.structuremodel.StructureModelRemoveInteract;
 import io.github.anjoismysign.blobtycoon.listener.structuremodel.StructureModelSelection;
+import org.bukkit.Bukkit;
 
 public class TycoonListenerManager extends ListenerManager {
     private TycoonManagerDirector managerDirector;

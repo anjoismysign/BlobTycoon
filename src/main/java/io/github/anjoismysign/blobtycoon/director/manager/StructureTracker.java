@@ -1,7 +1,7 @@
 package io.github.anjoismysign.blobtycoon.director.manager;
 
-import io.github.anjoismysign.blobtycoon.BlobTycoonInternalAPI;
 import io.github.anjoismysign.aesthetic.DirectoryAssistant;
+import io.github.anjoismysign.blobtycoon.BlobTycoonInternalAPI;
 import io.github.anjoismysign.blobtycoon.director.TycoonManager;
 import io.github.anjoismysign.blobtycoon.director.TycoonManagerDirector;
 import org.bukkit.Bukkit;

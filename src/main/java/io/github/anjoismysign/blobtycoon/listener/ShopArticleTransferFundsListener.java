@@ -1,16 +1,16 @@
 package io.github.anjoismysign.blobtycoon.listener;
 
-import net.milkbowl.vault.economy.IdentityEconomy;
-import org.bukkit.Bukkit;
-import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.HandlerList;
 import io.github.anjoismysign.bloblib.api.BlobLibEconomyAPI;
 import io.github.anjoismysign.blobrp.events.ShopArticleSaleFailEvent;
 import io.github.anjoismysign.blobtycoon.BlobTycoonInternalAPI;
 import io.github.anjoismysign.blobtycoon.director.manager.TycoonListenerManager;
 import io.github.anjoismysign.blobtycoon.entity.PlotProfile;
 import io.github.anjoismysign.blobtycoon.entity.TycoonPlayer;
+import net.milkbowl.vault.economy.IdentityEconomy;
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.HandlerList;
 
 import java.util.Optional;
 

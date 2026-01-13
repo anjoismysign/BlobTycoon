@@ -1,15 +1,5 @@
 package io.github.anjoismysign.blobtycoon.listener.structuremodel;
 
-import org.bukkit.Bukkit;
-import org.bukkit.block.BlockFace;
-import org.bukkit.entity.EntityType;
-import org.bukkit.entity.ItemFrame;
-import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.player.PlayerInteractAtEntityEvent;
-import org.bukkit.inventory.EquipmentSlot;
-import org.bukkit.persistence.PersistentDataContainer;
-import org.bukkit.persistence.PersistentDataType;
 import io.github.anjoismysign.bloblib.api.BlobLibInventoryAPI;
 import io.github.anjoismysign.bloblib.api.BlobLibMessageAPI;
 import io.github.anjoismysign.bloblib.utilities.PlayerUtil;
@@ -26,6 +16,16 @@ import io.github.anjoismysign.blobtycoon.entity.structure.StructureModel;
 import io.github.anjoismysign.blobtycoon.entity.structure.TycoonModelHolder;
 import io.github.anjoismysign.blobtycoon.event.StructureModelRemoveEvent;
 import io.github.anjoismysign.blobtycoon.listener.BlobTycoonListener;
+import org.bukkit.Bukkit;
+import org.bukkit.block.BlockFace;
+import org.bukkit.entity.EntityType;
+import org.bukkit.entity.ItemFrame;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.player.PlayerInteractAtEntityEvent;
+import org.bukkit.inventory.EquipmentSlot;
+import org.bukkit.persistence.PersistentDataContainer;
+import org.bukkit.persistence.PersistentDataType;
 
 public class StructureModelRemoveInteract extends BlobTycoonListener {
     public StructureModelRemoveInteract(TycoonListenerManager listenerManager) {

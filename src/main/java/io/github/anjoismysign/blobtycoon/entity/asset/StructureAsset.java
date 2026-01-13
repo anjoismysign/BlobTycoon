@@ -1,11 +1,11 @@
 package io.github.anjoismysign.blobtycoon.entity.asset;
 
-import io.github.anjoismysign.blobtycoon.BlobTycoonInternalAPI;
 import io.github.anjoismysign.anjo.entities.Tuple2;
 import io.github.anjoismysign.anjo.entities.Uber;
 import io.github.anjoismysign.bloblib.action.Action;
 import io.github.anjoismysign.bloblib.entities.translatable.TranslatableItem;
 import io.github.anjoismysign.bloblib.utilities.TextColor;
+import io.github.anjoismysign.blobtycoon.BlobTycoonInternalAPI;
 import io.github.anjoismysign.blobtycoon.director.TycoonManagerDirector;
 import io.github.anjoismysign.blobtycoon.entity.ActionHolder;
 import io.github.anjoismysign.blobtycoon.entity.ActionHolderData;

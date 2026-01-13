@@ -1,11 +1,11 @@
 package io.github.anjoismysign.blobtycoon.entity.plothelper;
 
+import io.github.anjoismysign.bloblib.api.BlobLibInventoryAPI;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import io.github.anjoismysign.bloblib.api.BlobLibInventoryAPI;
 
 import java.util.List;
 import java.util.Map;

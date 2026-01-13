@@ -1,9 +1,9 @@
 package io.github.anjoismysign.blobtycoon.entity;
 
+import io.github.anjoismysign.bloblib.entities.SerializableProfile;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import io.github.anjoismysign.bloblib.entities.SerializableProfile;
 
 import java.util.HashMap;
 import java.util.Map;

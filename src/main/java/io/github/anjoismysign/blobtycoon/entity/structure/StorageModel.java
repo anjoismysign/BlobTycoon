@@ -1,12 +1,12 @@
 package io.github.anjoismysign.blobtycoon.entity.structure;
 
-import io.github.anjoismysign.blobtycoon.BlobTycoonInternalAPI;
 import io.github.anjoismysign.anjo.entities.Tuple2;
 import io.github.anjoismysign.anjo.entities.Uber;
 import io.github.anjoismysign.bloblib.api.BlobLibMessageAPI;
 import io.github.anjoismysign.bloblib.entities.Cuboid;
 import io.github.anjoismysign.bloblib.entities.message.BlobSound;
 import io.github.anjoismysign.bloblib.exception.ConfigurationFieldException;
+import io.github.anjoismysign.blobtycoon.BlobTycoonInternalAPI;
 import io.github.anjoismysign.blobtycoon.entity.Plot;
 import io.github.anjoismysign.blobtycoon.entity.PlotExpansion;
 import io.github.anjoismysign.blobtycoon.entity.PlotObject;

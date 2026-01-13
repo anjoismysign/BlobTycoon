@@ -1,16 +1,5 @@
 package io.github.anjoismysign.blobtycoon.ui;
 
-import io.papermc.paper.registry.RegistryAccess;
-import io.papermc.paper.registry.RegistryKey;
-import net.kyori.adventure.key.Key;
-import net.milkbowl.vault.economy.IdentityEconomy;
-import org.bukkit.Bukkit;
-import org.bukkit.Registry;
-import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.ItemType;
-import org.bukkit.inventory.meta.ItemMeta;
-import org.jetbrains.annotations.NotNull;
 import io.github.anjoismysign.bloblib.api.BlobLibEconomyAPI;
 import io.github.anjoismysign.bloblib.api.BlobLibInventoryAPI;
 import io.github.anjoismysign.bloblib.api.BlobLibListenerAPI;
@@ -35,13 +24,23 @@ import io.github.anjoismysign.blobtycoon.entity.plothelper.PlotHelperTradeData;
 import io.github.anjoismysign.blobtycoon.entity.plothelper.PlotHelperTradeFactory;
 import io.github.anjoismysign.blobtycoon.event.TradeSaleFailEvent;
 import io.github.anjoismysign.blobtycoon.ui.context.CreateTradeContext;
+import io.papermc.paper.registry.RegistryAccess;
+import io.papermc.paper.registry.RegistryKey;
+import net.kyori.adventure.key.Key;
+import net.milkbowl.vault.economy.IdentityEconomy;
+import org.bukkit.Bukkit;
+import org.bukkit.Registry;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.ItemType;
+import org.bukkit.inventory.meta.ItemMeta;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
-import java.util.UUID;
 
 public class PlotHelperUI implements ReloadableUI {
     protected PlotHelperUI() {

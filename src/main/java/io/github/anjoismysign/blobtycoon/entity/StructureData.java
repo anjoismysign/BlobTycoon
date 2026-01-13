@@ -1,11 +1,11 @@
 package io.github.anjoismysign.blobtycoon.entity;
 
+import io.github.anjoismysign.bloblib.exception.ConfigurationFieldException;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.util.Vector;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import io.github.anjoismysign.bloblib.exception.ConfigurationFieldException;
 
 public record StructureData(@NotNull Vector getArea,
                             @NotNull Vector getRemovePivot,

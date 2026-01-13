@@ -1,10 +1,5 @@
 package io.github.anjoismysign.blobtycoon.entity.plotdata;
 
-import org.bukkit.Bukkit;
-import org.bukkit.block.Block;
-import org.bukkit.entity.Player;
-import org.bukkit.scheduler.BukkitTask;
-import org.bukkit.util.BlockVector;
 import io.github.anjoismysign.bloblib.api.BlobLibSoundAPI;
 import io.github.anjoismysign.bloblib.entities.PlayerAddress;
 import io.github.anjoismysign.bloblib.entities.inventory.BlobInventory;
@@ -15,6 +10,11 @@ import io.github.anjoismysign.bloblib.entities.message.BlobSound;
 import io.github.anjoismysign.blobtycoon.director.manager.PlotManager;
 import io.github.anjoismysign.blobtycoon.entity.StructureDirection;
 import io.github.anjoismysign.blobtycoon.entity.selection.Selector;
+import org.bukkit.Bukkit;
+import org.bukkit.block.Block;
+import org.bukkit.entity.Player;
+import org.bukkit.scheduler.BukkitTask;
+import org.bukkit.util.BlockVector;
 
 import java.io.File;
 import java.util.UUID;

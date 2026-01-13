@@ -1,8 +1,8 @@
 package io.github.anjoismysign.blobtycoon.entity;
 
-import io.github.anjoismysign.blobtycoon.BlobTycoonInternalAPI;
 import io.github.anjoismysign.bloblib.exception.ConfigurationFieldException;
 import io.github.anjoismysign.blobpets.entity.petexpansion.PetExpansion;
+import io.github.anjoismysign.blobtycoon.BlobTycoonInternalAPI;
 import io.github.anjoismysign.blobtycoon.entity.tycoonattribute.TycoonAttributeModifier;
 import io.github.anjoismysign.blobtycoon.entity.tycoonattribute.TycoonAttributeOperation;
 import org.bukkit.configuration.ConfigurationSection;

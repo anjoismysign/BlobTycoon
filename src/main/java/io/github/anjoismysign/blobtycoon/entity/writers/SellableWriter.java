@@ -1,7 +1,7 @@
 package io.github.anjoismysign.blobtycoon.entity.writers;
 
-import org.bukkit.configuration.ConfigurationSection;
 import io.github.anjoismysign.blobtycoon.entity.Sellable;
+import org.bukkit.configuration.ConfigurationSection;
 
 public class SellableWriter {
     public static void WRITE(Sellable sellable, ConfigurationSection section) {

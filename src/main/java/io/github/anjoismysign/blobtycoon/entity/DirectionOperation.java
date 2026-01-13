@@ -1,7 +1,7 @@
 package io.github.anjoismysign.blobtycoon.entity;
 
-import org.bukkit.block.structure.StructureRotation;
 import io.github.anjoismysign.blobtycoon.exception.TycoonExceptionFactory;
+import org.bukkit.block.structure.StructureRotation;
 
 /**
  * Represents an operation to perform on a structure.

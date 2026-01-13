@@ -1,8 +1,8 @@
 package io.github.anjoismysign.blobtycoon;
 
-import org.jetbrains.annotations.Nullable;
 import io.github.anjoismysign.blobtycoon.director.TycoonManagerDirector;
 import io.github.anjoismysign.blobtycoon.entity.valuable.ValuableDriver;
+import org.jetbrains.annotations.Nullable;
 
 public class BlobTycoonValuableAPI {
     private static BlobTycoonValuableAPI instance;

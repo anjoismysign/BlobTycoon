@@ -1,6 +1,5 @@
 package io.github.anjoismysign.blobtycoon;
 
-import org.bukkit.Bukkit;
 import io.github.anjoismysign.bloblib.managers.BlobPlugin;
 import io.github.anjoismysign.bloblib.managers.IManagerDirector;
 import io.github.anjoismysign.blobtycoon.blobeconomy.BlobEconomyAbsent;
@@ -8,6 +7,7 @@ import io.github.anjoismysign.blobtycoon.blobeconomy.BlobEconomyFound;
 import io.github.anjoismysign.blobtycoon.blobeconomy.BlobEconomyMiddleman;
 import io.github.anjoismysign.blobtycoon.director.TycoonManagerDirector;
 import io.github.anjoismysign.blobtycoon.entity.TycoonPH;
+import org.bukkit.Bukkit;
 
 public final class BlobTycoon extends BlobPlugin {
     private static BlobTycoon INSTANCE;

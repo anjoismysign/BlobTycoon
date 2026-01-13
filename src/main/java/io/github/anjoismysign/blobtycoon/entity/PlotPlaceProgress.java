@@ -2,6 +2,9 @@ package io.github.anjoismysign.blobtycoon.entity;
 
 import io.github.anjoismysign.bloblib.api.BlobLibDisguiseAPI;
 import io.github.anjoismysign.bloblib.disguises.Disguiser;
+import io.github.anjoismysign.blobtycoon.BlobTycoonInternalAPI;
+import io.github.anjoismysign.blobtycoon.entity.configuration.PlotPlacingConfiguration;
+import io.github.anjoismysign.blobtycoon.entity.plotdata.PlotData;
 import io.github.anjoismysign.blobtycoon.util.BTDisguiseAPI;
 import io.github.anjoismysign.util.Structrador;
 import org.bukkit.Location;
@@ -9,9 +12,6 @@ import org.bukkit.block.structure.Mirror;
 import org.bukkit.block.structure.StructureRotation;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.jetbrains.annotations.Nullable;
-import io.github.anjoismysign.blobtycoon.BlobTycoonInternalAPI;
-import io.github.anjoismysign.blobtycoon.entity.configuration.PlotPlacingConfiguration;
-import io.github.anjoismysign.blobtycoon.entity.plotdata.PlotData;
 
 import java.util.Queue;
 import java.util.Random;

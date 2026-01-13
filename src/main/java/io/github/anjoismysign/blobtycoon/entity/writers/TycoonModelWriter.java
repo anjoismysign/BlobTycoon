@@ -1,9 +1,9 @@
 package io.github.anjoismysign.blobtycoon.entity.writers;
 
-import org.bukkit.configuration.ConfigurationSection;
 import io.github.anjoismysign.blobtycoon.entity.StructureData;
 import io.github.anjoismysign.blobtycoon.entity.structure.StructureModel;
 import io.github.anjoismysign.blobtycoon.entity.structure.TycoonModel;
+import org.bukkit.configuration.ConfigurationSection;
 
 public class TycoonModelWriter {
     public static void WRITE(TycoonModel model, ConfigurationSection section) {

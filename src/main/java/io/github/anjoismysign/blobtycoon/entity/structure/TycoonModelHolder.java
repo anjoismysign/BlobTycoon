@@ -1,14 +1,14 @@
 package io.github.anjoismysign.blobtycoon.entity.structure;
 
-import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import io.github.anjoismysign.bloblib.entities.BlobObject;
 import io.github.anjoismysign.bloblib.entities.translatable.TranslatableItem;
 import io.github.anjoismysign.blobtycoon.entity.MechanicsProcessorHolder;
 import io.github.anjoismysign.blobtycoon.entity.ScalarEarnerHolder;
 import io.github.anjoismysign.blobtycoon.entity.Sellable;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public interface TycoonModelHolder<T extends TycoonModel> extends BlobObject,
         MechanicsProcessorHolder, ScalarEarnerHolder {

@@ -1,8 +1,5 @@
 package io.github.anjoismysign.blobtycoon.entity.valuable.drivers;
 
-import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
-import org.jetbrains.annotations.NotNull;
 import io.github.anjoismysign.bloblib.api.BlobLibEconomyAPI;
 import io.github.anjoismysign.bloblib.entities.translatable.TranslatableItem;
 import io.github.anjoismysign.blobtycoon.BlobTycoonInternalAPI;
@@ -10,6 +7,9 @@ import io.github.anjoismysign.blobtycoon.entity.PlotProfile;
 import io.github.anjoismysign.blobtycoon.entity.TycoonPlayer;
 import io.github.anjoismysign.blobtycoon.entity.valuable.ValuableDriver;
 import io.github.anjoismysign.blobtycoon.util.TycoonUnit;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
