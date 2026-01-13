@@ -1,9 +1,9 @@
 package io.github.anjoismysign.blobtycoon.util;
 
+import io.github.anjoismysign.util.VectorUtil;
 import org.bukkit.block.BlockFace;
 import org.bukkit.util.Vector;
 import org.jetbrains.annotations.NotNull;
-import io.github.anjoismysign.bloblib.utilities.VectorUtil;
 import io.github.anjoismysign.blobtycoon.exception.TycoonExceptionFactory;
 
 import java.util.Objects;
@@ -83,7 +83,7 @@ public record Vectorator(Vector getVector) {
     public Vector rotate(int degree) {
         if (degree == 0)
             return getVector;
-        return VectorUtil.rotateVector(getVector, degree);
+        return VectorUtil.rotateBlockVector(getVector, degree);
     }
 
     /**

@@ -167,7 +167,7 @@ public class TycoonModelReader {
             }
 
             @Override
-            public String getType() {
+            public @NotNull String getType() {
                 return type;
             }
 
@@ -247,7 +247,7 @@ public class TycoonModelReader {
             }
 
             @Override
-            public String getType() {
+            public @NotNull String getType() {
                 return type;
             }
 

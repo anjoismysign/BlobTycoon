@@ -1,7 +1,6 @@
 package io.github.anjoismysign.blobtycoon.entity;
 
-
-import io.github.anjoismysign.bloblib.utilities.Structrador;
+import io.github.anjoismysign.util.Structrador;
 
 public enum DefaultStructures {
     STOCK(DefaultStructuresInitializer.getStock()),

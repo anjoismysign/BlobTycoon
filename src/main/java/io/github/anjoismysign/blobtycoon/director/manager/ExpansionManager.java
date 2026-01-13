@@ -1,8 +1,8 @@
 package io.github.anjoismysign.blobtycoon.director.manager;
 
+import io.github.anjoismysign.aesthetic.DirectoryAssistant;
 import org.jetbrains.annotations.NotNull;
 import io.github.anjoismysign.bloblib.entities.ObjectManager;
-import io.github.anjoismysign.bloblib.utilities.HandyDirectory;
 import io.github.anjoismysign.blobtycoon.director.TycoonManager;
 import io.github.anjoismysign.blobtycoon.director.TycoonManagerDirector;
 import io.github.anjoismysign.blobtycoon.entity.AssetType;
@@ -33,8 +33,8 @@ public class ExpansionManager extends TycoonManager {
     }
 
     public void reload() {
-        HandyDirectory handyDirectory = HandyDirectory.of(expansionDirectory);
-        for (File file : handyDirectory.listFiles("zip")) {
+        DirectoryAssistant directoryAssistant = DirectoryAssistant.of(expansionDirectory);
+        for (File file : directoryAssistant.listFiles("zip")) {
             if (!loadExpansion(file))
                 getPlugin().getLogger().severe("Failed to load expansion: " + file.getName());
         }
@@ -52,54 +52,54 @@ public class ExpansionManager extends TycoonManager {
         TycoonManagerDirector director = getManagerDirector();
         if (!director.loadBlobLibExpansion(expansion))
             return false;
-        HandyDirectory handyDirectory = HandyDirectory.of(expansionOutputFile);
+        DirectoryAssistant directoryAssistant = DirectoryAssistant.of(expansionOutputFile);
         Map<AssetType, List<File>> assets = new HashMap<>();
         Map<AssetType, File> assetsDirectory = new HashMap<>();
-        for (File directory : handyDirectory.listDirectories()) {
+        for (File directory : directoryAssistant.listDirectories()) {
             if (directory.getName().equals(AssetType.STRUCTURE.getDirectoryName())) {
-                HandyDirectory subDirectory = HandyDirectory.of(directory);
+                DirectoryAssistant subDirectory = DirectoryAssistant.of(directory);
                 List<File> list = subDirectory.listRecursively("nbt").stream().toList();
                 assets.put(AssetType.STRUCTURE, list);
                 assetsDirectory.put(AssetType.STRUCTURE, directory);
                 continue;
             }
             if (directory.getName().equals(AssetType.RACK_ASSET.getDirectoryName())) {
-                HandyDirectory subDirectory = HandyDirectory.of(directory);
+                DirectoryAssistant subDirectory = DirectoryAssistant.of(directory);
                 List<File> list = subDirectory.listRecursively("yml").stream().toList();
                 assets.put(AssetType.RACK_ASSET, list);
                 assetsDirectory.put(AssetType.RACK_ASSET, directory);
                 continue;
             }
             if (directory.getName().equals(AssetType.OBJECT_ASSET.getDirectoryName())) {
-                HandyDirectory subDirectory = HandyDirectory.of(directory);
+                DirectoryAssistant subDirectory = DirectoryAssistant.of(directory);
                 List<File> list = subDirectory.listRecursively("yml").stream().toList();
                 assets.put(AssetType.OBJECT_ASSET, list);
                 assetsDirectory.put(AssetType.OBJECT_ASSET, directory);
                 continue;
             }
             if (directory.getName().equals(AssetType.STRUCTURE_ASSET.getDirectoryName())) {
-                HandyDirectory subDirectory = HandyDirectory.of(directory);
+                DirectoryAssistant subDirectory = DirectoryAssistant.of(directory);
                 List<File> list = subDirectory.listRecursively("yml").stream().toList();
                 assets.put(AssetType.STRUCTURE_ASSET, list);
                 assetsDirectory.put(AssetType.STRUCTURE_ASSET, directory);
                 continue;
             }
             if (directory.getName().equals(AssetType.MECHANICS_DATA.getDirectoryName())) {
-                HandyDirectory subDirectory = HandyDirectory.of(directory);
+                DirectoryAssistant subDirectory = DirectoryAssistant.of(directory);
                 List<File> list = subDirectory.listRecursively("yml").stream().toList();
                 assets.put(AssetType.MECHANICS_DATA, list);
                 assetsDirectory.put(AssetType.MECHANICS_DATA, directory);
                 continue;
             }
             if (directory.getName().equals(AssetType.VALUABLE.getDirectoryName())) {
-                HandyDirectory subDirectory = HandyDirectory.of(directory);
+                DirectoryAssistant subDirectory = DirectoryAssistant.of(directory);
                 List<File> list = subDirectory.listRecursively("yml").stream().toList();
                 assets.put(AssetType.VALUABLE, list);
                 assetsDirectory.put(AssetType.VALUABLE, directory);
                 continue;
             }
             if (directory.getName().equals(AssetType.TYCOON_PET.getDirectoryName())) {
-                HandyDirectory subDirectory = HandyDirectory.of(directory);
+                DirectoryAssistant subDirectory = DirectoryAssistant.of(directory);
                 List<File> list = subDirectory.listRecursively("yml").stream().toList();
                 assets.put(AssetType.TYCOON_PET, list);
                 assetsDirectory.put(AssetType.TYCOON_PET, directory);
@@ -116,7 +116,7 @@ public class ExpansionManager extends TycoonManager {
                 objectManager.loadFile(file, e -> {
                 });
             });
-            HandyDirectory.of(assetsDirectory.get(AssetType.MECHANICS_DATA)).deleteRecursively();
+            DirectoryAssistant.of(assetsDirectory.get(AssetType.MECHANICS_DATA)).deleteRecursively();
         }
         List<File> valuable = assets.get(AssetType.VALUABLE);
         if (valuable != null && !valuable.isEmpty()) {
@@ -125,13 +125,13 @@ public class ExpansionManager extends TycoonManager {
                 objectManager.loadFile(file, e -> {
                 });
             });
-            HandyDirectory.of(assetsDirectory.get(AssetType.VALUABLE)).deleteRecursively();
+            DirectoryAssistant.of(assetsDirectory.get(AssetType.VALUABLE)).deleteRecursively();
         }
         List<File> structure = assets.get(AssetType.STRUCTURE);
         if (structure != null && !structure.isEmpty()) {
             StructureTracker tracker = director.getStructureTracker();
             structure.forEach(tracker::load);
-            HandyDirectory.of(assetsDirectory.get(AssetType.STRUCTURE)).deleteRecursively();
+            DirectoryAssistant.of(assetsDirectory.get(AssetType.STRUCTURE)).deleteRecursively();
         }
         List<File> rackAsset = assets.get(AssetType.RACK_ASSET);
         if (rackAsset != null && !rackAsset.isEmpty()) {
@@ -140,7 +140,7 @@ public class ExpansionManager extends TycoonManager {
                 objectManager.loadFile(file, e -> {
                 });
             });
-            HandyDirectory.of(assetsDirectory.get(AssetType.RACK_ASSET)).deleteRecursively();
+            DirectoryAssistant.of(assetsDirectory.get(AssetType.RACK_ASSET)).deleteRecursively();
         }
         List<File> objectAsset = assets.get(AssetType.OBJECT_ASSET);
         if (objectAsset != null && !objectAsset.isEmpty()) {
@@ -149,7 +149,7 @@ public class ExpansionManager extends TycoonManager {
                 objectManager.loadFile(file, e -> {
                 });
             });
-            HandyDirectory.of(assetsDirectory.get(AssetType.OBJECT_ASSET)).deleteRecursively();
+            DirectoryAssistant.of(assetsDirectory.get(AssetType.OBJECT_ASSET)).deleteRecursively();
         }
         List<File> structureAsset = assets.get(AssetType.STRUCTURE_ASSET);
         if (structureAsset != null && !structureAsset.isEmpty()) {
@@ -158,7 +158,7 @@ public class ExpansionManager extends TycoonManager {
                 objectManager.loadFile(file, e -> {
                 });
             });
-            HandyDirectory.of(assetsDirectory.get(AssetType.STRUCTURE_ASSET)).deleteRecursively();
+            DirectoryAssistant.of(assetsDirectory.get(AssetType.STRUCTURE_ASSET)).deleteRecursively();
         }
         List<File> tycoonPet = assets.get(AssetType.TYCOON_PET);
         if (tycoonPet != null && !tycoonPet.isEmpty()) {

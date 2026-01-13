@@ -1,7 +1,7 @@
 package io.github.anjoismysign.blobtycoon.entity;
 
+import io.github.anjoismysign.util.Structrador;
 import org.jetbrains.annotations.Nullable;
-import io.github.anjoismysign.bloblib.utilities.Structrador;
 import io.github.anjoismysign.blobtycoon.entity.plotdata.PlotData;
 
 /**

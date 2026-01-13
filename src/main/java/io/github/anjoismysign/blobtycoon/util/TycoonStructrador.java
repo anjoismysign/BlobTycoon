@@ -1,11 +1,11 @@
 package io.github.anjoismysign.blobtycoon.util;
 
 import io.github.anjoismysign.anjo.entities.Uber;
-import io.github.anjoismysign.bloblib.entities.ChainedTask;
-import io.github.anjoismysign.bloblib.entities.ChainedTaskProgress;
-import io.github.anjoismysign.bloblib.utilities.BlockFaceUtil;
-import io.github.anjoismysign.bloblib.utilities.Structrador;
-import io.github.anjoismysign.bloblib.utilities.VectorUtil;
+import io.github.anjoismysign.util.BlockFaceUtil;
+import io.github.anjoismysign.util.ChainedTask;
+import io.github.anjoismysign.util.ChainedTaskProgress;
+import io.github.anjoismysign.util.Structrador;
+import io.github.anjoismysign.util.VectorUtil;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.block.BlockFace;
@@ -126,7 +126,7 @@ public class TycoonStructrador extends Structrador {
                     while (blockIterator.hasNext() && placed.thanks() < maxPlacedPerPeriod) {
                         BlockState next = blockIterator.next();
                         Vector nextVector = next.getLocation().toVector();
-                        Vector result = VectorUtil.rotateVector(nextVector, degree);
+                        Vector result = VectorUtil.rotateBlockVector(nextVector, degree);
                         Location blockLocation = location.clone()
                                 .add(result.getX() + blockOffset.getX(),
                                         result.getY() + blockOffset.getY(),
@@ -168,7 +168,7 @@ public class TycoonStructrador extends Structrador {
                             Entity next = entityIterator.next();
                             Location nextLocation = next.getLocation();
                             Vector nextVector = nextLocation.toVector();
-                            Vector result = VectorUtil.floatRotateVector(nextVector, degree);
+                            Vector result = VectorUtil.rotateVector(nextVector, degree);
                             Location entityLocation = location.clone()
                                     .add(result.getX() + entityOffset.getX(),
                                             result.getY() + entityOffset.getY(),

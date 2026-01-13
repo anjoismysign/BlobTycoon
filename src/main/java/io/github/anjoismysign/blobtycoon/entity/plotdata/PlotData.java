@@ -1,5 +1,6 @@
 package io.github.anjoismysign.blobtycoon.entity.plotdata;
 
+import io.github.anjoismysign.util.VectorUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -16,7 +17,6 @@ import org.jetbrains.annotations.Nullable;
 import io.github.anjoismysign.bloblib.entities.BlobObject;
 import io.github.anjoismysign.bloblib.entities.Cuboid;
 import io.github.anjoismysign.bloblib.exception.ConfigurationFieldException;
-import io.github.anjoismysign.bloblib.utilities.VectorUtil;
 import io.github.anjoismysign.blobtycoon.BlobTycoonInternalAPI;
 import io.github.anjoismysign.blobtycoon.entity.StructureDirection;
 import io.github.anjoismysign.blobtycoon.util.PlotDiscriminator;
