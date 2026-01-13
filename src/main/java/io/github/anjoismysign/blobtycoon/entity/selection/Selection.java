@@ -23,7 +23,7 @@ public record Selection(@NotNull World getWorld,
                         @NotNull BlockVector getMin,
                         @NotNull BlockVector getMax,
                         @NotNull List<Location> getEdges,
-                        @NotNull double getDistance) {
+                        double getDistance) {
 
     /**
      * Will get a Selection from two locations.
