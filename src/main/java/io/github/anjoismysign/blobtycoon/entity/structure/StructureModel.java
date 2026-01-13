@@ -1,7 +1,6 @@
 package io.github.anjoismysign.blobtycoon.entity.structure;
 
 import io.github.anjoismysign.bloblib.api.BlobLibMessageAPI;
-import io.github.anjoismysign.bloblib.entities.Cuboid;
 import io.github.anjoismysign.bloblib.entities.message.BlobSound;
 import io.github.anjoismysign.blobtycoon.BlobTycoonInternalAPI;
 import io.github.anjoismysign.blobtycoon.entity.Plot;
@@ -20,6 +19,7 @@ import io.github.anjoismysign.blobtycoon.util.CuboidArea;
 import io.github.anjoismysign.blobtycoon.util.PlotDiscriminator;
 import io.github.anjoismysign.blobtycoon.util.TycoonStructrador;
 import io.github.anjoismysign.blobtycoon.util.Vectorator;
+import io.github.anjoismysign.util.Cuboid;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;

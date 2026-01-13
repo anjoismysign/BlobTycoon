@@ -2,7 +2,6 @@ package io.github.anjoismysign.blobtycoon.entity.structure;
 
 import io.github.anjoismysign.anjo.entities.Tuple2;
 import io.github.anjoismysign.bloblib.api.BlobLibMessageAPI;
-import io.github.anjoismysign.bloblib.entities.Cuboid;
 import io.github.anjoismysign.bloblib.entities.message.BlobSound;
 import io.github.anjoismysign.bloblib.entities.translatable.TranslatableItem;
 import io.github.anjoismysign.bloblib.utilities.PlayerUtil;
@@ -15,6 +14,7 @@ import io.github.anjoismysign.blobtycoon.entity.asset.ObjectAsset;
 import io.github.anjoismysign.blobtycoon.entity.asset.RackAsset;
 import io.github.anjoismysign.blobtycoon.util.InteractionModel;
 import io.github.anjoismysign.blobtycoon.util.TycoonStructrador;
+import io.github.anjoismysign.util.Cuboid;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;

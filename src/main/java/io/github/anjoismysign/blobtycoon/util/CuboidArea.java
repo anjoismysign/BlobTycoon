@@ -1,6 +1,6 @@
 package io.github.anjoismysign.blobtycoon.util;
 
-import io.github.anjoismysign.bloblib.entities.Cuboid;
+import io.github.anjoismysign.util.Cuboid;
 import org.bukkit.Location;
 import org.bukkit.util.Vector;
 

@@ -1,10 +1,10 @@
 package io.github.anjoismysign.blobtycoon.entity.selection;
 
-import io.github.anjoismysign.bloblib.entities.Cuboid;
 import io.github.anjoismysign.blobtycoon.entity.configuration.SelectionConfiguration;
 import io.github.anjoismysign.blobtycoon.exception.TycoonExceptionFactory;
 import io.github.anjoismysign.blobtycoon.util.CuboidArea;
 import io.github.anjoismysign.blobtycoon.util.Vectorator;
+import io.github.anjoismysign.util.Cuboid;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
