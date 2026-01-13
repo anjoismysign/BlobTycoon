@@ -209,7 +209,6 @@ public interface StorageModel extends StructureModel {
         face = plotData.localize(face);
 
         Location location = itemFrame.getLocation();
-        World world = location.getWorld();
         Location origin = location.clone();
         Vector removePivot = Vectorator.of(getStructureData().getRemovePivot()).rotate(face);
         Vector removeRelativeOffset = getStructureData().getRemoveRelativeOffset() == null ?
