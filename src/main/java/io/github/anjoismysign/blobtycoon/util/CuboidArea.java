@@ -9,7 +9,6 @@ public record CuboidArea(Location getLoc1,
                          Cuboid cuboid) {
 
     public static CuboidArea of(Location location, Vector pos1, Vector pos2) {
-        int floor = location.getBlockY();
         int x1 = location.getBlockX() + pos1.getBlockX();
         int y1 = location.getBlockY() + pos1.getBlockY();
         int z1 = location.getBlockZ() + pos1.getBlockZ();
