@@ -22,7 +22,6 @@ import io.github.anjoismysign.blobtycoon.util.Vectorator;
 import io.github.anjoismysign.util.Cuboid;
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.block.structure.Mirror;
@@ -144,7 +143,6 @@ public interface StructureModel extends TycoonModel {
         Cuboid cuboid = area.cuboid();
         Location loc1 = area.getLoc1();
         Location loc2 = area.getLoc2();
-        Location center = cuboid.getCenter().clone();
         int x1 = loc1.getBlockX();
         int x2 = loc2.getBlockX();
         int floor = loc1.getBlockY();
@@ -178,7 +176,6 @@ public interface StructureModel extends TycoonModel {
                 case EAST -> structureRotation = StructureRotation.COUNTERCLOCKWISE_90;
                 default -> structureRotation = StructureRotation.CLOCKWISE_180;
             }
-            Set<BlockVector> set = new HashSet<>();
             UUID objectId = plotProfile.generateObjectId();
             Material emptyMaterial = BlobTycoonInternalAPI.getInstance().getEmptyMaterial();
             new TycoonStructrador(getStructure(), getPlugin())
