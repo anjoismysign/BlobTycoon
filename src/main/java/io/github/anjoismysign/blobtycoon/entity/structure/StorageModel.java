@@ -44,10 +44,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.Objects;
 import java.util.Random;
-import java.util.Set;
 import java.util.UUID;
 
 public interface StorageModel extends StructureModel {
@@ -304,7 +302,6 @@ public interface StorageModel extends StructureModel {
                 case EAST -> structureRotation = StructureRotation.COUNTERCLOCKWISE_90;
                 default -> structureRotation = StructureRotation.CLOCKWISE_180;
             }
-            Set<BlockVector> set = new HashSet<>();
             UUID objectId = plotProfile.generateObjectId();
             Material emptyMaterial = BlobTycoonInternalAPI.getInstance().getEmptyMaterial();
             new TycoonStructrador(getStructure(), getPlugin())
@@ -317,7 +314,7 @@ public interface StorageModel extends StructureModel {
                             new Random(), block -> {
                                 if (block.getType() == Material.LIGHT)
                                     block.setType(emptyMaterial);
-                            });
+                            }, entity -> {});
             hand.setAmount(hand.getAmount() - 1);
             getWhenPlaced().accept(player);
             BlobSound placeSound = getPlaceSound();

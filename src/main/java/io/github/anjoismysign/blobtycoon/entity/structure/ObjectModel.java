@@ -249,7 +249,7 @@ public interface ObjectModel extends TycoonModel {
                             new Random(), block -> {
                                 if (block.getType() == Material.LIGHT)
                                     block.setType(emptyMaterial);
-                            });
+                            }, entity -> {});
             Interaction interaction = InteractionModel.findInteraction(pos);
             if (interaction == null) {
                 interaction = (Interaction) player.getWorld().spawnEntity(pos.getBlock()

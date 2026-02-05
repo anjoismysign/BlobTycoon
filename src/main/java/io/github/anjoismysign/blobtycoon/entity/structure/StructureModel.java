@@ -37,9 +37,7 @@ import org.bukkit.util.BlockVector;
 import org.bukkit.util.Vector;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.HashSet;
 import java.util.Random;
-import java.util.Set;
 import java.util.UUID;
 
 public interface StructureModel extends TycoonModel {
@@ -188,7 +186,7 @@ public interface StructureModel extends TycoonModel {
                             new Random(), block -> {
                                 if (block.getType() == Material.LIGHT)
                                     block.setType(emptyMaterial);
-                            });
+                            }, entity -> {});
             hand.setAmount(hand.getAmount() - 1);
             getWhenPlaced().accept(player);
             BlobSound placeSound = getPlaceSound();
