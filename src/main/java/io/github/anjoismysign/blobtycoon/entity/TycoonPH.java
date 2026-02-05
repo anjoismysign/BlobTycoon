@@ -69,12 +69,15 @@ public class TycoonPH {
         });
         expansion.putStartsWith("valuableBalanceNoFormat", (offlinePlayer, key) -> {
             TycoonPlayer tycoonPlayer = getTycoonPlayer(offlinePlayer.getUniqueId());
-            if (tycoonPlayer == null)
+            if (tycoonPlayer == null) {
                 return notOnline().get();
+            }
             PlotProfile plotProfile = getPlotProfile(tycoonPlayer);
-            if (plotProfile == null)
+            if (plotProfile == null) {
                 return notOnline().get();
-            return plotProfile.getValuable(key) + "";
+            }
+            double balance = plotProfile.getValuable(key);
+            return String.valueOf(balance);
         });
         expansion.putStartsWith("valuableEarner", (offlinePlayer, key) -> {
             TycoonPlayer tycoonPlayer = getTycoonPlayer(offlinePlayer.getUniqueId());
@@ -92,7 +95,7 @@ public class TycoonPH {
             PlotProfile plotProfile = getPlotProfile(tycoonPlayer);
             if (plotProfile == null)
                 return notOnline().get();
-            return plotProfile.getTotalEarnings(key) + "";
+            return String.valueOf(plotProfile.getTotalEarnings(key));
         });
         expansion.putSimple("selectedPlot", offlinePlayer -> {
             TycoonPlayer tycoonPlayer = getTycoonPlayer(offlinePlayer.getUniqueId());
@@ -105,7 +108,7 @@ public class TycoonPH {
                 return notOnline().get();
             }
             return getSnippet("BlobTycoon-Placeholder.Plot", player).get()
-                    .replace("%n%", plotProfile.getSelectedExpansionIndex() + 1 + "");
+                    .replace("%n%", String.valueOf(plotProfile.getSelectedExpansionIndex() + 1));
         });
         expansion.putSimple("selectedPlotNoFormat", offlinePlayer -> {
             TycoonPlayer tycoonPlayer = getTycoonPlayer(offlinePlayer.getUniqueId());
@@ -116,7 +119,7 @@ public class TycoonPH {
             if (plotProfile == null) {
                 return notOnline().get();
             }
-            return plotProfile.getSelectedExpansionIndex() + 1 + "";
+            return String.valueOf(plotProfile.getSelectedExpansionIndex() + 1);
         });
         expansion.putStartsWith("production", (offlinePlayer, key) -> {
             TycoonPlayer tycoonPlayer = getTycoonPlayer(offlinePlayer.getUniqueId());
@@ -155,7 +158,7 @@ public class TycoonPH {
                 return TextColor.PARSE("&cMechanics disabled");
             double amount = plotProfile.getProduction(mechanicsData);
             amount += mechanicsData.getDefaultAmount();
-            return amount + "";
+            return String.valueOf(amount);
         });
         expansion.putStartsWith("consumption", (offlinePlayer, key) -> {
             TycoonPlayer tycoonPlayer = getTycoonPlayer(offlinePlayer.getUniqueId());
@@ -194,7 +197,7 @@ public class TycoonPH {
                 return TextColor.PARSE("&cMechanics disabled");
             double amount = plotProfile.getConsumption(mechanicsData);
             amount += mechanicsData.getDefaultAmount();
-            return amount + "";
+            return String.valueOf(amount);
         });
     }
 
