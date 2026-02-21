@@ -1,5 +1,6 @@
 package io.github.anjoismysign.blobtycoon.entity;
 
+import com.google.gson.Gson;
 import io.github.anjoismysign.bloblib.api.BlobLibMessageAPI;
 import io.github.anjoismysign.bloblib.entities.BlobCrudable;
 import io.github.anjoismysign.bloblib.entities.DocumentDecorator;
@@ -8,6 +9,7 @@ import io.github.anjoismysign.bloblib.storage.BlobCrudManager;
 import io.github.anjoismysign.bloblib.storage.IdentifierType;
 import io.github.anjoismysign.bloblib.storage.StorageType;
 import io.github.anjoismysign.bloblib.utilities.BlobCrudManagerFactory;
+import io.github.anjoismysign.blobtycoon.BlobTycoon;
 import io.github.anjoismysign.blobtycoon.director.TycoonManager;
 import io.github.anjoismysign.blobtycoon.director.TycoonManagerDirector;
 import io.github.anjoismysign.blobtycoon.exception.NoAvailablePlotsException;
@@ -20,8 +22,12 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -106,7 +112,6 @@ public class PlotProfileManager extends TycoonManager implements Listener {
 
     @Override
     public void unload() {
-        getAll().forEach(PlotProfile::unload);
         saveAll(false);
     }
 

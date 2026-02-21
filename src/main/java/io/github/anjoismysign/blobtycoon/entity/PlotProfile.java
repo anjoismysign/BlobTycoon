@@ -14,7 +14,6 @@ import io.github.anjoismysign.bloblib.entities.translatable.TranslatableBlock;
 import io.github.anjoismysign.bloblib.entities.translatable.TranslatableItem;
 import io.github.anjoismysign.bloblib.middleman.itemstack.ItemStackModder;
 import io.github.anjoismysign.bloblib.utilities.ItemStackUtil;
-import io.github.anjoismysign.bloblib.utilities.TextColor;
 import io.github.anjoismysign.bloblib.vault.multieconomy.ElasticEconomy;
 import io.github.anjoismysign.blobtycoon.BlobTycoonInternalAPI;
 import io.github.anjoismysign.blobtycoon.blobeconomy.BlobEconomyMiddleman;
@@ -30,6 +29,7 @@ import io.github.anjoismysign.blobtycoon.entity.plotdata.PlotData;
 import io.github.anjoismysign.blobtycoon.entity.plothelper.PlotHelper;
 import io.github.anjoismysign.blobtycoon.entity.plothelper.PlotHelperContainer;
 import io.github.anjoismysign.blobtycoon.entity.plothelper.PlotHelperTrade;
+import io.github.anjoismysign.blobtycoon.entity.plothelper.PlotHelperTradeData;
 import io.github.anjoismysign.blobtycoon.entity.structure.ItemFrameType;
 import io.github.anjoismysign.blobtycoon.event.PlayerRebirthEvent;
 import io.github.anjoismysign.blobtycoon.event.ProfileLoadEvent;
@@ -42,8 +42,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
-import org.bukkit.Registry;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
@@ -172,6 +170,12 @@ public class PlotProfile implements SharedSerializable<PlotProprietorProfile>,
         loadExpansion(selectedExpansionIndex, null, true, false);
         this.mechanics = new HashMap<>();
         this.tradeContexts = new HashMap<>();
+        if (document.containsKey("Trade-Context")){
+            Map<String, Map<String, Object>> tradeContext = (Map<String, Map<String, Object>>) document.get("Trade-Context");
+            tradeContext.forEach((stringId, serialized)->{
+                tradeContexts.put(stringId, PlotHelperTradeData.deserialize(serialized).toContext());
+            });
+        }
         this.deniedVisit = new HashSet<>();
         reloadMechanicsOperator();
         HologramConfiguration hologramConfiguration = HologramConfiguration.getInstance();
@@ -239,15 +243,6 @@ public class PlotProfile implements SharedSerializable<PlotProprietorProfile>,
         plotHelper().reload();
     }
 
-    public void unload() {
-        forEachOnlineProprietor(tycoonPlayer -> {
-            Player player = tycoonPlayer.getPlayer();
-            UUID uuid = player.getUniqueId();
-            getCreateTradeContext(player).cancel(player);
-            tradeContexts.remove(uuid.toString());
-        });
-    }
-
     /**
      * Closes the player relation to this PlotProfile.
      * Won't run any logic when the player switches plot and the plot is not loaded.
@@ -270,9 +265,6 @@ public class PlotProfile implements SharedSerializable<PlotProprietorProfile>,
     public void close(@NotNull Player player,
                       @Nullable Runnable onSwitch,
                       @Nullable Runnable onCoopSwitch) {
-        UUID uuid = player.getUniqueId();
-        getCreateTradeContext(player).cancel(player);
-        tradeContexts.remove(uuid.toString());
         TycoonPlayer tycoonPlayer = director.getTycoonPlayerManager()
                 .isBlobSerializable(player).orElseThrow();
         saveEco();
@@ -426,6 +418,11 @@ public class PlotProfile implements SharedSerializable<PlotProprietorProfile>,
         document.put("Last-Connection", Instant.now().toEpochMilli());
         document.put("Is-Fresh", isFresh);
         document.put("PlotHelper", plotHelper.serialize());
+        Map<String, Map<String, Object>> tradeContext = new HashMap<>();
+        tradeContexts.forEach((stringId, context)->{
+            tradeContext.put(stringId, context.toTradeData().serialize());
+        });
+        document.put("Trade-Context", tradeContext);
         return blobCrudable;
     }
 
@@ -850,9 +847,6 @@ public class PlotProfile implements SharedSerializable<PlotProprietorProfile>,
             ItemStack tradingItem = context.getTradingItem();
             String itemDisplay = tradingItemTranslatableItem == null ? ItemStackUtil.display(tradingItem) :
                     ItemStackUtil.display(tradingItemTranslatableItem.localize(player).get());
-            if (Registry.MATERIAL.get(NamespacedKey.minecraft(itemDisplay)) != null) {
-                itemDisplay = TextColor.PARSE("&f" + itemDisplay);
-            }
             String name = context.getCurrency();
             String format = BlobLibEconomyAPI.getInstance().getElasticEconomy().getImplementation(name)
                     .format(context.getAmount());

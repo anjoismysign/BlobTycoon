@@ -9,12 +9,14 @@ import io.github.anjoismysign.blobtycoon.entity.PlotProfile;
 import io.github.anjoismysign.blobtycoon.entity.TycoonPlayer;
 import io.github.anjoismysign.blobtycoon.entity.valuable.ValuableDriver;
 import io.github.anjoismysign.blobtycoon.util.TycoonUnit;
+import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.jetbrains.annotations.NotNull;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 public class BlobLibTranslatableItem implements ValuableDriver {
@@ -44,12 +46,6 @@ public class BlobLibTranslatableItem implements ValuableDriver {
          * this is because double to int casting rounds towards '0'
          */
         int truncatedAmount = (int) amount;
-        if (truncatedAmount > 2240) {
-            BlobLibMessageAPI.getInstance()
-                    .getMessage("BlobTycoon.Transaction-Too-Big", player)
-                    .handle(player);
-            return false;
-        }
         try {
             TranslatableItem translatableItem = translatableAPI
                     .getTranslatableItem(currency, player);
@@ -61,6 +57,12 @@ public class BlobLibTranslatableItem implements ValuableDriver {
                 return false;
             }
             ItemStack itemStack = translatableItem.getClone();
+            if (truncatedAmount > itemStack.getItemMeta().getMaxStackSize()) {
+                BlobLibMessageAPI.getInstance()
+                        .getMessage("BlobTycoon.Transaction-Too-Big", player)
+                        .handle(player);
+                return false;
+            }
             itemStack.setAmount(truncatedAmount);
             PlayerUtil.giveItemToInventoryOrDrop(player,
                     itemStack);
@@ -93,5 +95,13 @@ public class BlobLibTranslatableItem implements ValuableDriver {
         itemMeta.setLore(baseMeta.getLore());
         clone.setItemMeta(itemMeta);
         return clone;
+    }
+
+    @Override
+    public String format(@NotNull Player player, String currency, double amount) {
+        var stack = TranslatableItem.by(currency).localize(player).getClone();
+        var meta = stack.getItemMeta();
+        var display = meta.getDisplayName();
+        return ChatColor.stripColor(display) +" x"+ BigDecimal.valueOf(amount).intValue();
     }
 }

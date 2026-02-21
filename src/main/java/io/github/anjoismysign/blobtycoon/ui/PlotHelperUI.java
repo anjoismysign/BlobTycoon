@@ -100,7 +100,6 @@ public class PlotHelperUI implements ReloadableUI {
                             .handle(player);
                     return;
                 }
-                PlotProfile profile = tycoonPlayer.getProfile().getPlotProfile();
                 BlobLibInventoryAPI.getInstance().trackInventory(player, "Plot-Helper-Trading")
                         .getInventory().open(player);
             });
@@ -322,7 +321,6 @@ public class PlotHelperUI implements ReloadableUI {
                         .handle(player);
                 return;
             }
-            PlotProfile profile = tycoonPlayer.getProfile().getPlotProfile();
             BlobLibInventoryAPI.getInstance().trackInventory(player, "Plot-Helper-Trading")
                     .getInventory().open(player);
         });
@@ -538,10 +536,6 @@ public class PlotHelperUI implements ReloadableUI {
                 TranslatableItem tradingItemTranslatableItem = context.getTradingTranslatableItem();
                 String itemDisplay = tradingItemTranslatableItem == null ? ItemStackUtil.display(tradingItem) :
                         ItemStackUtil.display(tradingItemTranslatableItem.localize(player).get());
-                RegistryAccess access = RegistryAccess.registryAccess();
-                Registry<ItemType> registry = access.getRegistry(RegistryKey.ITEM);
-                if (registry.get(Key.key(itemDisplay)) != null)
-                    itemDisplay = TextColor.PARSE("&f" + itemDisplay);
                 String name = context.getCurrency();
                 String format = BlobLibEconomyAPI.getInstance().getElasticEconomy().getImplementation(name)
                         .format(context.getAmount());

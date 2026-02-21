@@ -3,6 +3,9 @@ package io.github.anjoismysign.blobtycoon.entity.plothelper;
 import io.github.anjoismysign.bloblib.entities.translatable.TranslatableItem;
 import io.github.anjoismysign.bloblib.utilities.ItemStackSerializer;
 import io.github.anjoismysign.bloblib.utilities.PlayerUtil;
+import io.github.anjoismysign.blobtycoon.entity.configuration.PlotHelperConfiguration;
+import io.github.anjoismysign.blobtycoon.entity.configuration.PlotHelperDefaultTradeConfiguration;
+import io.github.anjoismysign.blobtycoon.ui.context.CreateTradeContext;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
@@ -99,5 +102,15 @@ public record PlotHelperTradeData(@NotNull ItemStack getItemStack,
         ItemStack localized = translatableItem.localize(player).getClone();
         localized.setAmount(getItemStack.getAmount());
         PlayerUtil.giveItemToInventoryOrDrop(player, localized);
+    }
+
+    public CreateTradeContext toContext(){
+        PlotHelperDefaultTradeConfiguration tradeConfiguration = PlotHelperConfiguration
+                .getInstance().getMerchantConfiguration().getDefaultTradeConfiguration();
+        var context = CreateTradeContext.of(tradeConfiguration.getCurrency(), tradeConfiguration.getAmount());
+        context.setCurrency(getCurrency);
+        context.setAmount(getPrice);
+        context.setTradingItem(getItemStack);
+        return context;
     }
 }

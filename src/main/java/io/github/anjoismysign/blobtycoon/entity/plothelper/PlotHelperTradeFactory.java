@@ -3,7 +3,6 @@ package io.github.anjoismysign.blobtycoon.entity.plothelper;
 import io.github.anjoismysign.anjo.entities.Uber;
 import io.github.anjoismysign.bloblib.api.BlobLibEconomyAPI;
 import io.github.anjoismysign.bloblib.api.BlobLibMessageAPI;
-import io.github.anjoismysign.bloblib.entities.translatable.TranslatableItem;
 import io.github.anjoismysign.bloblib.utilities.PlayerUtil;
 import io.github.anjoismysign.bloblib.vault.multieconomy.ElasticEconomy;
 import io.github.anjoismysign.blobtycoon.entity.PlotProfile;
@@ -49,11 +48,9 @@ public class PlotHelperTradeFactory {
     @Nullable
     private PlotHelperTrade buy(@NotNull PlotHelperTradeData tradeData,
                                 @NotNull PlotHelperContainer plotHelperContainer) {
-        TranslatableItem involvedItem = tradeData.toTranslatableItem();
         Integer order = plotHelperContainer.canAddTrade();
         if (order == null)
             return null;
-        PlotHelper plotHelper = plotHelperContainer.plotHelper();
         Uber<Boolean> isForSale = Uber.drive(true);
         PlotHelperTrade trade = new PlotHelperTrade() {
 

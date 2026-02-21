@@ -1,9 +1,11 @@
 package io.github.anjoismysign.blobtycoon.entity;
 
+import io.github.anjoismysign.bloblib.api.BlobLibEconomyAPI;
 import io.github.anjoismysign.bloblib.api.BlobLibInventoryAPI;
 import io.github.anjoismysign.bloblib.api.BlobLibListenerAPI;
 import io.github.anjoismysign.bloblib.api.BlobLibMessageAPI;
 import io.github.anjoismysign.bloblib.middleman.itemstack.ItemStackBuilder;
+import io.github.anjoismysign.bloblib.vault.multieconomy.ElasticEconomy;
 import io.github.anjoismysign.blobtycoon.BlobTycoonInternalAPI;
 import io.github.anjoismysign.blobtycoon.BlobTycoonValuableAPI;
 import io.github.anjoismysign.blobtycoon.entity.valuable.ValuableDriver;
@@ -66,8 +68,19 @@ public class ValuableTeller {
                                         TycoonPlayer manage = BlobTycoonInternalAPI.getInstance().getTycoonPlayer(player);
                                         Objects.requireNonNull(manage, "add player#isValid && player#isOnline to BlobLib listeners");
                                         PlotProfile managePlot = manage.getProfile().getPlotProfile();
+                                        var driver = BlobTycoonValuableAPI.getInstance()
+                                                .getLinkedDriver(valuable);
                                         try {
                                             double parsed = Double.parseDouble(input);
+                                            var display = driver.format(player, valuable, parsed);
+                                            if (parsed < 0){
+                                                BlobLibMessageAPI.getInstance().getMessage("Economy.Not-Enough")
+                                                        .modder()
+                                                        .replace("%display%", display)
+                                                        .get()
+                                                        .handle(player);
+                                                return;
+                                            }
                                             if (!managePlot.hasValuableAmount(valuable, parsed)) {
                                                 BlobLibMessageAPI.getInstance()
                                                         .getMessage("Withdraw.Insufficient-Balance", player)
@@ -75,9 +88,7 @@ public class ValuableTeller {
                                                 return;
                                             }
                                             managePlot.withdrawValuable(valuable, parsed);
-                                            BlobTycoonValuableAPI.getInstance()
-                                                    .getLinkedDriver(valuable)
-                                                    .withdraw(player, valuable, parsed);
+                                            driver.withdraw(player, valuable, parsed);
                                             withdraw(player);
                                         } catch (NumberFormatException exception) {
                                             Set<String> allKeywords = BlobTycoonInternalAPI.getInstance().getAllKeywords();
@@ -91,9 +102,7 @@ public class ValuableTeller {
                                                     return;
                                                 }
                                                 managePlot.withdrawValuable(valuable, amount);
-                                                BlobTycoonValuableAPI.getInstance()
-                                                        .getLinkedDriver(valuable)
-                                                        .withdraw(player, valuable, amount);
+                                                driver.withdraw(player, valuable, amount);
                                                 withdraw(player);
                                             } else if (halfKeywords.contains(input)) {
                                                 double amount = managePlot.getValuable(valuable) / 2;
@@ -104,9 +113,7 @@ public class ValuableTeller {
                                                     return;
                                                 }
                                                 managePlot.withdrawValuable(valuable, amount);
-                                                BlobTycoonValuableAPI.getInstance()
-                                                        .getLinkedDriver(valuable)
-                                                        .withdraw(player, valuable, amount);
+                                                driver.withdraw(player, valuable, amount);
                                                 withdraw(player);
                                             } else {
                                                 BlobLibMessageAPI.getInstance()

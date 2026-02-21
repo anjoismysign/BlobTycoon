@@ -59,4 +59,9 @@ public class VaultMultiEconomy implements ValuableDriver {
                 .get()
                 .getClone();
     }
+
+    @Override
+    public String format(@NotNull Player player, String currency, double amount) {
+        return BlobLibEconomyAPI.getInstance().getElasticEconomy().getImplementation(currency).format(amount);
+    }
 }

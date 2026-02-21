@@ -66,10 +66,14 @@ public class CreateTradeContext {
         if (tradingItem == null)
             return;
         TranslatableItem item = getTradingTranslatableItem();
-        if (item == null)
+        int amount = tradingItem.getAmount();
+        if (item == null) {
             PlayerUtil.giveItemToInventoryOrDrop(owner, tradingItem);
-        else
-            PlayerUtil.giveItemToInventoryOrDrop(owner, item.localize(owner).getClone());
+        } else {
+            var clone = item.localize(owner).getClone();
+            clone.setAmount(amount);
+            PlayerUtil.giveItemToInventoryOrDrop(owner, clone);
+        }
         tradingItem = null;
     }
 

@@ -51,4 +51,6 @@ public interface ValuableDriver {
      * @return The display
      */
     ItemStack display(@NotNull Player player, @NotNull String currency);
+
+    String format(@NotNull Player player, String currency, double amount);
 }
