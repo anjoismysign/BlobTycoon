@@ -1,11 +1,9 @@
 package io.github.anjoismysign.blobtycoon.entity;
 
-import io.github.anjoismysign.bloblib.api.BlobLibEconomyAPI;
 import io.github.anjoismysign.bloblib.api.BlobLibInventoryAPI;
 import io.github.anjoismysign.bloblib.api.BlobLibListenerAPI;
 import io.github.anjoismysign.bloblib.api.BlobLibMessageAPI;
 import io.github.anjoismysign.bloblib.middleman.itemstack.ItemStackBuilder;
-import io.github.anjoismysign.bloblib.vault.multieconomy.ElasticEconomy;
 import io.github.anjoismysign.blobtycoon.BlobTycoonInternalAPI;
 import io.github.anjoismysign.blobtycoon.BlobTycoonValuableAPI;
 import io.github.anjoismysign.blobtycoon.entity.valuable.ValuableDriver;
