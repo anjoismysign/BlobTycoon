@@ -3,6 +3,7 @@ package io.github.anjoismysign.blobtycoon.ui.context;
 import io.github.anjoismysign.bloblib.entities.translatable.TranslatableItem;
 import io.github.anjoismysign.bloblib.utilities.PlayerUtil;
 import io.github.anjoismysign.blobtycoon.entity.plothelper.PlotHelperTradeData;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
@@ -98,8 +99,6 @@ public class CreateTradeContext {
 
     @NotNull
     public PlotHelperTradeData toTradeData() {
-        if (!isReady())
-            throw new IllegalStateException("Trade data is not ready");
-        return new PlotHelperTradeData(tradingItem, amount, currency);
+        return new PlotHelperTradeData(tradingItem == null ? new ItemStack(Material.AIR) : tradingItem, amount, currency);
     }
 }

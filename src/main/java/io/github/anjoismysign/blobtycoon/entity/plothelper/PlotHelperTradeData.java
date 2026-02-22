@@ -110,7 +110,7 @@ public record PlotHelperTradeData(@NotNull ItemStack getItemStack,
         var context = CreateTradeContext.of(tradeConfiguration.getCurrency(), tradeConfiguration.getAmount());
         context.setCurrency(getCurrency);
         context.setAmount(getPrice);
-        context.setTradingItem(getItemStack);
+        context.setTradingItem(getItemStack.getType().isAir() ? null : getItemStack);
         return context;
     }
 }

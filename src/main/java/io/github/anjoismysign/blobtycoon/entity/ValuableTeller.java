@@ -70,12 +70,8 @@ public class ValuableTeller {
                                                 .getLinkedDriver(valuable);
                                         try {
                                             double parsed = Double.parseDouble(input);
-                                            var display = driver.format(player, valuable, parsed);
                                             if (parsed < 0){
-                                                BlobLibMessageAPI.getInstance().getMessage("Economy.Not-Enough")
-                                                        .modder()
-                                                        .replace("%display%", display)
-                                                        .get()
+                                                BlobLibMessageAPI.getInstance().getMessage("Economy.Number-Exception")
                                                         .handle(player);
                                                 return;
                                             }
